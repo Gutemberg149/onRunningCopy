@@ -13,6 +13,7 @@ import Footer from "../../componentes/footer/Footer";
 import AccordionQuestion from "./AccordionQuestion";
 
 const SignUpPage = () => {
+  //to open the sign up containe in the menu.
   const [signUp, setSingUp] = useState(false);
 
   const handleSignUp = () => {
@@ -39,6 +40,7 @@ const SignUpPage = () => {
             One free account, endless possibilities. Check out the benefits
             below. Because we've got your back. Even if it's sweaty.
           </p>
+
           <div className="btns">
             <button className="siginup" onClick={() => handleSignUp()}>
               Sign up

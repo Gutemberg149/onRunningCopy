@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { useUserAuth } from "../../../contexts/UserAuthContext";
-
+import { useContext } from "react";
+import { OpensignUpContext } from "../../../contexts/OpenSigUpContext";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const { logIn } = useUserAuth();
 
   const handleSubmit = async (e) => {
@@ -13,8 +14,8 @@ const Login = () => {
     try {
       await logIn(email, password);
     } catch (error) {
-      setError(error.message);
-      console.log(error);
+      setErrorMessage(error.message);
+      console.log(errorMessage);
     }
   };
 
@@ -22,7 +23,9 @@ const Login = () => {
     <Wrapper>
       <div className="innerUserContainer">
         <h4>Log in to your On account</h4>
-        <p>For faster checkout, managing orders and account-only exclusives.</p>
+        <p className="pInnercontainer">
+          For faster checkout, managing orders and account-only exclusives.
+        </p>
         <form onSubmit={handleSubmit}>
           <div className="fildeHolder">
             <input
@@ -53,13 +56,28 @@ const Login = () => {
   );
 };
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .alertToLogin {
+    margin-bottom: 2rem;
+    border: 1px solid #cc0303;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    .pAlert {
+      font-size: 1.5rem;
+      font-family: "poppins";
+      font-weight: 600;
+      color: #cc0303;
+    }
+  }
   h4 {
     font-size: 2.7rem;
     font-weight: 500;
     color: #302f2f;
     margin-bottom: 2rem;
   }
-  p {
+  .pInnercontainer {
     font-size: 1.75rem;
     font-weight: 400;
     color: #302f2f;
@@ -75,6 +93,7 @@ const Wrapper = styled.div`
       width: 100%;
       outline: none !important;
       border: 0;
+      font-size: 1.2rem;
       &:focus ~ label,
       &:valid ~ label {
         position: absolute;

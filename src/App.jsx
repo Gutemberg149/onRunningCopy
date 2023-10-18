@@ -40,6 +40,7 @@ function App() {
         <UserAuthContextProvider>
           <Routes>
             <Route path="/" element={<Home />} />
+
             <Route
               path="/useraccount"
               element={
@@ -67,9 +68,23 @@ function App() {
             <Route path="/innovation" element={<Innovation />} />
             <Route path="/abouton" element={<About_On />} />
             <Route path="/stores" element={<StoresLocation />} />
-            <Route path="/account" element={<Account />} />
-            <Route path="/checkout" element={<CheckOut />} />
             <Route path="/orderplaced" element={<OrderPlaced />} />
+            <Route
+              path="/account"
+              element={
+                <ProtectedRoute>
+                  <Account />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/checkout"
+              element={
+                <ProtectedRoute>
+                  <CheckOut />
+                </ProtectedRoute>
+              }
+            />
             <Route path="/contactus" element={<ContactUs />} />
           </Routes>
         </UserAuthContextProvider>

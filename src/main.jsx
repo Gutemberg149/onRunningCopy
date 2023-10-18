@@ -7,19 +7,22 @@ import SizeChosenProvider from "./assets/contexts/SizeChosenContex.jsx";
 import ProdDetailProvider from "./assets/contexts/ProdetailContext.jsx";
 import ShippingProvider from "./assets/contexts/ShippingContext.jsx";
 import ContactUsProvider from "./assets/contexts/ContactUsContext.jsx";
+import OpensignUpProvider from "./assets/contexts/OpenSigUpContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <ContactUsProvider>
-      <ShippingProvider>
-        <CartToggleProvider>
-          <SizeChosenProvider>
-            <ProdDetailProvider>
-              <App />
-            </ProdDetailProvider>
-          </SizeChosenProvider>
-        </CartToggleProvider>
-      </ShippingProvider>
-    </ContactUsProvider>
-  </React.StrictMode>
+  <OpensignUpProvider>
+    <React.StrictMode>
+      <ContactUsProvider>
+        <ShippingProvider>
+          <CartToggleProvider>
+            <SizeChosenProvider>
+              <ProdDetailProvider>
+                <App />
+              </ProdDetailProvider>
+            </SizeChosenProvider>
+          </CartToggleProvider>
+        </ShippingProvider>
+      </ContactUsProvider>
+    </React.StrictMode>
+  </OpensignUpProvider>
 );

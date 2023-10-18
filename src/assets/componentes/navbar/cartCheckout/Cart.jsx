@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { BsTrash } from "react-icons/bs";
 import { Link, useParams } from "react-router-dom";
-import { listProduct } from "../../../utils/APIArray";
+// import { listProduct } from "../../../utils/APIArray";
 import { useContext } from "react";
 import { ProdDetailContetx } from "../../../contexts/ProdetailContext";
 
@@ -18,6 +18,7 @@ const Cart = () => {
     countShopBag,
   } = useContext(ProdDetailContetx);
   cartItems;
+
   return (
     <Wrapper>
       <div className="cartBody">
@@ -84,6 +85,11 @@ const Cart = () => {
           </div>
           <Link to={"/checkout"} className="checkout">
             <p>Check out</p>
+            {/* {user ? (
+                <NavBarAccount />
+              ) : (
+                <Login_SignUp handleSignUp={handleSignUp} />
+              )} */}
           </Link>
         </div>
       </div>

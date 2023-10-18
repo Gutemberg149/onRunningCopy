@@ -8,6 +8,7 @@ import Payment from "./Payment";
 import Shipping from "./Shipping";
 import { ShippingContext } from "../../contexts/ShippingContext";
 import Footer from "../../componentes/footer/Footer";
+
 const CheckOut = () => {
   //context to send and delete itens from the cart
   const { cartItems, total } = useContext(ProdDetailContetx);

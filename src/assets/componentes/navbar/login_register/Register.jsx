@@ -5,18 +5,19 @@ import { useState } from "react";
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMEssage] = useState("");
   const { signUp } = useUserAuth();
   let { btnToggle, setBtnToggle } = useUserAuth();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
+    setErrorMEssage("Error");
     try {
       await signUp(email, password);
       setBtnToggle(true);
       console.log(btnToggle);
     } catch (error) {
-      setError(error.message);
+      setErrorMEssage(error.message);
     }
   };
 
@@ -112,6 +113,7 @@ const Wrapper = styled.div`
           width: 100%;
           outline: none !important;
           border: 0;
+          font-size: 1.2rem;
           &:focus ~ label,
           &:valid ~ label {
             position: absolute;

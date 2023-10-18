@@ -11,18 +11,19 @@ import { useRef } from "react";
 import { useUserAuth } from "../../contexts/UserAuthContext";
 import Login_SignUp from "./login_register/Login_SignUp";
 import NavBarAccount from "./NavBarAccount";
+import { OpensignUpContext } from "../../contexts/OpenSigUpContext";
 
-const Navbar = ({ signUp, handleSignUp, setSingUp }) => {
+const Navbar = ({ signUp, setSingUp, handleSignUp }) => {
   const [togglevisibility, setTogglevisibility] = useState(false);
   const [togglevisibility3, setTogglevisibility3] = useState(false);
   const [togglevisibilitySearch, setTogglevisibilitySearch] = useState(false);
   const [togglevisibilityCart, setTogglevisibilityCart] = useState(false);
-  const [togglevisibilitySignUp, setTogglevisibilitySignUp] = useState(false);
+  // const [togglevisibilitySignUp, setTogglevisibilitySignUp] = useState(false);
 
   const [show, setShow] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  const { user } = useUserAuth(); //if the user is logged in to show his profile
+  const { user } = useUserAuth(); //if the user is logged in, shows his profile
 
   const handleNAvbarShow = () => {
     if (window.scrollY < lastScrollY || window.scrollY <= 33) {
@@ -36,6 +37,10 @@ const Navbar = ({ signUp, handleSignUp, setSingUp }) => {
     setLastScrollY(window.scrollY);
   };
 
+  // ------------------------------------------------------
+  //usecontext to set the number of itens at the top of item bag
+  const { countShopBag, cartItems } = useContext(ProdDetailContetx);
+
   useEffect(() => {
     window.addEventListener("scroll", handleNAvbarShow);
     // cleanup function
@@ -47,6 +52,14 @@ const Navbar = ({ signUp, handleSignUp, setSingUp }) => {
   //This is code snipt is to make the sign up container drop from navbar.
   //it takes info from signUpPage and  Login_signUp page.
   const effectRan = useRef(false);
+
+  //this use context is to open and close the sigUp container in case we click on the sign up bottom or hover out of sign up container and in case there is no user logged in and the user try to check out the items, it will send the user to sign up page and open the sign up box automaticaly.
+  const {
+    togglevisibilitySignUp,
+    setTogglevisibilitySignUp,
+    allowToggleVisibility, //this code changes the togglevisibilitySignUp with user effect, line 76.
+    setAllowToggleVisibility, //this code changes the togglevisibilitySignUp in every LINK in navbar.
+  } = useContext(OpensignUpContext);
 
   useEffect(() => {
     if (effectRan.current === true) {
@@ -60,9 +73,12 @@ const Navbar = ({ signUp, handleSignUp, setSingUp }) => {
     };
   }, [handleSignUp]);
 
-  // ------------------------------------------------------
-  //usecontext to set the number of itens at the top of item bag
-  const { countShopBag, cartItems } = useContext(ProdDetailContetx);
+  useEffect(() => {
+    if (allowToggleVisibility) {
+      setTogglevisibilitySignUp(true);
+    }
+  }, [allowToggleVisibility]);
+  //-----------------------------------------------------------------------------------------------
 
   return (
     <Wrapper>
@@ -83,28 +99,52 @@ const Navbar = ({ signUp, handleSignUp, setSingUp }) => {
                 <div>
                   <ul className="libtnContainer">
                     <Link to={"/ShoesPage"}>
-                      <li>SHOP</li>
+                      <li onClick={() => setAllowToggleVisibility(false)}>
+                        SHOP
+                      </li>
                     </Link>
                     <Link to={"/featured"}>
-                      <li>FEATURED</li>
+                      <li onClick={() => setAllowToggleVisibility(false)}>
+                        FEATURED
+                      </li>
                     </Link>
                   </ul>
 
                   <ul className="libtnContainer">
                     <Link to={"/orderstatus"}>
-                      <li className="liBttm">Order status</li>
+                      <li
+                        className="liBttm"
+                        onClick={() => setAllowToggleVisibility(false)}
+                      >
+                        Order status
+                      </li>
                     </Link>
 
                     <Link to={"/stores"}>
-                      <li className="liBttm">Stores</li>
+                      <li
+                        className="liBttm"
+                        onClick={() => setAllowToggleVisibility(false)}
+                      >
+                        Stores
+                      </li>
                     </Link>
 
                     <Link to={"/referfriend"}>
-                      <li className="liBttm">Refer a friend</li>
+                      <li
+                        className="liBttm"
+                        onClick={() => setAllowToggleVisibility(false)}
+                      >
+                        Refer a friend
+                      </li>
                     </Link>
 
                     <Link to={"/signUpPage"}>
-                      <li className="liBttm">Sign Up</li>
+                      <li
+                        className="liBttm"
+                        onClick={() => setAllowToggleVisibility(false)}
+                      >
+                        Sign Up
+                      </li>
                     </Link>
                   </ul>
                 </div>
@@ -124,15 +164,21 @@ const Navbar = ({ signUp, handleSignUp, setSingUp }) => {
               >
                 <ul className="libtnContainer">
                   <Link to={"/movement"}>
-                    <li>MOVEMENT</li>
+                    <li onClick={() => setAllowToggleVisibility(false)}>
+                      MOVEMENT
+                    </li>
                   </Link>
 
                   <Link to={"/innovation"}>
-                    <li>INNOVATION</li>
+                    <li onClick={() => setAllowToggleVisibility(false)}>
+                      INNOVATION
+                    </li>
                   </Link>
 
                   <Link to={"/abouton"}>
-                    <li>ABOUT ON</li>
+                    <li onClick={() => setAllowToggleVisibility(false)}>
+                      ABOUT ON
+                    </li>
                   </Link>
                 </ul>
               </div>
@@ -162,7 +208,7 @@ const Navbar = ({ signUp, handleSignUp, setSingUp }) => {
           </div>
 
           {/* ----------------------------BAG-------------------------------------------------- */}
-          {/* basket ofShop */}
+          {/* basket of Shop */}
 
           <div
             className="iconContainer2 "
@@ -205,8 +251,6 @@ const Navbar = ({ signUp, handleSignUp, setSingUp }) => {
               ) : (
                 <Login_SignUp handleSignUp={handleSignUp} />
               )}
-
-              {/*  */}
             </div>
           </div>
 
