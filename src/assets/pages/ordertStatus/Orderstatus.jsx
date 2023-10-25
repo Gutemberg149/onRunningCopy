@@ -6,7 +6,7 @@ import { useReducer } from "react";
 import ReducerBcg from "./ReducerBcg";
 import { initialState } from "./ReducerBcg";
 import Order from "./order/Order";
-import Returns from "./returns/Return";
+import Returns from "./returns/Returns";
 import Shipping from "./shipping/Shipping";
 import ProductInfo from "./info/ProductInfo";
 import Sustainability from "./sustainability/Sustainability";
