@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../../contexts/CartToggleContex";
 import { ProdDetailContetx } from "../../../contexts/ProdetailContext";
-import SizeTable from "./sizeTable";
+import SizeTable from "./SizeTable";
 import { SizeChosenContext } from "../../../contexts/SizeChosenContex";
 
 const CartShop = () => {
