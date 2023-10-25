@@ -354,6 +354,7 @@ const Wrapper = styled.div`
       margin-top: 4.5rem;
 
       .pProd {
+        width: 10rem;
         margin-left: 3rem;
         font-size: 1.2rem;
       }
@@ -399,6 +400,7 @@ const Wrapper = styled.div`
         }
       }
     }
+
     .pFaqs {
       margin-top: 3rem;
       margin-left: 3.2rem;
@@ -461,6 +463,135 @@ const Wrapper = styled.div`
             font-size: 1.2rem;
           }
         }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    padding: 0;
+    width: 36rem;
+    .bodyContainer {
+      width: 36rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .search {
+        width: 30rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+        input {
+          height: 3.8rem;
+          &::placeholder {
+          }
+        }
+        .searchIcon {
+          font-size: 1rem;
+          cursor: pointer;
+        }
+      }
+
+      .suggestedSearch {
+        /* align-items: center; */
+        margin-top: 1rem;
+        width: 29rem;
+        height: 20rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .pSugested {
+          font-size: 1rem;
+          margin-bottom: 0;
+          margin-left: 3rem;
+        }
+        .innerSugested {
+          width: 29rem;
+          height: 10rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin-bottom: 0;
+          margin-left: 0;
+          .sugested {
+            margin: 0.5rem;
+            width: 7rem;
+            height: 5.8;
+            font-size: 0.9rem;
+            padding: 0.5rem 0.6rem;
+            margin-bottom: 0;
+
+            cursor: pointer;
+            &:hover {
+            }
+          }
+        }
+      }
+
+      .products {
+        width: 33rem;
+        margin-top: 1.5rem;
+        .pProd {
+          margin-left: 2rem;
+        }
+        .prodsContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 33rem;
+          cursor: pointer;
+          .prodContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 14rem;
+            height: 22rem;
+            margin: 2rem 1rem;
+            display: grid;
+            grid-template-rows: 1fr 2fr;
+            .upperPart {
+              width: 14rem;
+              background-color: #e9e8e8;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              img {
+                width: 11rem;
+              }
+            }
+            .bottomPart {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              width: 14rem;
+              height: 12rem;
+              padding: 0.5rem;
+              .name {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #535252;
+                margin-bottom: 0.5rem;
+              }
+              .introduction,
+              .price,
+              .colors {
+                text-align: center;
+                font-size: 1rem;
+                color: #4d4d4d;
+                margin-bottom: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+      .pFaqs {
+        display: none;
+      }
+      .FAQs {
+        display: none;
       }
     }
   }

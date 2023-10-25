@@ -84,7 +84,7 @@ const Navbar = ({ signUp, setSingUp, handleSignUp }) => {
     <Wrapper>
       <div className="navContainer" style={{ top: `${show ? "-90" : "30"}px` }}>
         <div className="leftContainer">
-          <ul>
+          <ul className="ulLeftContainer">
             <li
               className="btnNav "
               onMouseEnter={() => setTogglevisibility(true)}
@@ -279,7 +279,7 @@ const Wrapper = styled.nav`
     transition: all 0.4s ease-out;
 
     .leftContainer {
-      ul {
+      .ulLeftContainer {
         display: flex;
         margin-left: 3.75rem;
         position: relative;
@@ -320,16 +320,17 @@ const Wrapper = styled.nav`
             top: 5rem;
             left: -3.75rem;
             background-color: #f9f8f8;
+            height: 80vh;
             width: 75rem;
             flex-direction: column;
             padding: 3.125rem 0;
-            height: 80vh;
             border-bottom-left-radius: 1rem;
             border-bottom-right-radius: 1rem;
             box-shadow: rgba(8, 8, 9, 0.2) 0px 7px 29px 0px;
             transition: all ease-in-out 0.4s;
 
             li {
+              margin-left: 2.75rem;
               list-style: none;
               font-size: 2.5rem;
               transition: all ease-in-out 0.3s;
@@ -416,8 +417,8 @@ const Wrapper = styled.nav`
         left: 0rem;
         background-color: white;
         width: 75rem;
-        flex-direction: column;
         height: 80vh;
+        flex-direction: column;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
         box-shadow: rgba(8, 8, 9, 0.2) 0px 7px 29px 0px;
@@ -429,5 +430,134 @@ const Wrapper = styled.nav`
       }
     }
   }
+  @media only screen and (max-width: 600px) {
+    .navContainer {
+      width: 36rem;
+      right: 0.5rem;
+      height: 4.5rem;
+
+      .leftContainer {
+        .ulLeftContainer {
+          display: flex;
+          margin-left: 0rem;
+          position: relative;
+          .btnNav:first-child {
+            margin-left: 1rem;
+          }
+          .btnNav {
+            font-size: 1.3rem;
+            display: flex;
+            margin-right: 1.3rem;
+            font-weight: 400;
+            cursor: pointer;
+
+            &:after {
+              content: "";
+              position: absolute;
+              width: 110%;
+              height: 0.125rem;
+              background-color: #232222;
+              bottom: 0.625rem;
+              transform: scaleX(0);
+              transform-origin: bottom left;
+              transition: all 0.2s ease-in-out;
+            }
+            &:hover::after {
+              transform: scaleX(1);
+              transform-origin: bottom left;
+            }
+
+            .dropDowUl {
+              width: 36rem;
+              height: 80vh;
+              display: flex;
+              position: absolute;
+              top: 4.4rem;
+              left: -1rem;
+              background-color: #f9f8f8;
+              flex-direction: column;
+              padding: 0rem 0;
+              border-bottom-left-radius: 1rem;
+              border-bottom-right-radius: 1rem;
+              box-shadow: rgba(8, 8, 9, 0.2) 0px 7px 29px 0px;
+              transition: all ease-in-out 0.4s;
+
+              li {
+                margin-left: 0.75rem;
+                list-style: none;
+                font-size: 2.5rem;
+                transition: all ease-in-out 0.3s;
+                margin-bottom: 0.938rem;
+                &:hover {
+                  transform: translateX(1.875rem);
+                }
+              }
+              .libtnContainer {
+                margin-top: 3.125rem;
+                display: flex;
+                flex-direction: column;
+                .liBttm {
+                  font-size: 1.9rem;
+                  margin-bottom: 0.625rem;
+                  font-weight: 400;
+                }
+              }
+            }
+            .dropDowUl2 {
+              top: 5rem;
+              left: -9.313rem;
+            }
+            .dropDowUl3 {
+              top: 4.5rem;
+              left: -5.7rem;
+            }
+            .dropDowUlNoShow {
+              visibility: hidden;
+              position: absolute;
+            }
+          }
+        }
+      }
+
+      .RightContainer {
+        margin-right: 1.2rem;
+        width: 12rem;
+        height: 4rem;
+        justify-content: center;
+
+        .iconBtn {
+        }
+
+        .iconContainer2 {
+          width: 4.5rem;
+          height: 4.5rem;
+
+          .containerForCountIcon {
+            .numberOfItens {
+            }
+          }
+        }
+
+        .dropDowcontainer2 {
+          display: flex;
+          position: absolute;
+          top: 4rem;
+          width: 36rem;
+          height: 97vh;
+        }
+        .dropDowNoShow {
+          visibility: hidden;
+          position: absolute;
+        }
+      }
+    }
+  }
+  /* @media only screen and (max-width: 561px) and (min-width: 1500px) {
+    .navContainer {
+      width: 75rem;
+      background-color: #f503b0;
+      height: 5.65rem;
+    }
+  } */
 `;
 export default Navbar;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { BsTrash } from "react-icons/bs";
 import { Link, useParams } from "react-router-dom";
-// import { listProduct } from "../../../utils/APIArray";
+
 import { useContext } from "react";
 import { ProdDetailContetx } from "../../../contexts/ProdetailContext";
 
@@ -266,6 +266,180 @@ const Wrapper = styled.div`
 
           font-size: 1.2rem;
           border: 2px solid #393838;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    .cartBody {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 54.5rem;
+      width: 100%;
+
+      .innerCartBody {
+        padding: 1rem;
+
+        h1 {
+          font-size: 2rem;
+        }
+        .numberOfItens {
+          margin-top: 1rem;
+          margin-left: 0.5rem;
+          font-size: 1.5rem;
+          display: flex;
+          p {
+          }
+        }
+        .prodInCart {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 14rem;
+          border-bottom: #c7c4c4 0.5px solid;
+          .left {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 20rem;
+            height: 18rem;
+            margin-right: 1rem;
+            img {
+              width: 8rem;
+            }
+            .info {
+              min-width: 8rem;
+              display: flex;
+              flex-direction: column;
+              align-items: left;
+              justify-content: center;
+              h3 {
+                font-size: 1.2rem;
+                font-weight: 600;
+              }
+              p {
+                margin-top: 0.4rem;
+                font-size: 1rem;
+                font-weight: 400;
+                color: #343434;
+              }
+              .buttonContainer {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 1rem;
+                .btn {
+                  width: 3rem;
+                  height: 3rem;
+                  border-radius: 50%;
+                  border: 1px solid gray;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.9rem;
+                  font-weight: 200;
+                  cursor: pointer;
+                  &:hover {
+                    background-color: #efeded;
+                    border: none;
+                  }
+                }
+                .qtd {
+                  font-size: 1.5rem;
+                  font-weight: 300;
+                }
+              }
+            }
+          }
+          .right {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+            width: 10rem;
+            .price {
+              font-size: 1.4rem;
+              font-weight: 300;
+            }
+            .deleteContainer {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 4rem;
+              height: 4rem;
+              cursor: pointer;
+            }
+            .delete {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+
+      .checkOutContainer {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        bottom: 0;
+        z-index: 110;
+        padding: 0rem;
+        height: 14rem;
+        box-shadow: 0px -2px 5px 3px #cac8c8;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        width: 36rem;
+
+        cursor: pointer;
+        .top {
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 1rem;
+          .shipping {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            width: 96%;
+            border-bottom: 0.5px solid gray;
+          }
+          .total {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1.3rem;
+            font-weight: 500;
+            width: 95%;
+            border-bottom: 0.5px solid gray;
+          }
+        }
+        .checkout {
+          background-color: #f60909;
+          width: 50%;
+          height: 3.3rem;
+          background-color: #1f1e1e;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #f9f5f5;
+          border-radius: 5rem;
+          margin-top: 1rem;
+          &:hover {
+            background-color: #323232;
+
+            font-size: 1.2rem;
+            border: 2px solid #393838;
+          }
         }
       }
     }

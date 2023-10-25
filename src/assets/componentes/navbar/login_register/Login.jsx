@@ -59,18 +59,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  .alertToLogin {
-    margin-bottom: 2rem;
-    border: 1px solid #cc0303;
-    padding: 0.5rem 1.5rem;
-    border-radius: 2rem;
-    .pAlert {
-      font-size: 1.5rem;
-      font-family: "poppins";
-      font-weight: 600;
-      color: #cc0303;
-    }
-  }
+
   h4 {
     font-size: 2.7rem;
     font-weight: 500;
@@ -150,6 +139,101 @@ const Wrapper = styled.div`
       font-size: 1.1rem;
       border-radius: 3rem;
       cursor: pointer;
+    }
+  }
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+    .innerUserContainer {
+      width: 33rem;
+
+      h4 {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: #302f2f;
+        margin-bottom: 3rem;
+      }
+      .pInnercontainer {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #302f2f;
+        margin-bottom: 3rem;
+      }
+      .fildeHolder {
+        position: relative;
+        margin-bottom: 4rem;
+        border-bottom: 1px solid gray;
+        width: 30rem;
+        .inputRegister {
+          position: relative;
+          width: 100%;
+          outline: none !important;
+          border: 0;
+          font-size: 1.6rem;
+          &:focus ~ label,
+          &:valid ~ label {
+            position: absolute;
+            left: 0;
+            bottom: 2rem;
+          }
+        }
+        label {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+      /* .subscribeContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 4rem;
+        background-color: pink;
+        .subscribeCheckbox {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 2.9rem;
+          height: 1.8rem;
+          border: 2px solid gray;
+          border-radius: 0.3rem;
+          margin-right: 1rem;
+          margin-top: 0.3rem;
+          cursor: pointer;
+          .blackBox {
+            width: 1.1rem;
+            height: 1.1rem;
+            background-color: #302f2f;
+            transition: all ease 0.4s;
+          }
+        }
+        p {
+          font-size: 1.4rem;
+          color: #393737;
+          font-weight: 400;
+        }
+      } */
+      .btnContainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 7rem;
+
+        button {
+          width: 22rem;
+          height: 3.2rem;
+          margin-bottom: 0.8rem;
+          border: none;
+          background-color: black;
+          color: white;
+          font-size: 1.1rem;
+          border-radius: 3rem;
+          cursor: pointer;
+        }
+      }
     }
   }
 `;

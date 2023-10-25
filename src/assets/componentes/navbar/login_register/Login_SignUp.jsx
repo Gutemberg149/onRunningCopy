@@ -134,5 +134,95 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media only screen and (max-width: 600px) {
+    main {
+      margin: 0;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+
+      .togglebutton {
+        margin-bottom: 0rem;
+        height: 4.4rem;
+
+        .login_signUp {
+          position: relative;
+          width: 22rem;
+          height: 4rem;
+          border-radius: 10rem;
+          margin-bottom: 2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .backContainer {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 97;
+            width: 30rem;
+            cursor: pointer;
+            p {
+              font-size: 1.2rem;
+              width: 19rem;
+              height: 4rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 10rem;
+            }
+          }
+
+          .buttonLeft {
+            position: absolute;
+            left: 0;
+            border: 2px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            width: 12rem;
+            height: 100%;
+            border-radius: 10rem;
+            font-size: 1.3rem;
+            font-weight: 500;
+            z-index: 98;
+            cursor: pointer;
+          }
+          .buttonRight {
+            position: absolute;
+            right: 0;
+            border: 2px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            width: 12rem;
+            height: 100%;
+            border-radius: 10rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            z-index: 98;
+
+            cursor: pointer;
+          }
+          .backContainer {
+            position: absolute;
+            width: 20rem;
+            z-index: 95;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            height: 5rem;
+            border-radius: 10rem;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
 `;
 export default Login_SignUp;

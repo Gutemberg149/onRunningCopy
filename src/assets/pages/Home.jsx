@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Navbar from "../componentes/navbar/Navbar";
 import { AiOutlineArrowRight, AiOutlineClose } from "react-icons/ai";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
@@ -28,19 +28,26 @@ import Footer from "../componentes/footer/Footer";
 import CarrosselProdSugested from "../componentes/CarrosselProdSugested";
 import { Link } from "react-router-dom";
 import { useUserAuth } from "../contexts/UserAuthContext";
+
 const Home = () => {
   const { user, logOut } = useUserAuth();
 
-  const [cardPosition1, setCardPosition1] = useState(5);
-  const [cardPosition2, setCardPosition2] = useState(0);
-  const [cardPosition3, setCardPosition3] = useState(0);
-  const [cardPosition4, setCardPosition4] = useState(0);
-  const [cardPosition5, setCardPosition5] = useState(0);
+  const [cardPosition1, setCardPosition1] = useState(5); //cadrs position section 3
+  const [cardPosition2, setCardPosition2] = useState(0); //cadrs position section 3
+  const [cardPosition3, setCardPosition3] = useState(0); //cadrs position section 3
+  const [cardPosition4, setCardPosition4] = useState(0); //cadrs position section 3
+  const [cardPosition5, setCardPosition5] = useState(0); //cadrs position section 3
 
   const [moveFunction, setMoveFunction] = useState(false); //section 6
   const [moveBcgImg, setMoveBcgImg] = useState(false); //section 6
   const [moveboxMission, setMoveboxMission] = useState(false); //section 6
   const [moveOverlayContainer, setMoveOverlayContainer] = useState(0); //section 6
+  // const [screenSize, getDimension] = useState();
+
+  // // this useEffect is for the small screen sizes
+  // useEffect(() => {
+  //   getDimension(window.innerWidth);
+  // }, []);
 
   //função para empilhar cards na seção 3
   const functionCardPosition = (event) => {
@@ -81,29 +88,39 @@ const Home = () => {
   // ----------------------------------------------------------------
   //funções para movimentações das divs OverlayContainer na seção 6
 
+  const screenSize = useRef(window.innerWidth);
+
   const moveOverlayLeft = () => {
-    if (moveOverlayContainer > -1500) {
-      setMoveOverlayContainer(moveOverlayContainer - 700);
+    if (screenSize.current <= 550) {
+      if (moveOverlayContainer > -2200) {
+        setMoveOverlayContainer(moveOverlayContainer - 295);
+      } else {
+        return;
+      }
     } else {
-      return;
+      if (moveOverlayContainer > -1500) {
+        setMoveOverlayContainer(moveOverlayContainer - 700);
+      } else {
+        return;
+      }
     }
   };
 
   const moveOverlayRight = () => {
-    if (moveOverlayContainer < 0) {
-      setMoveOverlayContainer(moveOverlayContainer + 700);
+    if (screenSize.current <= 550) {
+      if (moveOverlayContainer < -700) {
+        setMoveOverlayContainer(moveOverlayContainer + 295);
+      } else {
+        return;
+      }
     } else {
-      return;
+      if (moveOverlayContainer < 0) {
+        setMoveOverlayContainer(moveOverlayContainer + 700);
+      } else {
+        return;
+      }
     }
   };
-
-  // const handleLogOut = async () => {
-  //   try {
-  //     await logOut();
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   useEffect(() => {
     if (moveFunction) {
@@ -127,11 +144,18 @@ const Home = () => {
     }
   }, [moveFunction]);
 
+  // function getCurrentDimension() {}
+  // const width = window.innerWidth;
+  // useEffect(() => {
+  //   console.log(width);
+  // }, [width]);
+
   return (
     <Wrapper>
       <section className="section1">
+        <div className="overlay"></div>
+        <img src={logo} alt="" className="logo" />
         <nav>
-          <img src={logo} alt="" className="logo" />
           <Navbar />
         </nav>
 
@@ -381,8 +405,8 @@ const Home = () => {
             <img src={shoe} alt="" />
             <div className="shadowLayerBigBox"></div>
           </div>
-          <div className="smallBox">
-            <img src={logo} alt="" className="logsmallbox" />
+          <div className="smallBox logSmallContainer">
+            <img src={logo} alt="" className="logSmallImg" />
             <div className="shadowLayerSmallBox"></div>
           </div>
         </div>
@@ -413,7 +437,7 @@ const Home = () => {
         )}
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </Wrapper>
   );
 };
@@ -423,18 +447,14 @@ const Wrapper = styled.main`
     background: url(${backpic2}) no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
-    nav {
-      padding: 0 4rem;
-      position: absolute;
-      .logo {
-        width: 5.25rem;
-        margin: 2.55rem 3.75rem;
-      }
-    }
     .logo {
       mix-blend-mode: color-dodge;
       width: 6.25rem;
       margin: 1.25rem 3.75rem;
+    }
+    nav {
+      padding: 0 4rem;
+      position: absolute;
     }
     .infocontainer {
       position: absolute;
@@ -473,7 +493,7 @@ const Wrapper = styled.main`
     }
   }
   .section2 {
-    min-height: 56.25rem;
+    height: 60rem;
     width: 100vw;
     margin-top: 2.5rem;
     display: flex;
@@ -481,6 +501,7 @@ const Wrapper = styled.main`
     justify-content: center;
     align-items: center;
     position: relative;
+
     cursor: pointer;
     .section2Title {
       width: 86%;
@@ -492,10 +513,11 @@ const Wrapper = styled.main`
     }
 
     .pagesLinkContainer {
-      height: 900;
+      height: 700;
       display: flex;
       justify-content: center;
       align-items: center;
+
       .linkBox {
         position: relative;
         width: 34.375rem;
@@ -653,7 +675,7 @@ const Wrapper = styled.main`
     align-items: center;
     width: 100vw;
     height: 53.125rem;
-
+    overflow: hidden;
     .containerSec4 {
       display: flex;
       .boxContainer {
@@ -903,7 +925,7 @@ const Wrapper = styled.main`
           background-image: linear-gradient(to top, #000000a2, transparent);
         }
       }
-      .logsmallbox {
+      .logSmallImg {
         width: fit-content;
         background-color: black;
         height: 37.5rem;
@@ -969,5 +991,594 @@ const Wrapper = styled.main`
       }
     }
   }
+  @media only screen and (max-width: 600px) {
+    .section1 {
+      background-size: cover;
+      width: 100vw;
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(
+          0deg,
+          black,
+          #0000009f,
+          #00000039,
+          #00000016
+        );
+      }
+      .logo {
+        display: none;
+      }
+      nav {
+        padding: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border: 2px solid white;
+      }
+      .infocontainer {
+        position: absolute;
+        bottom: 3rem;
+        left: 1rem;
+        width: 300px;
+        color: white;
+        z-index: 1;
+
+        h1 {
+          font-size: 2.5rem;
+          font-weight: 500;
+          margin-bottom: 1.563rem;
+        }
+        h3 {
+          font-size: 1.4rem;
+          font-weight: 500;
+          margin-bottom: 1.563rem;
+        }
+        .btnsContainer {
+          button {
+            width: 8rem;
+            height: 4rem;
+            border-radius: 2.5rem;
+            border: none;
+            background-color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-right: 1.25rem;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+            &:hover {
+              background-color: #d0cfcf;
+            }
+          }
+        }
+      }
+    }
+    .section2 {
+      height: 24rem;
+      width: 37.4rem;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+
+      cursor: pointer;
+
+      .section2Title {
+        width: 86%;
+
+        h4 {
+          font-size: 2rem;
+          font-weight: 500;
+        }
+      }
+
+      .pagesLinkContainer {
+        height: 20rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .linkBox {
+          position: relative;
+          width: 11rem;
+          height: 18rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          margin: 0.3rem;
+          border-radius: 0.938rem;
+          img {
+            object-fit: contain;
+            width: 14rem;
+            transition: all 0.3s ease-in-out;
+            border-radius: 0.938rem;
+            &:hover {
+              width: 40rem;
+            }
+          }
+          .bottomDiv {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            padding: 0 0.5rem;
+            bottom: 0.5rem;
+            z-index: 98;
+            p {
+              font-size: 1.4rem;
+              font-weight: 400;
+              color: white;
+              cursor: pointer;
+              &:hover {
+                color: gray;
+              }
+            }
+            button {
+              width: 2rem;
+              height: 2rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              background-color: transparent;
+              border: 0.12rem solid white;
+              color: white;
+              font-size: 1.875rem;
+              cursor: pointer;
+              &:hover {
+                background-color: white;
+                color: gray;
+              }
+            }
+          }
+          .shadow {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            height: 15.625rem;
+            background-image: linear-gradient(to top, #000000a2, transparent);
+            z-index: 90;
+          }
+        }
+      }
+    }
+    .section3 {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 20rem;
+
+      .cards {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 95%;
+        height: 100%;
+        position: relative;
+
+        .transversal {
+          display: none;
+        }
+        .cardsList {
+          height: auto;
+          width: auto;
+          margin-left: 0rem;
+
+          p {
+            width: fit-content;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #323131;
+            margin-bottom: 1rem;
+            margin-left: 0.25rem;
+            position: relative;
+            cursor: pointer;
+
+            &:after {
+              content: "";
+              position: absolute;
+              width: 105%;
+              height: 0.25rem;
+              background-color: #323131;
+              bottom: 0;
+              transform-origin: bottom left;
+              transform: scaleX(0);
+              left: 0;
+              transition: all 0.3s ease-in-out;
+            }
+            &:hover::after {
+              transform: scaleX(1);
+            }
+          }
+        }
+        .cardsContainer {
+          position: relative;
+          width: 13rem;
+          height: 16rem;
+          margin-right: 0.5rem;
+
+          .cardImg {
+            top: 0;
+            position: absolute;
+            width: 12rem;
+            border-radius: 2.5rem;
+            cursor: pointer;
+          }
+
+          .cardImg1 {
+            transform: rotate(3deg);
+          }
+          .cardImg2 {
+            transform: rotate(5.5deg);
+          }
+          .cardImg3 {
+            transform: rotate(7.5deg);
+          }
+          .cardImg4 {
+            transform: rotate(9.5deg);
+          }
+          .cardImg5 {
+            transform: rotate(11.5deg);
+          }
+        }
+      }
+    }
+    .section4 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100vw;
+      height: 45rem;
+      overflow: hidden;
+
+      .containerSec4 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .boxContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: null;
+          overflow: hidden;
+          width: 16rem;
+          height: 20rem;
+          border-radius: 1.5rem;
+          margin: 0.4rem;
+          cursor: pointer;
+
+          h4 {
+            text-align: center;
+            position: absolute;
+            color: white;
+            bottom: 3rem;
+            font-size: 1rem;
+            font-weight: 500;
+            left: 0;
+            z-index: 99;
+            width: 100%;
+          }
+          .bttnShop {
+            position: absolute;
+            width: 5rem;
+            height: 1.8rem;
+            background-color: white;
+            border: none;
+            border-radius: 2.5rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #3e3d3d;
+            bottom: 1rem;
+            left: 50%;
+            margin-left: -2.5rem;
+            z-index: 99;
+
+            cursor: pointer;
+            &:hover {
+              background-color: #d0cfcf;
+            }
+          }
+        }
+
+        .sec4Backgroundimg1 {
+          background-image: url(${cloudultra2});
+          background-position: center;
+          background-size: cover;
+        }
+        .sec4Backgroundimg2 {
+          background-image: url(${apparelSec4});
+          background-position: center;
+          background-size: cover;
+        }
+        .sec4Backgroundimg3 {
+          background-image: url(${shorts});
+          background-position: center;
+          background-size: cover;
+        }
+        .sec4Backgroundimg4 {
+          background-image: url(${centerCourt});
+          background-position: center;
+          background-size: cover;
+        }
+        .shadowSec4 {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 18.75rem;
+          background-image: linear-gradient(to top, #000000a2, transparent);
+          z-index: 98;
+        }
+      }
+    }
+    .section6 {
+      position: relative;
+      height: 85vh;
+      width: 140vw;
+      overflow: hidden;
+
+      .sec6Container {
+        display: grid;
+        grid-template-columns: 70% 30%;
+        height: 100vh;
+      }
+      .leftBcgSec6 {
+        height: 100vh;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .shadowLayer {
+          width: 100%;
+          height: 50rem;
+          position: absolute;
+          bottom: 0;
+          z-index: 95;
+          background-image: linear-gradient(
+            to top,
+            #000000b9,
+            #000000a2,
+            transparent
+          );
+        }
+      }
+      .rightBcgSec6 {
+        width: 16rem;
+        transition: all 0.4s ease-in;
+        img {
+          width: 90.375rem;
+          object-fit: cover;
+        }
+      }
+      .boxMission {
+        position: absolute;
+        width: 24rem;
+        margin-bottom: 1.25rem;
+        bottom: 8.125rem;
+        left: 3.125;
+        z-index: 97;
+        transition: all ease-in 0.5s;
+        padding-left: 1.7rem;
+        h4 {
+          font-size: 2rem;
+          color: white;
+          font-weight: 500;
+          margin-bottom: 1.25rem;
+        }
+        p {
+          font-size: 1.4rem;
+          color: white;
+          font-weight: 400;
+          line-height: 3.125rem;
+        }
+        .containerReadMore {
+          width: 12rem;
+          height: 4rem;
+          display: flex;
+          align-items: center;
+          margin-top: 1.25rem;
+          border-radius: 3.125rem;
+          border: none;
+          background-color: transparent;
+
+          .btnReadMore {
+            display: flex;
+            width: 12rem;
+            height: 5rem;
+            background-color: #dcad03;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 3.125rem;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            &:hover {
+              width: 12.5rem;
+              height: 5.5rem;
+            }
+            .redmoreImg {
+              width: 4.5rem;
+              height: 4.5rem;
+              border-radius: 50%;
+              background-image: url(${tennis});
+              background-size: cover;
+              background-position: 0;
+            }
+            p {
+              font-size: 1.1rem;
+              font-weight: 600;
+              margin-right: 0.938rem;
+              color: black;
+            }
+          }
+        }
+      }
+
+      .OverlayContainer {
+        height: 30rem;
+        width: 110rem;
+        position: absolute;
+        display: flex;
+        top: 20rem;
+        z-index: 98;
+        left: 61rem;
+        transition: all 0.3s ease-in;
+
+        .bigBox {
+          overflow: hidden;
+
+          position: relative;
+          width: 18rem;
+          height: 27rem;
+          margin: 0 1.9rem;
+          border-radius: 0.7rem;
+          box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
+            rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+          cursor: pointer;
+          h4 {
+            position: absolute;
+            color: white;
+            font-size: 1.4rem;
+            bottom: 1.4rem;
+            padding: 0 1.5rem;
+            z-index: 98;
+            font-weight: 400;
+          }
+
+          img {
+            width: 20rem;
+            border-radius: 0.7rem;
+          }
+          .shadowLayerBigBox {
+            width: 100%;
+            height: 10rem;
+            position: absolute;
+            bottom: 0;
+            z-index: 96;
+            background-image: linear-gradient(to top, #050505c2, transparent);
+            border-radius: 0.6rem;
+            cursor: pointer;
+          }
+        }
+        .smallBox {
+          position: relative;
+          width: 15rem;
+          height: 24rem;
+          border-radius: 0.7rem;
+          box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
+            rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+          overflow: hidden;
+          cursor: pointer;
+          h4 {
+            position: absolute;
+            color: white;
+            font-size: 1.3rem;
+            bottom: 1.875rem;
+            padding: 0 1.5rem;
+            z-index: 98;
+            font-weight: 400;
+            width: 100%;
+          }
+
+          img {
+            width: 18rem;
+            border-radius: 0.625rem;
+          }
+          .shadowLayerSmallBox {
+            width: 100%;
+            height: 9rem;
+            position: absolute;
+            bottom: 0;
+            z-index: 95;
+            border-radius: 0.5rem;
+            background-image: linear-gradient(to top, #000000a2, transparent);
+          }
+        }
+      }
+      .logSmallContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .logSmallImg {
+          width: 100%;
+          background-color: black;
+          height: 24rem;
+          object-fit: cover;
+        }
+      }
+
+      .sec6Btns {
+        width: 15rem;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+        position: absolute;
+        z-index: 99;
+        bottom: 2rem;
+        left: 10rem;
+        padding: 0;
+        .ClickVolta {
+          width: 4rem;
+          height: 4rem;
+          background-color: black;
+          border-radius: 50%;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.4s ease-in;
+          cursor: pointer;
+
+          .iconX {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 500;
+            transition: all ease-in-out 0.3s;
+          }
+          &:hover > .iconX {
+            font-size: 1.5rem;
+            font-weight: 900;
+          }
+        }
+        .divbtn {
+          display: flex;
+          width: 9rem;
+          justify-content: space-between;
+          .sec6BtnLeft,
+          .sec6BtnRight {
+            width: 4rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            &:hover {
+              background-color: #191818;
+              border: 0.125rem solid black;
+            }
+          }
+        }
+      }
+    }
+  }
+  /* @media only screen and (min-width: 561px) and (max-width: 1500px) {
+  } */
 `;
 export default Home;

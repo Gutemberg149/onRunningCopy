@@ -174,5 +174,101 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media only screen and (max-width: 600px) {
+    .innerUserContainer {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+      width: 36rem;
+      padding: 0 0.6rem;
+      h4 {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: #302f2f;
+        margin-bottom: 1rem;
+      }
+      p {
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: #302f2f;
+        margin-bottom: 3rem;
+      }
+      form {
+        .fildeHolder {
+          position: relative;
+          margin-bottom: 3rem;
+          border-bottom: 1px solid gray;
+          width: 35rem;
+          .inputRegister {
+            position: relative;
+            width: 100%;
+            outline: none !important;
+            border: 0;
+            font-size: 1.2rem;
+            &:focus ~ label,
+            &:valid ~ label {
+              position: absolute;
+              left: 0;
+              bottom: 2rem;
+            }
+          }
+          label {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+          }
+        }
+        .subscribeContainer {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 3rem;
+          width: 25rem;
+          .subscribeCheckbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 2.8rem;
+            height: 1.2rem;
+            border: 2px solid gray;
+            border-radius: 0.3rem;
+            margin-right: 0.5rem;
+            margin-top: 0.3rem;
+            cursor: pointer;
+            .blackBox {
+              width: 1.1rem;
+              height: 1.1rem;
+              background-color: #302f2f;
+              transition: all ease 0.4s;
+            }
+          }
+          p {
+            font-size: 1.2rem;
+            color: #393737;
+            font-weight: 400;
+          }
+        }
+        .btnContainer {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          button {
+            width: 22rem;
+            height: 3.2rem;
+            margin-bottom: 0.8rem;
+            border: none;
+            background-color: black;
+            color: white;
+            font-size: 1.1rem;
+            border-radius: 3rem;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
 `;
 export default SignUp;
