@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import hiking from "../../../../images/cartEmpty/hiking.avif";
-import lifestyle from "../../../../images/cartEmpty/lifestyle.avif";
+import lifestyle from "../../../../images/cartEmpty/lifeStyle.avif";
 import roadRunning from "../../../../images/cartEmpty/roadRunning.avif";
 import tennis from "../../../../images/cartEmpty/tennis.avif";
 import trail from "../../../../images/cartEmpty/trail.avif";
