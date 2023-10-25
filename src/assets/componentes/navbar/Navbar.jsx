@@ -432,7 +432,7 @@ const Wrapper = styled.nav`
       }
     }
   }
-  @media only screen and (max-width: 600px) {
+  @media screen and (max-width: 552px) {
     .navContainer {
       width: 36rem;
       right: 0.5rem;

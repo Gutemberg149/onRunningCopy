@@ -983,7 +983,7 @@ const Wrapper = styled.main`
       }
     }
   }
-  @media only screen and (max-width: 600px) {
+  @media screen and (max-width: 552px) {
     .section1 {
       background-size: cover;
       width: 100vw;

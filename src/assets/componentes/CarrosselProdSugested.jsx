@@ -191,7 +191,7 @@ const Wrapper = styled.div`
       }
     }
   }
-  @media only screen and (max-width: 600px) {
+  @media screen and (max-width: 552px) {
     position: relative;
     display: flex;
     flex-direction: column;

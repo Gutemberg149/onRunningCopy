@@ -134,7 +134,7 @@ const Wrapper = styled.div`
       }
     }
   }
-  @media only screen and (max-width: 600px) {
+  @media screen and (max-width: 552px) {
     main {
       margin: 0;
       margin-top: 1.5rem;

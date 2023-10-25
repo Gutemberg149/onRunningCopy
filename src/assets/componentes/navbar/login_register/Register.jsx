@@ -162,7 +162,7 @@ const Wrapper = styled.div`
       }
     }
   }
-  @media only screen and (max-width: 600px) {
+  @media screen and (max-width: 552px) {
     .innerUserContainer {
       margin-top: 1rem;
       display: flex;
