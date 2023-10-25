@@ -3,10 +3,10 @@ import styled from "styled-components";
 import Navbar from "../../../../componentes/navbar/Navbar";
 import logo from "../../../../images/logoImg/logo.jpeg";
 import Footer from "../../../../componentes/footer/Footer";
-import movement_boost from "../../../../images/movements/articlesPageImg/movement_boost.avif";
-import movement_boosts2 from "../../../../images/movements/articlesPageImg/movement_boosts2.avif";
-import movement_boosts3 from "../../../../images/movements/articlesPageImg/movement_boosts3.avif";
-import movement_boosts4 from "../../../../images/movements/articlesPageImg/movement_boosts4.avif";
+import movement_boost from "../../../../images/movements/articlesPageImg/Movement_Boost.avif";
+import movement_boosts2 from "../../../../images/movements/articlesPageImg/Movement_Boosts2.avif";
+import movement_boosts3 from "../../../../images/movements/articlesPageImg/Movement_Boosts3.avif";
+import movement_boosts4 from "../../../../images/movements/articlesPageImg/Movement_Boosts4.avif";
 
 const MoovementBoost = () => {
   return (
