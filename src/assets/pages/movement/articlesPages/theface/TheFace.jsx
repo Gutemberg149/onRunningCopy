@@ -5,7 +5,7 @@ import Navbar from "../../../../componentes/navbar/Navbar";
 import logo from "../../../../images/logoImg/logo.jpeg";
 import Footer from "../../../../componentes/footer/Footer";
 import theFacePageImg from "../../../../images/movements/articlesPageImg/theFacePageImg.avif";
-import TheFaceVideo from "./theFaceVideo";
+import TheFaceVideo from "./TheFaceVideo";
 
 const TheFace = () => {
   return (
