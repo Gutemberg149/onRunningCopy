@@ -144,12 +144,6 @@ const Home = () => {
     }
   }, [moveFunction]);
 
-  // function getCurrentDimension() {}
-  // const width = window.innerWidth;
-  // useEffect(() => {
-  //   console.log(width);
-  // }, [width]);
-
   return (
     <Wrapper>
       <section className="section1">
@@ -475,14 +469,12 @@ const Wrapper = styled.main`
       }
       .btnsContainer {
         button {
-          width: 13.75rem;
+          width: 12rem;
           height: 5rem;
-          border-radius: 2.5rem;
-          border: none;
           background-color: white;
-          font-size: 1.25rem;
-          font-weight: 500;
-          margin-right: 1.25rem;
+          border-radius: 3rem;
+          border: none;
+          font-size: 1.5rem;
           transition: all 0.2s ease-in-out;
           cursor: pointer;
           &:hover {

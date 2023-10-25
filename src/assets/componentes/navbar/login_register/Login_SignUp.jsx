@@ -7,7 +7,7 @@ import { useUserAuth } from "../../../contexts/UserAuthContext";
 const Login_SignUp = ({ handleSignUp }) => {
   let { btnToggle, setBtnToggle } = useUserAuth();
 
-  //this snipt of code is to always make the drop dowm menu from navabar be on sign up mode.
+  //this snipt of code is to always make the drop dowm menu from navbar be on sign up mode.
   //when the bottom sign up is pressed.
   const effectRan = useRef(false);
 

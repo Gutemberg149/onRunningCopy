@@ -13,7 +13,8 @@ import Login_SignUp from "./login_register/Login_SignUp";
 import NavBarAccount from "./NavBarAccount";
 import { OpensignUpContext } from "../../contexts/OpenSigUpContext";
 
-const Navbar = ({ signUp, setSingUp, handleSignUp }) => {
+//These two parameters comes from SignUpPage.
+const Navbar = ({ signUp, handleSignUp }) => {
   const [togglevisibility, setTogglevisibility] = useState(false);
   const [togglevisibility3, setTogglevisibility3] = useState(false);
   const [togglevisibilitySearch, setTogglevisibilitySearch] = useState(false);
@@ -233,8 +234,9 @@ const Navbar = ({ signUp, setSingUp, handleSignUp }) => {
           <div
             className="iconContainer2 "
             onMouseEnter={() => setTogglevisibilitySignUp(true)}
-            onMouseLeave={() =>
-              setTogglevisibilitySignUp(false) + setSingUp(false)
+            onMouseLeave={
+              () => setTogglevisibilitySignUp(false)
+              // + setSingUp(false)
             }
           >
             <div className="iconContainer2">

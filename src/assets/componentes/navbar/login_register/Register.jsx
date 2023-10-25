@@ -51,24 +51,12 @@ const SignUp = () => {
             />
             <label htmlFor="password">Password *</label>
           </div>
-          {/* <div className="fildeHolder">
-            <input
-              className="inputRegister"
-              type="password"
-              id="password"
-              required
-              value={inputConfirmPassword}
-              onChange={""}
-            />
-            <label htmlFor="password">Confirm Password *</label>
-          </div> */}
+
           <div className="subscribeContainer">
             <div
               className="subscribeCheckbox"
               onClick={() => setIsChecked(!isChecked)}
-            >
-              {/* <div className={isChecked ? "blackBox" : null}></div> */}
-            </div>
+            ></div>
             <p>
               Subscribe to the On newsletter to receive email updates about new
               product releases, exclusive events and athlete stories.

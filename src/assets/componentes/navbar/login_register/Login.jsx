@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { useUserAuth } from "../../../contexts/UserAuthContext";
-import { useContext } from "react";
-import { OpensignUpContext } from "../../../contexts/OpenSigUpContext";
+// import { useContext } from "react";
+// import { OpensignUpContext } from "../../../contexts/OpenSigUpContext";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
