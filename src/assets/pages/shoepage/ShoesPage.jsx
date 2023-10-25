@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Navbar from "../../componentes/navbar/Navbar";
 import logo from "../../images/logoImg/logo.jpeg";
 import { listProduct } from "../../utils/APIArray";
-import ShoeContainer from "./shoeContainer";
+import ShoeContainer from "./ShoeContainer";
 import Footer from "../../componentes/footer/Footer";
 import { Link } from "react-router-dom";
 
