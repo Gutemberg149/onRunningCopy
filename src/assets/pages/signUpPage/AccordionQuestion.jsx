@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { AccordionQuestions } from "./arrayQuestion";
+import { AccordionQuestions } from "./ArrayQuestion";
 import { useState } from "react";
 const AccordionQuestion = () => {
   const [idAnser, setIdAnser] = useState(null);
