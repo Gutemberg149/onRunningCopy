@@ -12,10 +12,10 @@ const ProductesSugested = () => {
   const screenSize = useRef(window.innerWidth);
 
   const moveRight = () => {
-    if (screenSize.current <= 550) {
+    if (screenSize.current <= 600) {
       if (arrayLength > 1) {
         setArrayLength(arrayLength - 1);
-        setMoveCarrossel(moveCarrossel - 380);
+        setMoveCarrossel(moveCarrossel - 318);
       } else {
         return;
       }
@@ -30,10 +30,10 @@ const ProductesSugested = () => {
   };
 
   const moveLeft = () => {
-    if (screenSize.current < 550) {
+    if (screenSize.current < 600) {
       if (arrayLength < prodArrayCarrossel.length) {
         setArrayLength(arrayLength + 1);
-        setMoveCarrossel(moveCarrossel + 380);
+        setMoveCarrossel(moveCarrossel + 318);
       } else {
         return;
       }
@@ -161,7 +161,7 @@ const Wrapper = styled.div`
       transition: all 0.5s ease-in-out;
       cursor: pointer;
       img {
-        width: 34.375rem;
+        width: 34.37rem;
       }
       .infoBox {
         position: absolute;
@@ -191,14 +191,14 @@ const Wrapper = styled.div`
       }
     }
   }
-  @media screen and (max-width: 552px) {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 30rem;
-    width: 36rem;
+    width: 100vw;
     margin-top: 4rem;
     margin-bottom: 7rem;
 
@@ -206,7 +206,7 @@ const Wrapper = styled.div`
       position: absolute;
       top: -3rem;
       left: 1.5rem;
-      font-size: 1.7rem;
+      font-size: 1.3rem;
       font-weight: 500;
       color: #2b2b2b;
     }
@@ -214,9 +214,9 @@ const Wrapper = styled.div`
       position: absolute;
       left: 2.5rem;
       top: 31rem;
-      font-size: 3rem;
-      width: 4.5rem;
-      height: 4.5rem;
+      font-size: 2rem;
+      width: 3.5rem;
+      height: 3.5rem;
       border-radius: 50%;
       background-color: white;
       display: flex;
@@ -226,6 +226,7 @@ const Wrapper = styled.div`
       color: gray;
       box-shadow: rgba(100, 100, 111, 0.2) 0 0.438rem 1.813rem 0;
       z-index: 99;
+
       cursor: pointer;
       &:hover {
         background-color: #cdcbcb;
@@ -236,9 +237,9 @@ const Wrapper = styled.div`
       position: absolute;
       right: 2.5rem;
       top: 31rem;
-      font-size: 3rem;
-      width: 4.5rem;
-      height: 4.5rem;
+      font-size: 2rem;
+      width: 3.5rem;
+      height: 3.5rem;
       border-radius: 50%;
       background-color: white;
       display: flex;
@@ -265,8 +266,8 @@ const Wrapper = styled.div`
       overflow: hidden;
 
       .boxSec5 {
-        margin: 1.5rem;
-        height: 28.5rem;
+        margin: 1rem;
+        height: 28rem;
         position: relative;
         background-color: #f5f3f3;
         box-shadow: rgba(100, 100, 111, 0.2) 0 0.438rem 1.813rem 0;
@@ -276,21 +277,22 @@ const Wrapper = styled.div`
         img {
           overflow: hidden;
 
-          width: 22rem;
+          width: 18rem;
         }
         .infoBox {
           position: absolute;
           background-color: white;
           bottom: 0;
           width: 100%;
-          height: 37%;
-          padding: 0.6rem 1rem;
+          height: 40%;
+          padding: 0.6rem;
+
           .innerInfobox {
             margin: 0.25rem;
             h4 {
               font-size: 1rem;
               font-weight: 600;
-              margin-bottom: 0.625rem;
+              margin-bottom: 0.2rem;
               letter-spacing: 0.063rem;
             }
             .description,
@@ -298,7 +300,7 @@ const Wrapper = styled.div`
               font-size: 1;
               font-weight: 400;
               letter-spacing: 0.063rem;
-              margin-bottom: 0.5rem;
+              margin-bottom: 0.2rem;
             }
             span {
               font-size: 1.25rem;

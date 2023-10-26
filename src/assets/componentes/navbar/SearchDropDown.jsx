@@ -467,7 +467,7 @@ const Wrapper = styled.div`
     }
   }
 
-  @media screen and (max-width: 552px) {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
     padding: 0;
     width: 36rem;
     .bodyContainer {
