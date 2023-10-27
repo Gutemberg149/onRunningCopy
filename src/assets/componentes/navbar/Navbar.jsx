@@ -435,9 +435,9 @@ const Wrapper = styled.nav`
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     .navContainer {
       width: 100vw;
+      height: 3.5rem;
       right: null;
       left: 0rem;
-      height: 4rem;
 
       .leftContainer {
         .ulLeftContainer {

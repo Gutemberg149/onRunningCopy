@@ -163,7 +163,7 @@ const Home = () => {
 
       <section className="section2">
         <div className="section2Title">
-          <h4>Shop - X</h4>
+          <h4>Shop</h4>
         </div>
 
         <div className="pagesLinkContainer">
@@ -425,7 +425,7 @@ const Home = () => {
         )}
       </section>
 
-      {/* <Footer /> */}
+      <Footer />
     </Wrapper>
   );
 };
@@ -980,9 +980,11 @@ const Wrapper = styled.main`
   }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     .section1 {
+      background: url(${backpic2}) fixed;
+      background-position: center;
+      background-repeat: no-repeat;
       background-size: cover;
       width: 100vw;
-
       .overlay {
         position: absolute;
         bottom: 0;
@@ -1035,6 +1037,7 @@ const Wrapper = styled.main`
             font-weight: 600;
             margin-right: 1.25rem;
             transition: all 0.2s ease-in-out;
+            color: black;
             cursor: pointer;
             &:hover {
               background-color: #d0cfcf;
@@ -1421,7 +1424,7 @@ const Wrapper = styled.main`
         width: 110rem;
         position: absolute;
         display: flex;
-        top: 6rem;
+        top: 10rem;
         z-index: 98;
         left: 50rem;
         transition: all 0.3s ease-in;
@@ -1517,7 +1520,7 @@ const Wrapper = styled.main`
         z-index: 100;
         position: absolute;
         z-index: 99;
-        bottom: 1rem;
+        bottom: 2rem;
         left: 7rem;
         padding: 0;
         .ClickVolta {
