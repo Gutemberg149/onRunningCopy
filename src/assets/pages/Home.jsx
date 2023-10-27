@@ -1046,6 +1046,7 @@ const Wrapper = styled.main`
         }
       }
     }
+
     .section2 {
       height: calc(40% - 40vh);
       width: 100vw;
@@ -1071,8 +1072,8 @@ const Wrapper = styled.main`
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 100vw;
-
+        width: 100%;
+        border: 2px solid black;
         .linkBox {
           position: relative;
           width: 30vw;
@@ -1140,6 +1141,7 @@ const Wrapper = styled.main`
         }
       }
     }
+
     .section3 {
       position: relative;
       display: flex;
@@ -1153,9 +1155,8 @@ const Wrapper = styled.main`
         justify-content: space-around;
         align-items: center;
         width: 95%;
-        height: 100%;
+        height: 100vw;
         position: relative;
-
         .transversal {
           display: none;
         }
@@ -1348,8 +1349,9 @@ const Wrapper = styled.main`
           }
         }
         .rightBcgSec6 {
-          width: 50rem;
+          width: 0rem;
           transition: all 0.4s ease-in;
+          border: 3px solid black;
           img {
             width: 90rem;
             object-fit: cover;

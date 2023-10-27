@@ -22,7 +22,7 @@ const Footer = () => {
           </span>
           <div className="bottomContainerSignUp">
             <Link to={"/signUpPage"}>
-              <div className="signuP">Click here to sign up</div>
+              <div className="signuP">Sign up here</div>
             </Link>
             <div className="divContact">
               <div className="iconContainer">
@@ -171,6 +171,9 @@ const Wrapper = styled.footer`
             justify-content: center;
             align-items: center;
             background-color: #8080803c;
+          }
+          p {
+            font-size: 1.3rem;
           }
         }
         .brazil {
@@ -348,9 +351,9 @@ const Wrapper = styled.footer`
             border: 1px solid #dddddd;
             border-radius: 0.6rem;
             color: #cfcccc;
-            font-size: 0.6rem;
-            width: 7rem;
-            height: 3rem;
+            font-size: 0.7rem;
+            width: 5rem;
+            height: 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -362,7 +365,6 @@ const Wrapper = styled.footer`
             }
           }
           .divContact {
-            /* border: 2px solid white; */
             width: 8rem;
             display: flex;
             justify-content: center;
@@ -370,16 +372,20 @@ const Wrapper = styled.footer`
             color: #cfcccc;
             font-size: 1rem;
             margin-top: 0;
+
             .iconContainer {
               width: 2rem;
               height: 2rem;
               border-radius: 50%;
-              font-size: 1.563rem;
+              font-size: 1.4rem;
               display: flex;
               justify-content: center;
               align-items: center;
               background-color: #8080803c;
               margin-right: 0.2rem;
+            }
+            p {
+              font-size: 0.7rem;
             }
           }
           .brazil {
@@ -400,7 +406,7 @@ const Wrapper = styled.footer`
               background-position: center;
             }
             p {
-              font-size: 1rem;
+              font-size: 0.7rem;
               color: #cfcccc;
             }
           }
