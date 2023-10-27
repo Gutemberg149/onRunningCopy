@@ -12,12 +12,13 @@ const ShoesPageWoman = () => {
       <section className="section1">
         <Link to={"/"}>
           <img src={logo} alt="" className="logo" />
-        </Link>
-
+        </Link>{" "}
         <Navbar />
       </section>
       <section className="section2">
-        <div className="homeLink">HOME</div>
+        <Link to={"/"}>
+          <div className="homeLink">HOME</div>
+        </Link>
         <h1>Shoes</h1>
         <p>
           Discover our collection of shoes infused with our patented CloudTec®
@@ -111,6 +112,71 @@ const Wrapper = styled.main`
         bottom: 0;
         background-image: linear-gradient(to top, #0000008d, transparent);
         z-index: 97;
+      }
+    }
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 100vw;
+    .section1 {
+      padding: 0 4rem;
+      height: 6rem;
+      width: 100vw;
+      .logo {
+        display: none;
+      }
+    }
+    .section2 {
+      width: 100vw;
+      padding: 1.5rem 1rem;
+      .homeLink {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+    .section03 {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0rem;
+      width: 100vw;
+      margin-bottom: 1.5rem;
+      .containerImg {
+        position: relative;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 9.5rem;
+        height: 18rem;
+        margin-top: 0.5rem;
+        img {
+          width: 9.5rem;
+          height: 18rem;
+          object-fit: cover;
+        }
+        .message {
+          position: absolute;
+          color: white;
+          font-size: 0.8rem;
+          bottom: 1rem;
+          z-index: 98;
+        }
+        .shadow {
+          position: absolute;
+          width: 100%;
+          height: 7rem;
+          bottom: 0;
+          background-image: linear-gradient(to top, #0000008d, transparent);
+          z-index: 97;
+        }
       }
     }
   }

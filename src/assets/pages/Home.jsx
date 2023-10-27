@@ -1073,7 +1073,7 @@ const Wrapper = styled.main`
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        border: 2px solid black;
+
         .linkBox {
           position: relative;
           width: 30vw;
