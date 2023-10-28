@@ -157,6 +157,7 @@ const Wrapper = styled.div`
           display: flex;
           justify-content: center;
           align-items: center;
+          color: black;
           .backContainer {
             position: relative;
             display: flex;

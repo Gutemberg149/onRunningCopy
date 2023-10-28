@@ -132,6 +132,7 @@ const Wrapper = styled.main`
         font-size: 1.1rem;
         font-weight: 500;
         margin-bottom: 0.5rem;
+        color: black;
       }
       h1 {
         font-size: 1.5rem;
