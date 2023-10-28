@@ -525,7 +525,7 @@ const Wrapper = styled.nav`
             }
             .dropDowUl3 {
               top: 4rem;
-              left: -6.5rem;
+              left: -6.2rem;
             }
             .dropDowUlNoShow {
               visibility: hidden;
