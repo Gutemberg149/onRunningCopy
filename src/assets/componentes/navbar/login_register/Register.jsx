@@ -162,17 +162,18 @@ const Wrapper = styled.div`
       }
     }
   }
-  @media only screen and (min-device-width: 375px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     .innerUserContainer {
       margin-top: 1rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: start;
-      width: 36rem;
+      width: 100vw;
       padding: 0 0.6rem;
+      height: 100%;
       h4 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
         font-weight: 500;
         color: #302f2f;
         margin-bottom: 1rem;
@@ -186,9 +187,9 @@ const Wrapper = styled.div`
       form {
         .fildeHolder {
           position: relative;
-          margin-bottom: 3rem;
+          margin-bottom: 2rem;
           border-bottom: 1px solid gray;
-          width: 35rem;
+          width: 95vw;
           .inputRegister {
             position: relative;
             width: 100%;
@@ -211,8 +212,10 @@ const Wrapper = styled.div`
         .subscribeContainer {
           display: flex;
           justify-content: space-between;
-          margin-top: 3rem;
-          width: 25rem;
+          margin-top: 0rem;
+          width: 100%;
+
+          height: 7.5rem;
           .subscribeCheckbox {
             display: flex;
             justify-content: center;
@@ -243,6 +246,8 @@ const Wrapper = styled.div`
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          margin-top: 0.5rem;
+
           button {
             width: 22rem;
             height: 3.2rem;

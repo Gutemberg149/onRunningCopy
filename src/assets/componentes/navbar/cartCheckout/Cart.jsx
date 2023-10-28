@@ -277,11 +277,12 @@ const Wrapper = styled.div`
       justify-content: space-between;
       align-items: center;
       height: 54.5rem;
-      width: 100%;
+      width: 100vw;
 
       .innerCartBody {
-        padding: 1rem;
-
+        padding: 0.3rem;
+        height: 100%;
+        width: 100%;
         h1 {
           font-size: 2rem;
         }
@@ -298,16 +299,18 @@ const Wrapper = styled.div`
           justify-content: space-between;
           align-items: center;
           height: 14rem;
-          border-bottom: #c7c4c4 0.5px solid;
+          width: 100%;
+
           .left {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 20rem;
-            height: 18rem;
-            margin-right: 1rem;
+            width: 72%;
+            height: 100%;
+            margin-right: 0;
+
             img {
-              width: 8rem;
+              width: 50%;
             }
             .info {
               min-width: 8rem;
@@ -359,7 +362,7 @@ const Wrapper = styled.div`
             justify-content: space-around;
             align-items: center;
             height: 100%;
-            width: 10rem;
+            width: 28%;
             .price {
               font-size: 1.4rem;
               font-weight: 300;
@@ -393,7 +396,7 @@ const Wrapper = styled.div`
         box-shadow: 0px -2px 5px 3px #cac8c8;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
-        width: 36rem;
+        width: 100%;
 
         cursor: pointer;
         .top {

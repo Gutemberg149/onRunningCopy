@@ -434,24 +434,36 @@ const Wrapper = styled.nav`
   }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     .navContainer {
-      width: 100vw;
+      width: 100%;
       height: 3.5rem;
       right: null;
       left: 0rem;
-
+      display: flex;
+      align-items: center;
+      justify-content: center;
       .leftContainer {
+        width: 45%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 0.5rem;
+
         .ulLeftContainer {
           display: flex;
-          margin-left: 0rem;
+          align-items: center;
+          margin-left: 1rem;
           position: relative;
+
           .btnNav:first-child {
-            margin-left: 1rem;
+            margin-left: 0rem;
           }
           .btnNav {
             font-size: 1.3rem;
             display: flex;
-            margin-right: 1.3rem;
+            margin-right: 1rem;
             font-weight: 400;
+
             cursor: pointer;
 
             &:after {
@@ -471,12 +483,12 @@ const Wrapper = styled.nav`
             }
 
             .dropDowUl {
-              width: 36rem;
+              width: 100vw;
               height: 80vh;
               display: flex;
               position: absolute;
-              top: 4.4rem;
-              left: -1rem;
+              top: 4rem;
+              left: -1.4rem;
               background-color: #f9f8f8;
               flex-direction: column;
               padding: 0rem 0;
@@ -506,12 +518,13 @@ const Wrapper = styled.nav`
                 }
               }
             }
+
             .dropDowUl2 {
               top: 5rem;
               left: -9.313rem;
             }
             .dropDowUl3 {
-              top: 4.5rem;
+              top: 4rem;
               left: -5.7rem;
             }
             .dropDowUlNoShow {
@@ -524,11 +537,14 @@ const Wrapper = styled.nav`
 
       .RightContainer {
         margin-right: 1.2rem;
-        width: 12rem;
+        width: 10rem;
         height: 4rem;
         justify-content: center;
 
         .iconBtn {
+          font-size: 1.25rem;
+          color: #3c3b3b;
+          cursor: pointer;
         }
 
         .iconContainer2 {
@@ -544,9 +560,11 @@ const Wrapper = styled.nav`
         .dropDowcontainer2 {
           display: flex;
           position: absolute;
-          top: 4rem;
-          width: 36rem;
-          height: 97vh;
+          top: 3.2rem;
+          min-width: 22rem;
+          height: 90vh;
+          width: 100%;
+          padding-bottom: 1rem;
         }
         .dropDowNoShow {
           visibility: hidden;
