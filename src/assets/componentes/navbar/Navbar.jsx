@@ -472,7 +472,7 @@ const Wrapper = styled.nav`
               width: 110%;
               height: 0.125rem;
               background-color: #232222;
-              bottom: 0.625rem;
+              bottom: 1.7rem;
               transform: scaleX(0);
               transform-origin: bottom left;
               transition: all 0.2s ease-in-out;
@@ -488,7 +488,7 @@ const Wrapper = styled.nav`
               display: flex;
               position: absolute;
               top: 4rem;
-              left: -1.4rem;
+              left: -1.6rem;
               background-color: #f9f8f8;
               flex-direction: column;
               padding: 0rem 0;
