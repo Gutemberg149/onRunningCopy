@@ -488,7 +488,7 @@ const Wrapper = styled.nav`
               display: flex;
               position: absolute;
               top: 4rem;
-              left: -1.8rem;
+              left: -2rem;
               background-color: #f9f8f8;
               flex-direction: column;
               padding: 0;
@@ -521,11 +521,11 @@ const Wrapper = styled.nav`
 
             .dropDowUl2 {
               top: 5rem;
-              left: -9.313rem;
+              left: -2rem;
             }
             .dropDowUl3 {
               top: 4rem;
-              left: -5.7rem;
+              left: -6rem;
             }
             .dropDowUlNoShow {
               visibility: hidden;
