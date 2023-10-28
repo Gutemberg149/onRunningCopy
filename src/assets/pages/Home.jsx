@@ -1004,7 +1004,7 @@ const Wrapper = styled.main`
       }
       nav {
         padding: 0;
-        width: 100%;
+        width: 100vw;
         display: flex;
         justify-content: space-between;
       }
