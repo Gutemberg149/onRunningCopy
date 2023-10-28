@@ -469,17 +469,18 @@ const Wrapper = styled.div`
 
   @media only screen and (min-device-width: 375px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
     padding: 0;
-    width: 36rem;
+    width: 100vw;
     .bodyContainer {
-      width: 36rem;
+      width: 99%;
       display: flex;
       flex-direction: column;
       align-items: center;
 
       .search {
-        width: 30rem;
+        width: 80%;
         margin-top: 1.5rem;
         margin-bottom: 1rem;
+
         input {
           height: 3.8rem;
           &::placeholder {
@@ -492,9 +493,8 @@ const Wrapper = styled.div`
       }
 
       .suggestedSearch {
-        /* align-items: center; */
         margin-top: 1rem;
-        width: 29rem;
+        width: 96%;
         height: 20rem;
         display: flex;
         flex-direction: column;
@@ -504,10 +504,10 @@ const Wrapper = styled.div`
         .pSugested {
           font-size: 1rem;
           margin-bottom: 0;
-          margin-left: 3rem;
+          margin-left: 0;
         }
         .innerSugested {
-          width: 29rem;
+          width: 100%;
           height: 10rem;
           display: flex;
           align-items: center;
@@ -515,8 +515,9 @@ const Wrapper = styled.div`
           flex-wrap: wrap;
           margin-bottom: 0;
           margin-left: 0;
+
           .sugested {
-            margin: 0.5rem;
+            margin: 0.2rem 1.4rem;
             width: 7rem;
             height: 5.8;
             font-size: 0.9rem;
@@ -531,28 +532,29 @@ const Wrapper = styled.div`
       }
 
       .products {
-        width: 33rem;
+        width: 99%;
         margin-top: 1.5rem;
         .pProd {
-          margin-left: 2rem;
+          margin-left: 1rem;
         }
         .prodsContainer {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 33rem;
+          width: 100%;
           cursor: pointer;
           .prodContainer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 14rem;
+            /* display: flex; */
+            /* align-items: center;
+            justify-content: center; */
+            width: 11rem;
             height: 22rem;
-            margin: 2rem 1rem;
+            margin: 2rem 0.3rem;
             display: grid;
             grid-template-rows: 1fr 2fr;
+
             .upperPart {
-              width: 14rem;
+              width: 11.5rem;
               background-color: #e9e8e8;
               display: flex;
               justify-content: center;
@@ -566,7 +568,7 @@ const Wrapper = styled.div`
               flex-direction: column;
               align-items: center;
               justify-content: center;
-              width: 14rem;
+              width: 11.5rem;
               height: 12rem;
               padding: 0.5rem;
               .name {
