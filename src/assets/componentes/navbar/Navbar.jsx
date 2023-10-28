@@ -488,10 +488,10 @@ const Wrapper = styled.nav`
               display: flex;
               position: absolute;
               top: 4rem;
-              left: -1.6rem;
+              left: -1.8rem;
               background-color: #f9f8f8;
               flex-direction: column;
-              padding: 0rem 0;
+              padding: 0;
               border-bottom-left-radius: 1rem;
               border-bottom-right-radius: 1rem;
               box-shadow: rgba(8, 8, 9, 0.2) 0px 7px 29px 0px;
