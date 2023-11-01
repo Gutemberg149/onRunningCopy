@@ -113,7 +113,7 @@ const QuickFacts = () => {
         <div className="fact">
           <>
             <div className="top">
-              <p>Road Running Style</p>
+              <p>Road Running</p>
               <p className="i" onClick={() => setToggelFact4(!toggleFact4)}>
                 i
               </p>
@@ -247,6 +247,110 @@ const Wrapper = styled.div`
         p {
           color: white;
           font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+    h1 {
+      font-size: 2rem;
+      font-weight: 400;
+      color: #272727;
+      margin-left: 1rem;
+      margin-bottom: 0rem;
+      height: 3rem;
+    }
+    .factsContainer {
+      height: 15rem;
+      padding: 0rem;
+      display: flex;
+      justify-content: space-between;
+      .fact {
+        position: relative;
+        width: 25%;
+        margin-left: 0rem;
+        border-left: 1px solid gray;
+
+        .top {
+          width: 100%;
+          height: 3rem;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding: 0;
+
+          p {
+            font-size: 0.5rem;
+          }
+          .i {
+            width: 1rem;
+            height: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #f5c1033a;
+            transition: all ease 0.3s;
+            cursor: pointer;
+            &:hover {
+              width: 2.6rem;
+              height: 2.6rem;
+            }
+          }
+        }
+        .middle {
+          height: 70%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          p {
+            font-size: 1rem;
+            font-weight: 300;
+          }
+
+          .iconSec3 {
+            font-size: 3.4rem;
+            font-weight: 300;
+            margin-top: 2rem;
+          }
+        }
+      }
+      .fact:last-child {
+        border-right: 1px solid gray;
+      }
+      .blackBox {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        top: 0;
+        .iconConatiner {
+          width: 88%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          height: 2.2rem;
+          margin-top: 0.4rem;
+          .iconBlackBox {
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+          }
+        }
+
+        .container {
+          height: 70%;
+          width: 80%;
+          margin-top: 0.5rem;
+          p {
+            color: white;
+            font-size: 0.5rem;
+          }
         }
       }
     }

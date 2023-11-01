@@ -24,7 +24,6 @@ const Order_ReturnTracker = () => {
 };
 const Wrapper = styled.div`
   width: 60%;
-
   h1 {
     font-size: 4.1rem;
     font-weight: 400;
@@ -96,6 +95,85 @@ const Wrapper = styled.div`
       font-size: 1.2rem;
       font-weight: 400;
       color: #201f1f;
+    }
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 98%;
+    margin-top: 3rem;
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      color: #201f1f;
+    }
+    p {
+      font-size: 1rem;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      color: #201f1f;
+    }
+    form {
+      margin-bottom: 4rem;
+      .inputs {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+        .inputDiv {
+          position: relative;
+          width: 90%;
+          height: 2.5rem;
+          font-size: 1.4rem;
+          border-bottom: 1px solid gray;
+          margin-right: 1rem;
+          margin-bottom: 1.5rem;
+          height: 4.5rem;
+          .error {
+            position: absolute;
+            bottom: -2rem;
+            color: red;
+            font-weight: 400;
+          }
+          input {
+            position: absolute;
+            border: none;
+            background-color: transparent;
+            font-size: 1.2rem;
+            bottom: 0.3rem;
+            width: 100%;
+            &:focus {
+              outline: none;
+            }
+          }
+
+          label {
+            position: absolute;
+            bottom: 2rem;
+            font-size: 1.1rem;
+          }
+        }
+      }
+      .btn {
+        width: 50%;
+        height: 3.2rem;
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 2.5rem;
+        font-size: 1.3rem;
+        cursor: pointer;
+      }
+    }
+    .info {
+      h5 {
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+        color: #201f1f;
+      }
+      p {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #201f1f;
+      }
     }
   }
 `;

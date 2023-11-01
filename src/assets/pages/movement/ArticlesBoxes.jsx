@@ -99,5 +99,76 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+    .links_Grid {
+      margin: 2rem 0;
+      display: flex;
+      flex-wrap: null;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      .linkBox {
+        position: relative;
+        width: 96vw;
+        height: 50vh;
+        border-radius: 1rem;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: all ease 0.5s;
+        margin: 2rem;
+        cursor: pointer;
+        &:hover {
+          transform: scale(1.04);
+        }
+        .textBox {
+          position: absolute;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 0.8rem;
+          width: 100%;
+          bottom: 2rem;
+          z-index: 93;
+          cursor: pointer;
+          button {
+            width: 3rem;
+            height: 3rem;
+            border: 1px solid white;
+            border-radius: 50%;
+            background-color: transparent;
+            .iconArrowLeft {
+              color: white;
+              font-size: 1.5rem;
+              font-weight: 900;
+            }
+            cursor: pointer;
+            &:hover {
+              background-color: #ffffff50;
+            }
+          }
+          p {
+            font-size: 1.3rem;
+            color: white;
+            font-weight: 300;
+            width: 80%;
+          }
+        }
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background: linear-gradient(
+            360deg,
+            rgba(0, 0, 0, 0.797) 0%,
+            rgba(0, 0, 0, 0.05) 40%
+          );
+          z-index: 92;
+        }
+      }
+    }
+  }
 `;
 export default ArticlesBoxes;

@@ -218,5 +218,61 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+    background-color: black;
+    nav {
+      padding: 0 0rem;
+      .logo {
+        width: 3.25rem;
+        margin: 0;
+        margin-top: 7rem;
+      }
+    }
+    .sec1 {
+      padding: 0rem 1rem;
+      margin-bottom: 2rem;
+      width: 100vw;
+      .h1Sec1 {
+        color: white;
+
+        font-size: 1.6rem;
+        width: 99%;
+        font-weight: 500;
+        line-height: 2rem;
+        margin-bottom: 1rem;
+      }
+      .pSec1 {
+        color: white;
+        font-size: 1rem;
+        width: 90%;
+        font-weight: 300;
+        line-height: 2rem;
+      }
+    }
+    .sectionImage {
+      img {
+        width: 100%;
+      }
+    }
+    .sectionContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 1rem;
+      .containerSec3 {
+        width: 100vw;
+
+        .topText {
+          font-size: 1.2rem;
+          color: white;
+          margin-bottom: 2rem;
+        }
+        .pSec3_botton {
+          color: #e6e6e6;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
 `;
 export default MoovementBoost;

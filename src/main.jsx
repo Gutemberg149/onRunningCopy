@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import CartToggleProvider from "./assets/contexts/CartToggleContex.jsx";
+import CartToggleProviderSmallScreen from "./assets/contexts/CartToggleContexSmallScreen.jsx";
 import SizeChosenProvider from "./assets/contexts/SizeChosenContex.jsx";
 import ProdDetailProvider from "./assets/contexts/ProdetailContext.jsx";
 import ShippingProvider from "./assets/contexts/ShippingContext.jsx";
@@ -15,11 +16,13 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <ContactUsProvider>
         <ShippingProvider>
           <CartToggleProvider>
-            <SizeChosenProvider>
-              <ProdDetailProvider>
-                <App />
-              </ProdDetailProvider>
-            </SizeChosenProvider>
+            <CartToggleProviderSmallScreen>
+              <SizeChosenProvider>
+                <ProdDetailProvider>
+                  <App />
+                </ProdDetailProvider>
+              </SizeChosenProvider>
+            </CartToggleProviderSmallScreen>
           </CartToggleProvider>
         </ShippingProvider>
       </ContactUsProvider>

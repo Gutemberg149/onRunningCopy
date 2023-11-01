@@ -148,23 +148,23 @@ const Wrapper = styled.div`
     justify-content: center;
     margin-top: 3rem;
     .innerUserContainer {
-      width: 33rem;
-
+      width: 100vw;
+      padding: 0 0.6rem;
       h4 {
-        font-size: 1.6rem;
+        font-size: 1.2rem;
         font-weight: 500;
         color: #302f2f;
         margin-bottom: 3rem;
       }
       .pInnercontainer {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: 400;
         color: #302f2f;
         margin-bottom: 3rem;
       }
       .fildeHolder {
         position: relative;
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
         border-bottom: 1px solid gray;
         width: 30rem;
         .inputRegister {
@@ -220,7 +220,7 @@ const Wrapper = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 7rem;
+        margin-top: 2rem;
 
         button {
           width: 22rem;

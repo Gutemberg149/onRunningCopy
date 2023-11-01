@@ -158,7 +158,7 @@ const Wrapper = styled.div`
       }
       &:hover {
         img {
-          width: 9.5rem;
+          width: 9rem;
           background-color: #f9f2e2;
           transition: all 0.3s ease-in;
         }

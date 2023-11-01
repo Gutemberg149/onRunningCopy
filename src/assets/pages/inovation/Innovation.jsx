@@ -3,8 +3,6 @@ import Navbar from "../../componentes/navbar/Navbar";
 import { Link } from "react-router-dom";
 import logo from "../../images/logoImg/logo.jpeg";
 import image1 from "../../images/innovationImg/image1.avif";
-import video2 from "../../pages/inovation/videos/video2.mp4";
-import { InovationVideo1, InovationVideo2 } from "./videos/inovationYoutube";
 import Footer from "../../componentes/footer/Footer";
 const Innovation = () => {
   return (
@@ -57,8 +55,13 @@ const Innovation = () => {
         </div>
       </section>
 
-      <section className="secvideo">
-        <video src={video2} width="1920" loop muted autoPlay />
+      <section className="IframeSection">
+        <iframe
+          src={`https://www.youtube.com/embed/s8WEmSAr74dM`}
+          frameBorder={0}
+          allowFullScreen
+          allow="autoplay"
+        />
       </section>
 
       <section
@@ -77,8 +80,13 @@ const Innovation = () => {
         </div>
       </section>
 
-      <section className="secVideo">
-        <InovationVideo1 />
+      <section className="IframeSection">
+        <iframe
+          src={`https://www.youtube.com/embed/VtosSdRZcsA`}
+          frameBorder={0}
+          allowFullScreen
+          allow="autoplay"
+        />
       </section>
 
       <section className="sectionTech">
@@ -92,8 +100,13 @@ const Innovation = () => {
         </div>
       </section>
 
-      <section className="secVideo">
-        <InovationVideo2 />
+      <section className="IframeSection">
+        <iframe
+          src={`https://www.youtube.com/embed/zGi3f6Wyxj8`}
+          frameBorder={0}
+          allowFullScreen
+          allow="autoplay"
+        />
       </section>
       <Footer />
     </Wrapper>
@@ -157,6 +170,94 @@ const Wrapper = styled.div`
       }
       p {
         font-size: 2.5rem;
+      }
+    }
+  }
+  .IframeSection {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 25%;
+    background-color: #fac892;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+    background-color: #2d256f;
+    nav {
+      padding: 0 1rem;
+      .logo {
+        width: 3.25rem;
+        margin: 0;
+        margin-top: 7rem;
+      }
+    }
+    .secImage {
+      img {
+        width: 100%;
+      }
+    }
+    .sectionText {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .containerSecText {
+        width: 100%;
+        padding: 0 1rem;
+        .containerText_h4 {
+          color: #e6e6e6;
+          font-size: 2rem;
+          margin-top: 1.5rem;
+          margin-bottom: 0rem;
+        }
+        .pSecText {
+          color: #e6e6e6;
+          font-size: 1.5rem;
+          margin-bottom: 1rem;
+        }
+        .pSecText2 {
+          color: #e6e6e6;
+          font-size: 1.5rem;
+          margin: 0rem 0rem;
+          font-weight: 600;
+          line-height: 2.5rem;
+        }
+      }
+    }
+    .sectionTech {
+      background-color: white;
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .innerCoudeTech {
+        width: 90%;
+        h5 {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1.5rem;
+        }
+      }
+    }
+    .IframeSection {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      padding: 25%;
+      background-color: #fac892;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
       }
     }
   }

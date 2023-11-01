@@ -57,5 +57,32 @@ const Wrapper = styled.div`
       overflow: hidden;
     }
   }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+    margin: 1rem 0.3rem;
+    .container {
+      border-bottom: 2px solid gray;
+      .question {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin: 0.1rem 0;
+        cursor: pointer;
+      }
+      .answer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3rem;
+        color: #2c2c2c;
+        font-weight: 300;
+        margin: 0.52rem 0;
+        transition: ease 0.3s;
+        height: 7rem;
+      }
+      .hiddenAnser {
+        height: 0rem;
+        overflow: hidden;
+      }
+    }
+  }
 `;
 export default AccordionQuestion;

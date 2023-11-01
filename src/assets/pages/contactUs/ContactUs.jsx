@@ -121,5 +121,78 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+    nav {
+      padding: 0 0rem;
+      .logo {
+        width: 3.25rem;
+        margin: 0;
+        margin-top: 7rem;
+        border-radius: 50%;
+      }
+    }
+    main {
+      margin-bottom: 1rem;
+
+      .contactContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .leftSideContainer {
+          position: relative;
+          width: 100%;
+          height: 110vh;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          padding: 0.5rem;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+
+          h4 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #363535;
+            margin-bottom: 2rem;
+          }
+          .contactInfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 40vh;
+            padding-left: 0.5rem;
+            .containerInfo {
+              span {
+                font-size: 0.9rem;
+                font-weight: 500;
+                color: #939393;
+              }
+              p {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #7d7c7c;
+              }
+              P:nth-child(2) {
+                margin-top: 0.3rem;
+              }
+            }
+          }
+          .glassMessage {
+            position: absolute;
+            top: 20rem;
+          }
+        }
+        .rightSideContainer {
+          width: 100%;
+          height: 40vh;
+          background-image: url(${img2});
+          background-size: cover;
+          background-position: 75%;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          border-top-right-radius: 2rem;
+          border-bottom-right-radius: 2rem;
+        }
+      }
+    }
+  }
 `;
 export default ContactUs;

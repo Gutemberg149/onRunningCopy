@@ -12,6 +12,9 @@ import { listProduct } from "../../utils/APIArray";
 import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartToggleContex";
+import { CartContextSmallScreen } from "../../contexts/CartToggleContexSmallScreen";
+import CartShopSmallScreen from "./shopHere/ShopHereSmallScreen";
+import { useRef } from "react";
 
 const SingleProduct = () => {
   const [moveCarroseel, setMoveCarrosel] = useState(0);
@@ -19,12 +22,23 @@ const SingleProduct = () => {
   const [toggleShipping, setToggleShipping] = useState(false);
   const [toggleMaterials, setToggleMaterials] = useState(false);
 
+  const screenSize = useRef(window.innerWidth);
+
   const moveRight = () => {
-    if (moveCarroseel < -120) {
-      setMoveCarrosel(0);
+    if (screenSize.current <= 600) {
+      if (moveCarroseel < -60) {
+        setMoveCarrosel(0);
+      } else {
+        setMoveCarrosel(moveCarroseel - 20);
+        console.log(moveCarroseel);
+      }
     } else {
-      setMoveCarrosel(moveCarroseel - 60);
-      console.log(moveCarroseel);
+      if (moveCarroseel < -120) {
+        setMoveCarrosel(0);
+      } else {
+        setMoveCarrosel(moveCarroseel - 60);
+        console.log(moveCarroseel);
+      }
     }
   };
 
@@ -42,6 +56,9 @@ const SingleProduct = () => {
 
   //context to move cart shop in and out
   const { showCart } = useContext(CartContext);
+
+  //context to move cart shop in and out small screen
+  const { ShowCartSmallScreen } = useContext(CartContextSmallScreen);
 
   return (
     <Wrapper>
@@ -204,6 +221,13 @@ const SingleProduct = () => {
         <CartShop />
       </div>
 
+      <div
+        className="cartShopSmallScreen"
+        style={{ right: `${ShowCartSmallScreen}` }}
+      >
+        <CartShopSmallScreen />
+      </div>
+
       <Footer />
     </Wrapper>
   );
@@ -349,6 +373,96 @@ const Wrapper = styled.div`
     position: absolute;
     top: 11rem;
     transition: all ease-in 0.4s;
+  }
+  .cartShopSmallScreen {
+    display: none;
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+    .navbar {
+      .logo {
+        width: 4rem;
+        margin: 7rem 1rem 1rem 1rem;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+    .section1 {
+      top: 0;
+      .carrossel {
+        position: relative;
+        .innerCarrossel {
+          display: flex;
+          transition: all 0.6s ease;
+          .prodContainer {
+            width: 20rem;
+            height: 20rem;
+            background-color: #f6f4f3;
+            margin: 0.4rem;
+            img {
+              width: 20rem;
+            }
+          }
+        }
+        .btnsCarroessel {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 15rem;
+          height: 5rem;
+          position: absolute;
+          bottom: -5rem;
+          left: 3rem;
+
+          .btnCarrossel {
+            background-color: white;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            border-radius: 50%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            cursor: pointer;
+            &:hover {
+              background-color: #fafafa;
+              font-size: 1.9rem;
+            }
+          }
+          .dots {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 6rem;
+            height: 3rem;
+
+            .dot {
+              width: 1rem;
+              height: 1rem;
+              border-radius: 50%;
+              border: 1px solid gray;
+            }
+          }
+        }
+      }
+    }
+    .section2 {
+      display: none;
+    }
+    .section3 {
+      margin: 5rem 0 0 0;
+      height: 20rem;
+    }
+    .cartshop {
+      display: none;
+    }
+    .cartShopSmallScreen {
+      width: 90%;
+      display: block;
+      position: absolute;
+      top: 6rem;
+      transition: all ease-in 0.4s;
+    }
   }
 `;
 export default SingleProduct;

@@ -99,7 +99,6 @@ const Wrapper = styled.div`
   }
   .sec1 {
     position: relative;
-    border: 1px solid green;
     height: 67.7rem;
     video {
       position: absolute;
@@ -133,11 +132,7 @@ const Wrapper = styled.div`
         margin-bottom: 2rem;
         font-weight: 500;
       }
-      .pSecText {
-        color: black;
-        font-size: 4rem;
-        margin-bottom: 3rem;
-      }
+
       .pSecText2 {
         color: #222121;
         font-size: 3rem;
@@ -151,6 +146,70 @@ const Wrapper = styled.div`
   .secImage {
     img {
       width: 100%;
+    }
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+    nav {
+      padding: 0 0rem;
+      .logo {
+        width: 3.25rem;
+        margin: 0;
+        margin-top: 7rem;
+        margin-bottom: 1rem;
+      }
+    }
+    .sec1 {
+      position: relative;
+      height: 35vh;
+      video {
+        position: absolute;
+        width: 100vw;
+      }
+      .boxText {
+        position: absolute;
+        top: 50%;
+        left: 0.5rem;
+        width: 100vw;
+        h4 {
+          font-size: 1.5rem;
+          color: white;
+        }
+        p {
+          font-size: 1rem;
+          color: white;
+        }
+      }
+    }
+    .sectionText {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .containerSecText {
+        width: 100%;
+        padding: 0 1rem;
+        .containerText_h4 {
+          color: black;
+          font-size: 1.8rem;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+          font-weight: 500;
+        }
+
+        .pSecText2 {
+          color: black;
+          font-size: 1rem;
+          margin: 1rem 0.5rem;
+          font-weight: 400;
+          line-height: 2rem;
+          text-align: justify;
+        }
+      }
+    }
+
+    .secImage {
+      img {
+        width: 100%;
+      }
     }
   }
 `;

@@ -12,7 +12,7 @@ import point2_6 from "../../../../images/movements/articlesPageImg/point2_6.avif
 import point2_7 from "../../../../images/movements/articlesPageImg/point2_7.avif";
 import point2_8 from "../../../../images/movements/articlesPageImg/point2_8.avif";
 import point2_9 from "../../../../images/movements/articlesPageImg/point2_9.avif";
-import Point2Video from "./Point2Video";
+
 const Point2 = () => {
   return (
     <Wrapper>
@@ -143,8 +143,13 @@ const Point2 = () => {
         </div>
       </section>
 
-      <section className="secVideo">
-        <Point2Video />
+      <section className="IframeSection">
+        <iframe
+          src={`https://www.youtube.com/embed/VuNqZzciy4g`}
+          frameBorder={0}
+          allowFullScreen
+          allow="autoplay"
+        />
       </section>
       <Footer />
     </Wrapper>
@@ -246,6 +251,138 @@ const Wrapper = styled.div`
       img {
         width: 25rem;
         margin: 0 0.5rem;
+      }
+    }
+  }
+  .IframeSection {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 25%;
+    background-color: #fac892;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+    background-color: black;
+    nav {
+      padding: 0 0rem;
+      .logo {
+        width: 3.25rem;
+        margin: 0;
+        margin-top: 7rem;
+      }
+    }
+    .sec1 {
+      padding: 0rem 1rem;
+      margin-bottom: 2rem;
+      width: 100vw;
+      .h1Sec1 {
+        color: white;
+        font-size: 1.6rem;
+        width: 99%;
+        font-weight: 500;
+        line-height: 2rem;
+        margin-bottom: 1rem;
+      }
+      .pSec1 {
+        color: white;
+        font-size: 1rem;
+        width: 90%;
+        font-weight: 300;
+        line-height: 2rem;
+      }
+    }
+    .secImg {
+      img {
+        width: 100%;
+      }
+    }
+    .sectionText {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0rem 1rem;
+      margin-top: 2rem;
+      .containerSecText {
+        width: 100vw;
+        .containerText_h4 {
+          color: #e6e6e6;
+          font-size: 1.5rem;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+        .pSecText {
+          color: #e6e6e6;
+          font-size: 1rem;
+          margin-bottom: 1.4rem;
+        }
+      }
+    }
+    .sectionTextSmallPadding {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 0.5rem;
+      .containerSecText {
+        width: 100vw;
+        .containerText_h4 {
+          color: #e6e6e6;
+          font-size: 1.5rem;
+        }
+        .pSecText {
+          color: #e6e6e6;
+          font-size: 1rem;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    .secDoubleImg {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 1rem;
+      margin-bottom: 1.5rem;
+      img {
+        width: 50%;
+        margin: 0.3rem;
+      }
+    }
+    .secTripleImg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: auto;
+      margin-bottom: 1rem;
+      .containerSecTriple {
+        margin: 0.2rem 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        img {
+          width: 24%;
+          margin: 0 0.2rem;
+        }
+      }
+    }
+    .IframeSection {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      padding: 25%;
+      background-color: #fac892;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
       }
     }
   }

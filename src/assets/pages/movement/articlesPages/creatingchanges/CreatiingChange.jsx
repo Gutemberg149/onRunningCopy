@@ -3,12 +3,6 @@ import styled from "styled-components";
 import Navbar from "../../../../componentes/navbar/Navbar";
 import logo from "../../../../images/logoImg/logo.jpeg";
 import Footer from "../../../../componentes/footer/Footer";
-import {
-  CreatchangesVideo1,
-  CreatchangesVideo2,
-  CreatchangesVideo3,
-  CreatchangesVideo4,
-} from "./CreatingChangesVideo";
 import creatingAndChanging1 from "../../../../images/movements/articlesPageImg/creatingAndChanging1.avif";
 import creatingAndChanging2 from "../../../../images/movements/articlesPageImg/creatingAndChanging2.avif";
 import creatingAndChanging3 from "../../../../images/movements/articlesPageImg/creatingAndChanging3.avif";
@@ -37,8 +31,13 @@ const CreatiingChange = () => {
         </p>
       </section>
 
-      <section className="secVideo">
-        <CreatchangesVideo1 />
+      <section className="IframeSection">
+        <iframe
+          src={`https://www.youtube.com/embed/ojCTQRHOif0`}
+          frameBorder={0}
+          allowFullScreen
+          allow="autoplay"
+        />
       </section>
 
       <section className="sectionText">
@@ -52,8 +51,13 @@ const CreatiingChange = () => {
         </div>
       </section>
 
-      <section className="secVideo">
-        <CreatchangesVideo2 />
+      <section className="IframeSection">
+        <iframe
+          src={`https://www.youtube.com/embed/NUI3Tri-w8M`}
+          frameBorder={0}
+          allowFullScreen
+          allow="autoplay"
+        />
       </section>
 
       <section className="sectionText">
@@ -69,10 +73,7 @@ const CreatiingChange = () => {
             ever program nine years ago.
           </div>
 
-          <h4
-            className="containerText_h4"
-            style={{ width: "80rem", fontSize: "4.5rem" }}
-          >
+          <h4 className="containerText_h4">
             “The Running Charity made me who I am today. Everything I was doing
             to escape, I replaced with running.”
           </h4>
@@ -139,8 +140,13 @@ const CreatiingChange = () => {
         </div>
       </section>
 
-      <section className="secVideo">
-        <CreatchangesVideo3 />
+      <section className="IframeSection">
+        <iframe
+          src={`https://www.youtube.com/embed/NUI3Tri-w8M`}
+          frameBorder={0}
+          allowFullScreen
+          allow="autoplay"
+        />
       </section>
 
       <section className="sectionText">
@@ -174,10 +180,7 @@ const CreatiingChange = () => {
             need to look a certain type of way to be accepted as a runner.
           </div>
 
-          <h4
-            className="containerText_h4"
-            style={{ width: "90rem", fontSize: "4.5rem" }}
-          >
+          <h4 className="containerText_h4">
             “Men also feel body shaming around the way we look and the way we’re
             shaped. We’re just trying to put some positivity into the world for
             people of any shape, size, form. Just because we’re big doesn’t mean
@@ -186,8 +189,13 @@ const CreatiingChange = () => {
         </div>
       </section>
 
-      <section className="secVideo">
-        <CreatchangesVideo4 />
+      <section className="IframeSection">
+        <iframe
+          src={`https://www.youtube.com/embed/2vckZRzQUpM`}
+          frameBorder={0}
+          allowFullScreen
+          allow="autoplay"
+        />
       </section>
       <Footer />
     </Wrapper>
@@ -225,20 +233,20 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5rem 0;
-    margin-top: 2rem;
+    padding: 1rem 0;
+    margin-top: 1rem;
     .containerSecText {
-      width: 95rem;
+      width: 100vw;
       .containerText_h4 {
         color: #e6e6e6;
         font-size: 3.5rem;
-        margin-top: 5rem;
-        margin-bottom: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
       }
       .containerText_h5 {
         color: #e6e6e6;
         font-size: 2.5rem;
-        margin-top: 5rem;
+        margin-top: 2rem;
         margin-bottom: 1rem;
         font-weight: 300;
       }
@@ -263,6 +271,103 @@ const Wrapper = styled.div`
     margin-bottom: 4rem;
     img {
       width: 50rem;
+    }
+  }
+  .IframeSection {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding: 25%;
+    background-color: #fac892;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+    background-color: black;
+    nav {
+      padding: 0 0rem;
+      .logo {
+        width: 3.25rem;
+        margin: 0;
+        margin-top: 7rem;
+      }
+    }
+    .sec1 {
+      padding: 0rem 1rem;
+      margin-bottom: 2rem;
+      width: 100vw;
+      .h1Sec1 {
+        color: white;
+        font-size: 1.6rem;
+        width: 99%;
+        font-weight: 500;
+        line-height: 2rem;
+        margin-bottom: 1rem;
+      }
+      .pSec1 {
+        color: white;
+        font-size: 1rem;
+        width: 90%;
+        font-weight: 300;
+        line-height: 2rem;
+      }
+    }
+    .sectionText {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0rem 1rem;
+      margin-top: 2rem;
+      .containerSecText {
+        width: 100vw;
+        .containerText_h4 {
+          color: #e6e6e6;
+          font-size: 1.5rem;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+        }
+        .pSecText {
+          color: #e6e6e6;
+          font-size: 1rem;
+          margin-bottom: 1.4rem;
+        }
+      }
+    }
+
+    .secImg {
+      img {
+        width: 100%;
+      }
+    }
+    .secDoubleImg {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0 1rem;
+      margin-bottom: 1.5rem;
+      img {
+        width: 50%;
+        margin: 0.3rem;
+      }
+    }
+    .IframeSection {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      padding: 25%;
+      background-color: #fac892;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
     }
   }
 `;

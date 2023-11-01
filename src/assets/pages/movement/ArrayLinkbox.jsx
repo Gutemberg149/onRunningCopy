@@ -29,6 +29,6 @@ export const ArrayLinkBox = [
     id: 9,
     link: "/theultimate",
     img: image9,
-    text: "the ulimate guide to run",
+    text: "the ultimate guide to run",
   },
 ];

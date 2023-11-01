@@ -24,6 +24,12 @@ const Message = () => {
 
   const handleSumit = (e) => {
     e.preventDefault();
+    setContact((e) => {
+      e.name = "";
+      e.email = "";
+      e.subject = "";
+      e.textmessage = "";
+    });
     console.log(contact);
   };
 
@@ -124,6 +130,52 @@ const Wrapper = styled.div`
       border-radius: 0.3rem;
       margin-top: 2rem;
       cursor: pointer;
+    }
+  }
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
+    form {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      padding: 0 0.5rem;
+      input {
+        height: 3rem;
+        border: none;
+        border-bottom: 1px solid lightgray;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        &::placeholder {
+          font-size: 1.1rem;
+          color: #7d7c7c;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      textarea {
+        border: none;
+        border-bottom: 1px solid lightgray;
+        margin-top: 2rem;
+        font-size: 1.2rem;
+        &::placeholder {
+          font-size: 1.1rem;
+          color: #7d7c7c;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      button {
+        width: 8rem;
+        height: 3rem;
+        background-color: #047695;
+        border: none;
+        font-size: 0.9rem;
+        color: white;
+        border-radius: 0.3rem;
+        margin-top: 2rem;
+        cursor: pointer;
+      }
     }
   }
 `;
