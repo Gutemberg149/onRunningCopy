@@ -118,12 +118,6 @@ const SignUpPage = () => {
       </section>
 
       <section className="sec3">
-        <h3>Your account questions, answered.</h3>
-        <div className="accordion"></div>
-        <AccordionQuestion />
-      </section>
-
-      <section className="sec4">
         <img src={image5} alt="" />
         <div className="textBox">
           <p>Exclusive benefits that are miles ahead</p>
@@ -244,23 +238,15 @@ const Wrapper = styled.div`
     }
   }
   .sec3 {
-    margin-top: 4rem;
-    h3 {
-      margin-left: 3rem;
-      font-size: 3rem;
-      font-weight: 500;
-    }
-  }
-  .sec4 {
     position: relative;
-    margin-bottom: 6rem;
+    margin-bottom: 0rem;
     img {
       width: 100%;
     }
     .textBox {
       position: absolute;
-      width: 60rem;
-      bottom: 8rem;
+      width: 100%;
+      bottom: 4rem;
       color: white;
       font-size: 4rem;
       left: 4rem;
@@ -279,6 +265,7 @@ const Wrapper = styled.div`
       );
     }
   }
+
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     .sec1 {
       position: relative;
@@ -396,15 +383,8 @@ const Wrapper = styled.div`
         }
       }
     }
+
     .sec3 {
-      margin-top: 1rem;
-      h3 {
-        margin-left: 0.5rem;
-        font-size: 1.4rem;
-        font-weight: 500;
-      }
-    }
-    .sec4 {
       position: relative;
       margin-bottom: 0rem;
       img {

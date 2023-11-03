@@ -24,13 +24,12 @@ const Message = () => {
 
   const handleSumit = (e) => {
     e.preventDefault();
-    setContact((e) => {
-      e.name = "";
-      e.email = "";
-      e.subject = "";
-      e.textmessage = "";
+    setContact((prev) => {
+      return {
+        [e.target.name]: "",
+      };
     });
-    console.log(contact);
+    // console.log(contact);
   };
 
   const handleContactdataFill = () => {
@@ -40,12 +39,8 @@ const Message = () => {
     });
     if (userDataEmpty.length > 0) {
       setDisabledButton(true);
-      console.log("User length  equal 0" + " " + userDataEmpty.length);
-      console.log("Disble button" + disabledButton);
     } else {
       setDisabledButton(false);
-      console.log("User length NOT === 0" + userDataEmpty.length);
-      console.log("Disble button" + disabledButton);
     }
   };
 

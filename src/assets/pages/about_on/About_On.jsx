@@ -150,7 +150,8 @@ const Wrapper = styled.div`
   }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     nav {
-      padding: 0 0rem;
+      padding: 0;
+      width: 100vw;
       .logo {
         width: 3.25rem;
         margin: 0;
@@ -184,6 +185,8 @@ const Wrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+
+      width: 100vw;
       .containerSecText {
         width: 100%;
         padding: 0 1rem;

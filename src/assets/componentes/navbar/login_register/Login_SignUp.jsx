@@ -100,6 +100,7 @@ const Wrapper = styled.div`
           border-radius: 10rem;
           font-size: 1.3rem;
           font-weight: 500;
+          color: black;
           z-index: 98;
           cursor: pointer;
         }
@@ -115,6 +116,7 @@ const Wrapper = styled.div`
           height: 100%;
           border-radius: 10rem;
           font-size: 1.2rem;
+          color: black;
           font-weight: 500;
           z-index: 98;
 
@@ -190,6 +192,7 @@ const Wrapper = styled.div`
             border-radius: 10rem;
             font-size: 1.3rem;
             font-weight: 500;
+            color: black;
             z-index: 98;
             cursor: pointer;
           }
@@ -206,6 +209,7 @@ const Wrapper = styled.div`
             border-radius: 10rem;
             font-size: 1.2rem;
             font-weight: 500;
+            color: black;
             z-index: 98;
 
             cursor: pointer;

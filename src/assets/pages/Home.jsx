@@ -148,7 +148,7 @@ const Home = () => {
         </nav>
 
         <div className="infocontainer">
-          <h1>Built to go the distance</h1>
+          <h1>XXX Built to go the distance</h1>
           <h3>
             Fan favorites across footwear and apparel.
             <br /> See how they run.

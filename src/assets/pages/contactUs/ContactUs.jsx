@@ -147,7 +147,7 @@ const Wrapper = styled.div`
           padding: 0.5rem;
           border-top-left-radius: 0;
           border-bottom-left-radius: 0;
-
+          margin-bottom: 4rem;
           h4 {
             font-size: 1.2rem;
             font-weight: 500;

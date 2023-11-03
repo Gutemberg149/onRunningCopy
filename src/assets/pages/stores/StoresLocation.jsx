@@ -43,7 +43,42 @@ const StoresLocation = () => {
         </div>
         <h1>Shops located in Brazil</h1>
       </section>
+
       <main>
+        <div className="addressesContainer">
+          <div className="topMessage">
+            <h4>Stores Addresses</h4>
+            <p className="message">
+              To see the location on the map, click one of the options below
+              than <span>click on the map.</span>
+            </p>
+          </div>
+          <div className="mapAddresses">
+            {addresses.map((store) => {
+              return (
+                <div
+                  className="locationsContainer"
+                  onClick={() => setIndex(store.idx) + setClicked(true)}
+                  key={store.idx}
+                >
+                  {clicked && handleClickOnTheMAp()}
+                  {clicked && store.idx === indx ? (
+                    <div className="clickOnTheMAp">
+                      <p>Now click on the map</p>
+                    </div>
+                  ) : (
+                    <div className="addressDetails">
+                      <p className="localName">{store.localName}</p>
+                      <p className="address">{store.address}</p>
+                      <p className="tel">{store.tel}</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
         <section className="mapSection">
           <MapContainer
             className="MapContainer"
@@ -67,40 +102,6 @@ const StoresLocation = () => {
               <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
             </MarkerClusterGroup>
           </MapContainer>
-
-          <div className="addressesContainer">
-            <div className="topMessage">
-              <h4>Stores Addresses</h4>
-              <p className="message">
-                To see the location on the map, click one of the options below
-                than <span>click on the map.</span>
-              </p>
-            </div>
-            <div className="mapAddresses">
-              {addresses.map((store) => {
-                return (
-                  <div
-                    className="locationsContainer"
-                    onClick={() => setIndex(store.idx) + setClicked(true)}
-                    key={store.idx}
-                  >
-                    {clicked && handleClickOnTheMAp()}
-                    {clicked && store.idx === indx ? (
-                      <div className="clickOnTheMAp">
-                        <p>Now click on the map</p>
-                      </div>
-                    ) : (
-                      <div className="addressDetails">
-                        <p className="localName">{store.localName}</p>
-                        <p className="address">{store.address}</p>
-                        <p className="tel">{store.tel}</p>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
         </section>
       </main>
       <Footer />
@@ -145,24 +146,11 @@ const Wrapper = styled.div`
       font-weight: 400;
     }
   }
-  .mapSection {
-    position: relative;
-    width: 100%;
-    height: 60rem;
+  main {
     display: flex;
-    padding: 0.5rem;
-    z-index: 90;
-    margin-bottom: 1rem;
-    //in leaflet it is important to set this class below a 100% even though there is no visible class in the code. It is invisible.
-
-    .MapContainer {
-      width: 60%;
-      background-color: transparent;
-    }
     .addressesContainer {
-      border-left: 2rem solid #9e9c9c8d;
       width: 45%;
-      height: 100%;
+      height: 55vw;
       background-color: #e7e7e7;
       overflow: scroll;
       .topMessage {
@@ -233,7 +221,25 @@ const Wrapper = styled.div`
         }
       }
     }
+    .mapSection {
+      border: 2px solid black;
+      position: relative;
+      height: 55vw;
+      width: 60%;
+      display: flex;
+      padding: 0.5rem;
+      z-index: 90;
+      margin-bottom: 1rem;
+      //in leaflet it is important to set this class below a 100% even though there is no visible class in the code. It is invisible.
+
+      .MapContainer {
+        width: 100%;
+        background-color: transparent;
+        height: 100%;
+      }
+    }
   }
+
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     nav {
       padding: 0 0rem;
@@ -271,38 +277,27 @@ const Wrapper = styled.div`
         font-weight: 400;
       }
     }
-    .mapSection {
-      position: relative;
-      width: 100%;
-      height: auto;
-      display: flex;
-      flex-direction: column;
-      padding: 0rem;
-      z-index: 90;
-      margin-bottom: 1rem;
-      //in leaflet it is important to set this class below a 100% even though there is no visible class in the code. It is invisible.
-
-      .MapContainer {
-        display: none;
-      }
+    width: 100vw;
+    main {
+      display: block;
+      width: 100vw;
       .addressesContainer {
-        border-left: 2rem solid #9e9c9c8d;
         width: 100%;
-        height: 100%;
+        height: 100vw;
         background-color: #e7e7e7;
         overflow: scroll;
         .topMessage {
-          padding: 0.5rem 1rem 1.5rem 1rem;
+          padding: 1.5rem 2rem 3rem 2rem;
           h4 {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
           }
           .message {
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
+            font-size: 1.4rem;
+            margin-top: 2rem;
           }
           span {
             color: #cf0303;
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             font-weight: 600;
           }
         }
@@ -314,12 +309,12 @@ const Wrapper = styled.div`
           .locationsContainer {
             position: relative;
             border-radius: 1rem;
-            margin: 0.4rem;
-            width: 95%;
+            margin: 0.6rem;
+            width: 22rem;
             height: 11.5rem;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             background-color: white;
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             padding: 0.8rem;
             box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
             transition: ease 0.3s;
@@ -328,7 +323,7 @@ const Wrapper = styled.div`
               transform: scale(1.05);
             }
             .localName {
-              font-size: 1.4rem;
+              font-size: 1.5rem;
               font-weight: 600;
               margin-bottom: 0.3rem;
             }
@@ -357,6 +352,23 @@ const Wrapper = styled.div`
               border-radius: 1rem;
             }
           }
+        }
+      }
+      .mapSection {
+        position: relative;
+        width: 100vw;
+        height: 50vh;
+        display: flex;
+        padding: 0.5rem;
+        z-index: 90;
+        margin-bottom: 1rem;
+
+        //in leaflet it is important to set this class below a 100% even though there is no visible class in the code. It is invisible.
+
+        .MapContainer {
+          width: 100%;
+          height: 100%;
+          background-color: transparent;
         }
       }
     }

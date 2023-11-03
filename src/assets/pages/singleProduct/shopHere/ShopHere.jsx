@@ -33,8 +33,8 @@ const CartShop = () => {
         </div>
         <div className="cartBody">
           <div className="topGender">
-            {!toggleGender && <span className="gender">MENS</span>}
-            {toggleGender && <span className="gender">WOMEN</span>}
+            {!toggleGender && <span className="gender">MEN'S</span>}
+            {toggleGender && <span className="gender">WOMEN's</span>}
 
             <div className="dot">
               <GoDotFill />
@@ -217,6 +217,7 @@ const Wrapper = styled.div`
           border-radius: 10rem;
           font-size: 1.1rem;
           font-weight: 500;
+          color: black;
           z-index: 98;
           cursor: pointer;
         }
@@ -233,6 +234,7 @@ const Wrapper = styled.div`
           border-radius: 10rem;
           font-size: 1.1rem;
           font-weight: 500;
+          color: black;
           z-index: 98;
 
           cursor: pointer;
@@ -416,6 +418,7 @@ const Wrapper = styled.div`
             border-radius: 10rem;
             font-size: 1.1rem;
             font-weight: 500;
+            color: black;
             z-index: 98;
             cursor: pointer;
           }
@@ -432,6 +435,7 @@ const Wrapper = styled.div`
             border-radius: 10rem;
             font-size: 1.1rem;
             font-weight: 500;
+            color: black;
             z-index: 98;
 
             cursor: pointer;

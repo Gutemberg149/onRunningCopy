@@ -434,13 +434,14 @@ const Wrapper = styled.nav`
   }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     .navContainer {
-      width: 100%;
+      width: 100vw;
       height: 3.5rem;
-      right: null;
+      right: 0;
       left: 0rem;
       display: flex;
       align-items: center;
       justify-content: center;
+
       .leftContainer {
         width: 45%;
         height: 100%;
@@ -573,12 +574,5 @@ const Wrapper = styled.nav`
       }
     }
   }
-  /* @media only screen and (max-width: 561px) and (min-width: 1500px) {
-    .navContainer {
-      width: 75rem;
-      background-color: #f503b0;
-      height: 5.65rem;
-    }
-  } */
 `;
 export default Navbar;
