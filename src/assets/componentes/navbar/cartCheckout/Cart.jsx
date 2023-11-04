@@ -85,11 +85,6 @@ const Cart = () => {
           </div>
           <Link to={"/checkout"} className="checkout">
             <p>Check out</p>
-            {/* {user ? (
-                <NavBarAccount />
-              ) : (
-                <Login_SignUp handleSignUp={handleSignUp} />
-              )} */}
           </Link>
         </div>
       </div>
