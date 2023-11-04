@@ -217,7 +217,6 @@ const Wrapper = styled.div`
     }
   }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
-    padding: 0rem;
     .shipping {
       display: flex;
       width: 100vw;
@@ -376,7 +375,6 @@ const Wrapper = styled.div`
 
       .credcardContainerFull {
         height: 65vh;
-        background-color: lightcoral;
       }
     }
   }
