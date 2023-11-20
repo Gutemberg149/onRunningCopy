@@ -33,6 +33,14 @@ const Featured = () => {
       } else {
         return;
       }
+    } else if (screenSize.current <= 900) {
+      if (moveOverlayContainer > -1800) {
+        setMoveOverlayContainer(moveOverlayContainer - 230);
+        console.log("---");
+        console.log(moveOverlayContainer);
+      } else {
+        return;
+      }
     } else {
       if (moveOverlayContainer > -1500) {
         setMoveOverlayContainer(moveOverlayContainer - 700);
@@ -48,6 +56,12 @@ const Featured = () => {
         setMoveOverlayContainer(moveOverlayContainer + 260);
       } else {
         return;
+      }
+    } else if (screenSize.current <= 900) {
+      if (moveOverlayContainer < -600) {
+        setMoveOverlayContainer(moveOverlayContainer + 230);
+        console.log("+++");
+        console.log(moveOverlayContainer);
       }
     } else {
       if (moveOverlayContainer < 0) {
@@ -79,6 +93,7 @@ const Featured = () => {
       moveDivFunction2();
     }
   }, [moveFunction]);
+
   return (
     <Wrapper>
       <main>
@@ -377,7 +392,6 @@ const Wrapper = styled.div`
       overflow: hidden;
       background-color: #fac892;
       margin-bottom: 8rem;
-
       .sec6Container {
         display: grid;
         grid-template-columns: 70% 30%;
@@ -1044,6 +1058,798 @@ const Wrapper = styled.div`
         p {
           font-size: 1.1rem;
           font-weight: 300;
+          padding: 0 0rem 0 0rem;
+        }
+        .btnSec {
+          width: 9rem;
+          height: 3rem;
+          background-color: black;
+          border-radius: 4rem;
+          border: 2px solid black;
+          font-size: 1rem;
+          font-weight: 500;
+          color: white;
+          font-weight: 300;
+          margin: 1rem 0rem 0 0rem;
+          transition: all ease 0.36s;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
+    main {
+      .navbar {
+        display: flex;
+        align-items: center;
+        padding-top: 5rem;
+        .logo {
+          mix-blend-mode: null;
+          width: 4rem;
+          margin: 2rem 0rem 0rem 0rem;
+          cursor: pointer;
+        }
+      }
+      .sec1 {
+        width: 100%;
+        height: auto;
+        background-color: #fac892;
+        .text {
+          padding: 0.5rem;
+          h3 {
+            font-size: 2.2rem;
+            font-weight: 500;
+          }
+          p {
+            font-size: 1.7rem;
+          }
+        }
+      }
+      .IframeSection {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        padding: 25%;
+        background-color: #fac892;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .sec3 {
+        background-color: #fac892;
+        h3 {
+          font-size: 1.6rem;
+          font-weight: 400;
+          margin-left: 0.5rem;
+          padding: 0.5rem 0;
+        }
+      }
+
+      .sec4 {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 1rem;
+        h3 {
+          font-size: 2rem;
+          font-weight: 500;
+          padding: 0;
+        }
+        p {
+          font-size: 1.3rem;
+          font-weight: 300;
+          padding: 0 0rem 0 0rem;
+        }
+        .btnSec {
+          width: 9rem;
+          height: 3rem;
+          background-color: black;
+          border-radius: 4rem;
+          border: 2px solid black;
+          font-size: 1rem;
+          font-weight: 500;
+          color: white;
+          font-weight: 300;
+          margin: 1rem 0rem 0 0rem;
+          transition: all ease 0.36s;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .sec5 {
+        width: 100vw;
+        margin-bottom: 2rem;
+        img {
+          width: 100%;
+        }
+      }
+      .sec6 {
+        display: grid;
+        grid-template-columns: 99% 1%;
+        height: 100%;
+        background-color: #fac892;
+        margin-bottom: 0rem;
+        .sec6Container {
+          display: grid;
+          grid-template-columns: 99% 1%;
+          height: 100%;
+        }
+        .leftBcgSec6 {
+          height: 100vh;
+          width: 40rem;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          .shadowLayer {
+            width: 100%;
+            height: 40rem;
+            position: absolute;
+            bottom: 0;
+            z-index: 95;
+            background-image: linear-gradient(
+              to top,
+              #000000b9,
+              #000000a2,
+              transparent
+            );
+          }
+        }
+        .rightBcgSec6 {
+          width: 0rem;
+          transition: all 0.4s ease-in;
+          border: 3px solid black;
+          img {
+            width: 90rem;
+            object-fit: cover;
+          }
+          .shadowLayer {
+            width: 100%;
+            height: 70rem;
+            position: absolute;
+            bottom: 0;
+            z-index: 95;
+            background-image: linear-gradient(
+              to top,
+              #000000a2,
+              #000000a2,
+              transparent
+            );
+          }
+        }
+        .boxMission {
+          position: absolute;
+          width: 24rem;
+          margin-bottom: 1rem;
+          bottom: 2rem;
+          left: 3.125;
+          z-index: 97;
+          transition: all ease-in 0.5s;
+          padding-left: 1.7rem;
+
+          h4 {
+            font-size: 2rem;
+            color: white;
+            font-weight: 500;
+            margin-bottom: 0rem;
+          }
+          p {
+            font-size: 1.4rem;
+            color: white;
+            font-weight: 400;
+            line-height: 1.5rem;
+          }
+          .containerReadMore {
+            width: 12rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            margin-top: 1.25rem;
+            border-radius: 3.125rem;
+            border: none;
+            background-color: transparent;
+
+            .btnReadMore {
+              display: flex;
+              width: 12rem;
+              height: 4rem;
+              background-color: #dcad03;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              border-radius: 3.125rem;
+              transition: all 0.3s ease-in-out;
+              cursor: pointer;
+              &:hover {
+                width: 12rem;
+                height: 5rem;
+              }
+              .redmoreImg {
+                width: 3.5rem;
+                height: 3.5rem;
+                border-radius: 50%;
+                background-image: url(${waste});
+                background-size: cover;
+                background-position: 0;
+              }
+              p {
+                font-size: 1.2rem;
+                font-weight: 500;
+                margin-right: 0.938rem;
+                color: black;
+              }
+            }
+          }
+        }
+        .OverlayContainer {
+          height: 25rem;
+          width: 110rem;
+          position: absolute;
+          display: flex;
+          top: 10rem;
+          z-index: 98;
+          left: 50rem;
+          transition: all 0.3s ease-in;
+
+          .bigBox {
+            overflow: hidden;
+            position: relative;
+            width: 14rem;
+            height: 20rem;
+            margin: 0 1.9rem;
+            border-radius: 0.7rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
+              rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+            cursor: pointer;
+            h4 {
+              position: absolute;
+              color: white;
+              font-size: 1rem;
+              bottom: 1.4rem;
+              padding: 0 1.5rem;
+              z-index: 98;
+              font-weight: 400;
+            }
+
+            img {
+              width: 20rem;
+              border-radius: 0.7rem;
+            }
+            .shadowLayerBigBox {
+              width: 100%;
+              height: 10rem;
+              position: absolute;
+              bottom: 0;
+              z-index: 96;
+              background-image: linear-gradient(to top, #050505c2, transparent);
+              border-radius: 0.6rem;
+              cursor: pointer;
+            }
+          }
+          .smallBox {
+            position: relative;
+            width: 12rem;
+            height: 18rem;
+            border-radius: 0.7rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
+              rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+            overflow: hidden;
+            cursor: pointer;
+            h4 {
+              position: absolute;
+              color: white;
+              font-size: 1rem;
+              bottom: 1.875rem;
+              padding: 0 1.5rem;
+              z-index: 98;
+              font-weight: 400;
+              width: 100%;
+            }
+
+            img {
+              width: 18rem;
+              border-radius: 0.625rem;
+            }
+            .shadowLayerSmallBox {
+              width: 100%;
+              height: 9rem;
+              position: absolute;
+              bottom: 0;
+              z-index: 95;
+              border-radius: 0.5rem;
+              background-image: linear-gradient(to top, #000000a2, transparent);
+            }
+          }
+          .logSmallContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .logSmallImg {
+              width: 100%;
+              background-color: black;
+              height: 24rem;
+              object-fit: cover;
+            }
+          }
+        }
+
+        .sec6Btns {
+          width: 15rem;
+          height: 70px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          z-index: 100;
+          position: absolute;
+          z-index: 99;
+          bottom: 2rem;
+          left: 7rem;
+          padding: 0;
+          .ClickVolta {
+            width: 3.5rem;
+            height: 3.5rem;
+            background-color: black;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease-in;
+            cursor: pointer;
+
+            .iconX {
+              color: white;
+              font-size: 1.4rem;
+              font-weight: 500;
+              transition: all ease-in-out 0.3s;
+            }
+            &:hover > .iconX {
+              font-size: 1.5rem;
+              font-weight: 900;
+            }
+          }
+          .divbtn {
+            display: flex;
+            width: 9rem;
+            justify-content: space-between;
+            .sec6BtnLeft,
+            .sec6BtnRight {
+              width: 3.5rem;
+              height: 3.5rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: black;
+              color: white;
+              border-radius: 50%;
+              cursor: pointer;
+              &:hover {
+                background-color: #191818;
+                border: 0.125rem solid black;
+              }
+            }
+          }
+        }
+      }
+      .sec7 {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 1rem;
+        h3 {
+          font-size: 1.5rem;
+          font-weight: 500;
+          padding: 0;
+        }
+        p {
+          font-size: 1.1rem;
+          font-weight: 300;
+          padding: 0 0rem 0 0rem;
+        }
+        .btnSec {
+          width: 9rem;
+          height: 3rem;
+          background-color: black;
+          border-radius: 4rem;
+          border: 2px solid black;
+          font-size: 1rem;
+          font-weight: 500;
+          color: white;
+          font-weight: 300;
+          margin: 1rem 0rem 0 0rem;
+          transition: all ease 0.36s;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (min-device-width: 901px) and (max-device-width: 1400px) and (-webkit-min-device-pixel-ratio: 2) {
+    main {
+      .navbar {
+        display: flex;
+        align-items: center;
+        padding-top: 5rem;
+        .logo {
+          mix-blend-mode: null;
+          width: 5rem;
+          margin: 2rem 0rem 0rem 0rem;
+          cursor: pointer;
+        }
+      }
+      .sec1 {
+        width: 100%;
+        height: auto;
+        background-color: #fac892;
+        .text {
+          padding: 0.5rem;
+          h3 {
+            font-size: 2.6rem;
+            font-weight: 600;
+          }
+          p {
+            font-size: 2rem;
+          }
+        }
+      }
+      .IframeSection {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        padding: 25%;
+        background-color: #fac892;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .sec3 {
+        background-color: #fac892;
+        padding-top: 1rem;
+        h3 {
+          font-size: 2rem;
+          font-weight: 400;
+          margin-left: 2rem;
+          padding: 0.5rem 0;
+        }
+      }
+
+      .sec4 {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 1rem;
+        h3 {
+          font-size: 2.6rem;
+          font-weight: 500;
+          padding: 0;
+        }
+        p {
+          font-size: 1.6rem;
+          font-weight: 300;
+          padding: 0rem;
+        }
+        .btnSec {
+          width: 12rem;
+          height: 5rem;
+          background-color: black;
+          border-radius: 4rem;
+          border: 2px solid black;
+          font-size: 1.4rem;
+          font-weight: 500;
+          color: white;
+          font-weight: 300;
+          margin: 1rem 0rem 0 0rem;
+          transition: all ease 0.36s;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .sec5 {
+        width: 100vw;
+        margin-bottom: 0rem;
+        img {
+          width: 100%;
+        }
+      }
+      .sec6 {
+        position: relative;
+        height: 90vh;
+        width: 100vw;
+        overflow: hidden;
+        margin-bottom: 0rem;
+        .sec6Container {
+          display: grid;
+          grid-template-columns: 99% 1%;
+          height: 100%;
+        }
+        .leftBcgSec6 {
+          height: 100vh;
+          width: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          .shadowLayer {
+            width: 100%;
+            height: 40rem;
+            position: absolute;
+            bottom: 0;
+            z-index: 95;
+            background-image: linear-gradient(
+              to top,
+              #000000b9,
+              #000000a2,
+              transparent
+            );
+          }
+        }
+        .rightBcgSec6 {
+          height: 100vh;
+          width: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          .shadowLayer {
+            width: 100%;
+            height: 70rem;
+            position: absolute;
+            bottom: 0;
+            z-index: 95;
+            background-image: linear-gradient(
+              to top,
+              #000000a2,
+              #000000a2,
+              transparent
+            );
+          }
+        }
+        .boxMission {
+          position: absolute;
+          width: 30rem;
+          margin-bottom: 1rem;
+          bottom: 2rem;
+          left: 3.3;
+          z-index: 97;
+          transition: all ease-in 0.5s;
+          padding-left: 1.7rem;
+
+          h4 {
+            font-size: 3rem;
+            color: white;
+            font-weight: 500;
+            margin-bottom: 0rem;
+          }
+          p {
+            font-size: 1.8rem;
+            color: white;
+            font-weight: 400;
+            line-height: 2.5rem;
+          }
+          .containerReadMore {
+            width: 15rem;
+            height: 6rem;
+            display: flex;
+            align-items: center;
+            margin-top: 1.25rem;
+            border-radius: 3.125rem;
+            border: none;
+            background-color: transparent;
+
+            .btnReadMore {
+              display: flex;
+              width: 15rem;
+              height: 5.5rem;
+              background-color: #dcad03;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              border-radius: 3.125rem;
+              transition: all 0.3s ease-in-out;
+              cursor: pointer;
+              &:hover {
+                width: 12rem;
+                height: 4.5rem;
+              }
+              .redmoreImg {
+                width: 5rem;
+                height: 5rem;
+                border-radius: 50%;
+                background-image: url(${waste});
+                background-size: cover;
+                background-position: 0;
+              }
+              p {
+                font-size: 1.6rem;
+                font-weight: 500;
+                margin-right: 0.938rem;
+                color: black;
+              }
+            }
+          }
+        }
+        .OverlayContainer {
+          height: 25rem;
+          width: 110rem;
+          position: absolute;
+          display: flex;
+          top: 10rem;
+          z-index: 98;
+          left: 50rem;
+          transition: all 0.3s ease-in;
+
+          .bigBox {
+            overflow: hidden;
+            position: relative;
+            width: 17rem;
+            height: 23rem;
+            margin: 0 1.9rem;
+            border-radius: 0.7rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
+              rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+            cursor: pointer;
+            h4 {
+              position: absolute;
+              color: white;
+              font-size: 1.3rem;
+              bottom: 1.4rem;
+              padding: 0 1.5rem;
+              z-index: 98;
+              font-weight: 400;
+            }
+
+            img {
+              width: 20rem;
+              border-radius: 0.7rem;
+            }
+            .shadowLayerBigBox {
+              width: 100%;
+              height: 10rem;
+              position: absolute;
+              bottom: 0;
+              z-index: 96;
+              background-image: linear-gradient(to top, #050505c2, transparent);
+              border-radius: 0.6rem;
+              cursor: pointer;
+            }
+          }
+          .smallBox {
+            position: relative;
+            width: 16rem;
+            height: 21rem;
+            border-radius: 0.7rem;
+            box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
+              rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+            overflow: hidden;
+            cursor: pointer;
+            h4 {
+              position: absolute;
+              color: white;
+              font-size: 1.3rem;
+              bottom: 1.875rem;
+              padding: 0 1.5rem;
+              z-index: 98;
+              font-weight: 400;
+              width: 100%;
+            }
+
+            img {
+              width: 18rem;
+              border-radius: 0.625rem;
+            }
+            .shadowLayerSmallBox {
+              width: 100%;
+              height: 9rem;
+              position: absolute;
+              bottom: 0;
+              z-index: 95;
+              border-radius: 0.5rem;
+              background-image: linear-gradient(to top, #000000a2, transparent);
+            }
+          }
+        }
+
+        .sec6Btns {
+          width: 18rem;
+          height: 75px;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          z-index: 100;
+          position: absolute;
+          z-index: 99;
+          bottom: 2rem;
+          left: 7rem;
+          padding: 0;
+          .ClickVolta {
+            width: 4.5rem;
+            height: 4.5rem;
+            background-color: black;
+            border-radius: 50%;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease-in;
+            cursor: pointer;
+
+            .iconX {
+              color: white;
+              font-size: 1.9rem;
+              font-weight: 500;
+              transition: all ease-in-out 0.3s;
+            }
+            &:hover > .iconX {
+              font-size: 2rem;
+              font-weight: 900;
+            }
+          }
+          .divbtn {
+            display: flex;
+            width: 10rem;
+            justify-content: space-between;
+            .sec6BtnLeft,
+            .sec6BtnRight {
+              width: 4.5rem;
+              height: 4.5rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: black;
+              color: white;
+              border-radius: 50%;
+              cursor: pointer;
+              &:hover {
+                background-color: #191818;
+                border: 0.125rem solid black;
+              }
+            }
+          }
+        }
+      }
+      .sec7 {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem 1rem;
+        h3 {
+          font-size: 2.2rem;
+          font-weight: 500;
+          padding: 0;
+        }
+        p {
+          font-size: 1.4rem;
+          font-weight: 400;
           padding: 0 0rem 0 0rem;
         }
         .btnSec {

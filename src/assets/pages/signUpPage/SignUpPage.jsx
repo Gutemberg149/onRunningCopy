@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import video1 from "./003.mp4";
+
 import Navbar from "../../componentes/navbar/Navbar";
 import { Link } from "react-router-dom";
 import logo from "../../images/logoImg/logo.jpeg";
@@ -10,7 +10,6 @@ import image3 from "../../images/signUpPage/image3.avif";
 import image4 from "../../images/signUpPage/image4.avif";
 import image5 from "../../images/signUpPage/image5.avif";
 import Footer from "../../componentes/footer/Footer";
-import AccordionQuestion from "./AccordionQuestion";
 
 const SignUpPage = () => {
   //to open the sign up containe in the menu.
@@ -60,13 +59,15 @@ const SignUpPage = () => {
             </button>
           </div>
         </div>
-        {videoSize ? (
-          <video src={video1} width="190%" loop muted autoPlay />
-        ) : (
-          <video src={video1} width="100%" loop muted autoPlay />
-        )}
 
-        <div className="overlay"></div>
+        <div className="IframeSection">
+          <iframe
+            src={`https://www.youtube.com/embed/Y2yktx0pqoE`}
+            frameBorder={0}
+            allowFullScreen
+            allow="autoplay"
+          />
+        </div>
       </section>
 
       <section className="sec2">
@@ -117,13 +118,6 @@ const SignUpPage = () => {
         </div>
       </section>
 
-      <section className="sec3">
-        <img src={image5} alt="" />
-        <div className="textBox">
-          <p>Exclusive benefits that are miles ahead</p>
-        </div>
-        <div className="overlay"></div>
-      </section>
       <Footer />
     </Wrapper>
   );
@@ -147,9 +141,19 @@ const Wrapper = styled.div`
         cursor: pointer;
       }
     }
+    .IframeSection {
+      overflow: hidden;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
     .containerText {
       position: absolute;
-      bottom: 10rem;
+      bottom: 22%;
       left: 5rem;
       height: 20rem;
       z-index: 99;
@@ -183,19 +187,6 @@ const Wrapper = styled.div`
           }
         }
       }
-    }
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        360deg,
-        rgba(0, 0, 0, 0.797) 0%,
-        rgba(0, 0, 0, 0.05) 50%
-      );
-      z-index: 94;
     }
   }
   .sec2 {
@@ -237,34 +228,6 @@ const Wrapper = styled.div`
       }
     }
   }
-  .sec3 {
-    position: relative;
-    margin-bottom: 0rem;
-    img {
-      width: 100%;
-    }
-    .textBox {
-      position: absolute;
-      width: 100%;
-      bottom: 4rem;
-      color: white;
-      font-size: 4rem;
-      left: 4rem;
-      z-index: 92;
-    }
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 99.5%;
-      background: linear-gradient(
-        360deg,
-        rgba(0, 0, 0, 0.797) 0%,
-        rgba(0, 0, 0, 0.05) 40%
-      );
-    }
-  }
 
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     .sec1 {
@@ -276,6 +239,7 @@ const Wrapper = styled.div`
         position: absolute;
         padding: 0rem;
         z-index: 100;
+        top: -3%;
         .logo {
           width: 2.5rem;
           margin: 0;
@@ -287,10 +251,20 @@ const Wrapper = styled.div`
           cursor: pointer;
         }
       }
+      .IframeSection {
+        overflow: hidden;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
 
       .containerText {
         position: absolute;
-        bottom: 1rem;
+        bottom: 3rem;
         left: 1rem;
         height: 30%;
         width: 90%;
@@ -308,13 +282,13 @@ const Wrapper = styled.div`
           color: white;
         }
         .btns {
-          width: 25%;
+          width: 6rem;
           display: flex;
           justify-content: space-between;
           margin-top: 0.5rem;
           button {
             width: 100%;
-            height: 2rem;
+            height: 2.5rem;
             background-color: white;
             border-radius: 3rem;
             border: none;
@@ -383,6 +357,269 @@ const Wrapper = styled.div`
         }
       }
     }
+  }
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
+    .sec1 {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      overflow: hidden;
+      nav {
+        position: absolute;
+        padding: 0rem;
+        z-index: 100;
+        top: -8%;
+        left: 1rem;
+        .logo {
+          width: 3rem;
+          margin: 0;
+          margin-top: 9rem;
+          margin-left: 0;
+          z-index: 100;
+          mix-blend-mode: exclusion;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+      .IframeSection {
+        overflow: hidden;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .containerText {
+        position: absolute;
+        bottom: 5rem;
+        left: 1rem;
+        height: 30%;
+        width: 80%;
+        z-index: 99;
+
+        h4 {
+          font-size: 1.4rem;
+          color: white;
+          margin-bottom: 0.1rem;
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 1.1rem;
+          font-weight: 500;
+          color: white;
+        }
+        .btns {
+          width: 6.5rem;
+          display: flex;
+          justify-content: space-between;
+          margin-top: 0.5rem;
+          button {
+            width: 100%;
+            height: 3rem;
+            background-color: white;
+            border-radius: 3rem;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            &:hover {
+              background-color: #d0cece;
+            }
+          }
+        }
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          360deg,
+          rgba(0, 0, 0, 0.797) 0%,
+          rgba(0, 0, 0, 0.05) 50%
+        );
+        z-index: 94;
+      }
+    }
+    .sec2 {
+      margin-top: 1rem;
+      padding: 0 1rem;
+      .containerinfoSec2 {
+        display: flex;
+        padding: 0.2rem;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        img {
+          max-width: 170px;
+          max-height: 160px;
+          width: auto;
+          height: auto;
+        }
+        .textBox {
+          padding: 0 0.4rem;
+
+          h4 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #363535;
+            margin-bottom: 0.4rem;
+          }
+          p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: #363535;
+            margin-bottom: 2rem;
+          }
+          .p {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #363535;
+            margin-bottom: 2rem;
+            span {
+              font-size: 1rem;
+              font-weight: 600;
+              color: #363535;
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (min-device-width: 901px) and (max-device-width: 1430px) and (-webkit-min-device-pixel-ratio: 2) {
+    .sec1 {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      overflow: hidden;
+      nav {
+        position: absolute;
+        padding: 0rem;
+        z-index: 100;
+        top: -12%;
+        left: 2rem;
+        .logo {
+          width: 4rem;
+          margin: 0;
+          margin-top: 9rem;
+          margin-left: 2rem;
+          z-index: 100;
+          mix-blend-mode: exclusion;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      }
+      .IframeSection {
+        overflow: hidden;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .containerText {
+        position: absolute;
+        bottom: 1rem;
+        left: 2rem;
+        height: 38%;
+        width: 90%;
+        z-index: 99;
+
+        h4 {
+          font-size: 1.9rem;
+          color: white;
+          margin-bottom: 0.1rem;
+          font-weight: 600;
+        }
+
+        p {
+          font-size: 1.4rem;
+          color: white;
+        }
+        .btns {
+          width: 7.5rem;
+          display: flex;
+          justify-content: space-between;
+          margin-top: 0.5rem;
+          button {
+            width: 100%;
+            height: 3.5rem;
+            background-color: white;
+            border-radius: 3rem;
+            border: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+            &:hover {
+              background-color: #d0cece;
+            }
+          }
+        }
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          360deg,
+          rgba(0, 0, 0, 0.797) 0%,
+          rgba(0, 0, 0, 0.05) 50%
+        );
+        z-index: 94;
+      }
+    }
+    .sec2 {
+      margin-top: 2rem;
+      padding: 0 1rem;
+      .containerinfoSec2 {
+        display: flex;
+        padding: 0.2rem;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        img {
+          max-width: 400px;
+          height: 160px;
+          width: auto;
+          height: auto;
+        }
+        .textBox {
+          padding: 2rem 0.6rem;
+
+          h4 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #363535;
+            margin-bottom: 0.4rem;
+          }
+          p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: #363535;
+            margin-bottom: 2rem;
+          }
+          .p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: #363535;
+            margin-bottom: 2rem;
+            span {
+              font-size: 1.2rem;
+              font-weight: 600;
+              color: #363535;
+              text-decoration: underline;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
 
     .sec3 {
       position: relative;
@@ -395,7 +632,7 @@ const Wrapper = styled.div`
         width: 100%;
         bottom: 1rem;
         color: white;
-        font-size: 1rem;
+        font-size: 1.5rem;
         left: 1rem;
         z-index: 92;
       }

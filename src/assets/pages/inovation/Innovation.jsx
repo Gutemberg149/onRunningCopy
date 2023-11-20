@@ -131,8 +131,6 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    /* padding: 5rem 0; */
-    /* margin-top: 2rem; */
     .containerSecText {
       width: 100%;
       padding: 0 4rem;
@@ -243,6 +241,155 @@ const Wrapper = styled.div`
         }
         p {
           font-size: 1.5rem;
+        }
+      }
+    }
+    .IframeSection {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      padding: 25%;
+      background-color: #fac892;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
+    nav {
+      padding: 0 1rem;
+      .logo {
+        width: 4rem;
+        margin: 0;
+        margin-top: 7rem;
+      }
+    }
+    .secImage {
+      img {
+        width: 100%;
+      }
+    }
+    .sectionText {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .containerSecText {
+        width: 100%;
+        padding: 0 1rem;
+        .containerText_h4 {
+          color: #e6e6e6;
+          font-size: 2rem;
+          margin-top: 1.5rem;
+          margin-bottom: 0rem;
+        }
+        .pSecText {
+          color: #e6e6e6;
+          font-size: 1.8rem;
+          margin-bottom: 1rem;
+        }
+        .pSecText2 {
+          color: #e6e6e6;
+          font-size: 1.8rem;
+          margin: 0rem 0rem;
+          font-weight: 600;
+          line-height: 2.5rem;
+        }
+      }
+    }
+    .sectionTech {
+      background-color: white;
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .innerCoudeTech {
+        width: 90%;
+        h5 {
+          font-size: 2.2rem;
+        }
+        p {
+          font-size: 1.8rem;
+        }
+      }
+    }
+    .IframeSection {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      padding: 25%;
+      background-color: #fac892;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  @media only screen and (min-device-width: 901px) and (max-device-width: 1400px) and (-webkit-min-device-pixel-ratio: 2) {
+    /* padding: 1rem; */
+    nav {
+      padding: 0 1rem;
+      .logo {
+        width: 5rem;
+        margin: 0;
+        margin-top: 7rem;
+      }
+    }
+    .secImage {
+      img {
+        width: 100%;
+      }
+    }
+    .sectionText {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      .containerSecText {
+        width: 100%;
+        padding: 0 1rem;
+        .containerText_h4 {
+          color: #e6e6e6;
+          font-size: 2.7rem;
+          margin-top: 1.5rem;
+          margin-bottom: 0rem;
+        }
+        .pSecText {
+          color: #e6e6e6;
+          font-size: 1.9rem;
+          margin-bottom: 1rem;
+        }
+        .pSecText2 {
+          color: #e6e6e6;
+          font-size: 1.9rem;
+          margin: 0rem 0rem;
+          font-weight: 600;
+          line-height: 2.5rem;
+        }
+      }
+    }
+    .sectionTech {
+      background-color: white;
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .innerCoudeTech {
+        width: 90%;
+        h5 {
+          font-size: 3rem;
+        }
+        p {
+          font-size: 2rem;
         }
       }
     }

@@ -181,5 +181,145 @@ const Wrapper = styled.main`
       }
     }
   }
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
+    width: 100vw;
+    .section1 {
+      padding: 0 4rem;
+      height: 6rem;
+      width: 100vw;
+
+      .logo {
+        display: none;
+      }
+    }
+    .section2 {
+      width: 100vw;
+      padding: 1.5rem 1rem;
+
+      .homeLink {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        color: black;
+      }
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+    .section03 {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0rem;
+      width: 100vw;
+      margin-bottom: 1.5rem;
+
+      .containerImg {
+        position: relative;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10rem;
+        height: 18rem;
+        margin-top: 0.5rem;
+
+        img {
+          width: 10rem;
+          height: 18rem;
+          object-fit: cover;
+        }
+        .message {
+          position: absolute;
+          color: white;
+          font-size: 0.8rem;
+          bottom: 1rem;
+          z-index: 98;
+        }
+        .shadow {
+          position: absolute;
+          width: 100%;
+          height: 7rem;
+          bottom: 0;
+          background-image: linear-gradient(to top, #0000008d, transparent);
+          z-index: 97;
+        }
+      }
+    }
+  }
+  @media only screen and (min-device-width: 901px) and (max-device-width: 1400px) and (-webkit-min-device-pixel-ratio: 2) {
+    .section1 {
+      padding: 0 6rem;
+      height: 6rem;
+      width: 100vw;
+
+      .logo {
+        display: none;
+      }
+    }
+    .section2 {
+      width: 100vw;
+      padding: 1.5rem 1.5rem;
+
+      .homeLink {
+        font-size: 1.3rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        color: black;
+      }
+      h1 {
+        font-size: 1.8rem;
+        font-weight: 500;
+      }
+      p {
+        font-size: 1.2rem;
+      }
+    }
+    .section03 {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0rem;
+      width: 100vw;
+      margin-bottom: 1.5rem;
+
+      .containerImg {
+        position: relative;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30vw;
+        height: 28rem;
+        margin-top: 0.5rem;
+
+        img {
+          width: 100%;
+          height: 28rem;
+          object-fit: cover;
+        }
+        .message {
+          position: absolute;
+          color: white;
+          font-size: 1.5rem;
+          font-weight: 100;
+          bottom: 1rem;
+          z-index: 98;
+        }
+        .shadow {
+          position: absolute;
+          width: 100%;
+          height: 7rem;
+          bottom: 0;
+          background-image: linear-gradient(to top, #0000008d, transparent);
+          z-index: 97;
+        }
+      }
+    }
+  }
 `;
 export default ShoesPageWoman;

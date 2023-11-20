@@ -12,8 +12,7 @@ import { listProduct } from "../../utils/APIArray";
 import { Link, useParams } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../../contexts/CartToggleContex";
-import { CartContextSmallScreen } from "../../contexts/CartToggleContexSmallScreen";
-import CartShopSmallScreen from "./shopHere/ShopHereSmallScreen";
+
 import { useRef } from "react";
 
 const SingleProduct = () => {
@@ -32,6 +31,13 @@ const SingleProduct = () => {
         setMoveCarrosel(moveCarroseel - 20);
         console.log(moveCarroseel);
       }
+    } else if (screenSize.current <= 900) {
+      if (moveCarroseel < -80) {
+        setMoveCarrosel(0);
+      } else {
+        setMoveCarrosel(moveCarroseel - 25);
+        console.log(moveCarroseel);
+      }
     } else {
       if (moveCarroseel < -120) {
         setMoveCarrosel(0);
@@ -43,10 +49,18 @@ const SingleProduct = () => {
   };
 
   const moveLeft = () => {
-    if (moveCarroseel > -60) {
-      return;
-    } else {
-      setMoveCarrosel(moveCarroseel + 60);
+    if (screenSize.current <= 600) {
+      if (moveCarroseel >= 0) {
+        return;
+      } else {
+        setMoveCarrosel(moveCarroseel + 20);
+      }
+    } else if (screenSize.current <= 900) {
+      if (moveCarroseel >= 0) {
+        return;
+      } else {
+        setMoveCarrosel(moveCarroseel + 25);
+      }
     }
 
     console.log(moveCarroseel);
@@ -56,9 +70,6 @@ const SingleProduct = () => {
 
   //context to move cart shop in and out
   const { showCart } = useContext(CartContext);
-
-  //context to move cart shop in and out small screen
-  const { ShowCartSmallScreen } = useContext(CartContextSmallScreen);
 
   return (
     <Wrapper>
@@ -217,15 +228,8 @@ const SingleProduct = () => {
         <QuickFacts />
       </section>
 
-      <div className="cartshop" style={{ right: `${showCart}` }}>
+      <div className="cartshop" style={{ right: `${showCart}px` }}>
         <CartShop />
-      </div>
-
-      <div
-        className="cartShopSmallScreen"
-        style={{ right: `${ShowCartSmallScreen}` }}
-      >
-        <CartShopSmallScreen />
       </div>
 
       <Footer />
@@ -374,13 +378,11 @@ const Wrapper = styled.div`
     top: 11rem;
     transition: all ease-in 0.4s;
   }
-  .cartShopSmallScreen {
-    display: none;
-  }
+
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     .navbar {
       .logo {
-        width: 4rem;
+        width: 3rem;
         margin: 7rem 1rem 1rem 1rem;
         border-radius: 50%;
         cursor: pointer;
@@ -454,15 +456,172 @@ const Wrapper = styled.div`
       height: 20rem;
     }
     .cartshop {
-      display: none;
-    }
-    .cartShopSmallScreen {
-      width: 90%;
-      display: block;
       position: absolute;
-      top: 6rem;
+      top: 11rem;
       transition: all ease-in 0.4s;
     }
+  }
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
+    .navbar {
+      .logo {
+        width: 4.5rem;
+        margin: 7rem 1rem 1rem 1rem;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+    .section1 {
+      top: 0;
+      .carrossel {
+        position: relative;
+        .innerCarrossel {
+          display: flex;
+          transition: all 0.6s ease;
+          .prodContainer {
+            width: 24rem;
+            height: 24rem;
+            background-color: #f6f4f3;
+            margin: 0.4rem;
+            img {
+              width: 24rem;
+            }
+          }
+        }
+        .btnsCarroessel {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 17rem;
+          height: 5rem;
+          position: absolute;
+          bottom: -5rem;
+          left: 3rem;
+
+          .btnCarrossel {
+            background-color: white;
+            width: 3.5rem;
+            height: 3.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.6rem;
+            border-radius: 50%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            cursor: pointer;
+            &:hover {
+              background-color: #fafafa;
+              font-size: 2.1rem;
+            }
+          }
+          .dots {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 6rem;
+            height: 3rem;
+
+            .dot {
+              width: 1rem;
+              height: 1rem;
+              border-radius: 50%;
+              border: 1px solid gray;
+            }
+          }
+        }
+      }
+    }
+    .section2 {
+      display: none;
+    }
+    .section3 {
+      margin: 5rem 0 2.5rem 0;
+      height: 20rem;
+    }
+    /* .cartshop {
+      display: none;
+    }
+
+  }
+  @media only screen and (min-device-width: 901px) and (max-device-width: 1300px) and (-webkit-min-device-pixel-ratio: 2) {
+    .navbar {
+      .logo {
+        width: 5.5rem;
+        margin: 7rem 1rem 1rem 1rem;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+    .section1 {
+      top: 0;
+      .carrossel {
+        position: relative;
+        .innerCarrossel {
+          display: flex;
+          transition: all 0.6s ease;
+          .prodContainer {
+            width: 28rem;
+            height: 28rem;
+            background-color: #f6f4f3;
+            margin: 0.4rem;
+            img {
+              width: 28rem;
+            }
+          }
+        }
+        .btnsCarroessel {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 17rem;
+          height: 5rem;
+          position: absolute;
+          bottom: -5rem;
+          left: 3rem;
+
+          .btnCarrossel {
+            background-color: white;
+            width: 3.5rem;
+            height: 3.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.6rem;
+            border-radius: 50%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            cursor: pointer;
+            &:hover {
+              background-color: #fafafa;
+              font-size: 2.1rem;
+            }
+          }
+          .dots {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 6rem;
+            height: 3rem;
+
+            .dot {
+              width: 1rem;
+              height: 1rem;
+              border-radius: 50%;
+              border: 1px solid gray;
+            }
+          }
+        }
+      }
+    }
+    .section2 {
+      display: none;
+    }
+    .section3 {
+      margin: 5rem 0 5.5rem 0;
+      height: 20rem;
+    }
+    /* .cartshop {
+      display: none;
+    }
+   */
   }
 `;
 export default SingleProduct;

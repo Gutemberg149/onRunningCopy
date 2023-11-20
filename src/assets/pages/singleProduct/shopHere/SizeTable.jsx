@@ -5,8 +5,6 @@ import { useContext, useRef } from "react";
 import { SizeChosenContext } from "../../../contexts/SizeChosenContex";
 import { listProduct } from "../../../utils/APIArray";
 import { useParams } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
 
 const SizeTable = () => {
   const { id } = useParams();
@@ -84,23 +82,24 @@ const Wrapper = styled.div`
   }
   @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     article {
-      width: 95%;
+      width: 100%;
       max-height: 50rem;
+      display: flex;
       flex-wrap: wrap;
-      display: flex;
-      display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: start;
+
       .divNumber {
-        width: 4rem;
-        height: 2.5rem;
+        width: 20vw;
+        height: 8vh;
         margin: 0.2rem;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: #323131;
+        color: #565555;
         border-radius: 0.2rem;
         box-shadow: rgba(149, 157, 165, 0.204) 0px 8px 24px;
+        font-size: 1.2em;
         cursor: pointer;
         &:hover {
           border: 1px solid #f78e8e;

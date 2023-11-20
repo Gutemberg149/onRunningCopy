@@ -161,5 +161,77 @@ const Wrapper = styled.div`
       }
     }
   }
+
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    header {
+      h3 {
+        font-size: 2.2rem;
+        font-weight: 500;
+        color: #3a3939;
+        margin-top: 2rem;
+      }
+      p {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #3a3939;
+        margin-top: 0.51rem;
+      }
+      a {
+        text-decoration: underline;
+      }
+    }
+    main {
+      height: 55%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      font-size h5 {
+        font-size: 1.7rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+      }
+      .pTag {
+        font-size: 1.5rem;
+        font-weight: 400;
+        color: #969595;
+        letter-spacing: 0.2rem;
+      }
+      .pData {
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: #242323;
+        margin-bottom: 3rem;
+      }
+    }
+    .btnsContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .btnBottom {
+        width: 45vw;
+        height: 3rem;
+        background-color: white;
+        border: none;
+        border: 2px solid black;
+        margin: 0 0.5rem;
+        border-radius: 2rem;
+        font-size: 1.4rem;
+        cursor: pointer;
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+  }
+
+  // @media only screen and (min-device-width: 901px) and (max-device-width: 1500px) and (-webkit-min-device-pixel-ratio: 2) {}
 `;
 export default NavBarAccount;

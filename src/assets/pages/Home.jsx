@@ -91,6 +91,14 @@ const Home = () => {
       } else {
         return;
       }
+    } else if (screenSize.current <= 900) {
+      if (moveOverlayContainer > -1800) {
+        setMoveOverlayContainer(moveOverlayContainer - 230);
+        console.log("---");
+        console.log(moveOverlayContainer);
+      } else {
+        return;
+      }
     } else {
       if (moveOverlayContainer > -1500) {
         setMoveOverlayContainer(moveOverlayContainer - 700);
@@ -106,6 +114,12 @@ const Home = () => {
         setMoveOverlayContainer(moveOverlayContainer + 260);
       } else {
         return;
+      }
+    } else if (screenSize.current <= 900) {
+      if (moveOverlayContainer < -600) {
+        setMoveOverlayContainer(moveOverlayContainer + 230);
+        console.log("+++");
+        console.log(moveOverlayContainer);
       }
     } else {
       if (moveOverlayContainer < 0) {
@@ -148,7 +162,7 @@ const Home = () => {
         </nav>
 
         <div className="infocontainer">
-          <h1>XXX Built to go the distance</h1>
+          <h1>Built to go the distance</h1>
           <h3>
             Fan favorites across footwear and apparel.
             <br /> See how they run.
@@ -1572,7 +1586,1199 @@ const Wrapper = styled.main`
       }
     }
   }
-  /* @media only screen and (min-width: 561px) and (max-width: 1500px) {
-  } */
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
+    .section1 {
+      background: url(${backpic2}) fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100vw;
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(
+          0deg,
+          black,
+          #0000009f,
+          #00000039,
+          #00000016
+        );
+      }
+      .logo {
+        display: none;
+      }
+      nav {
+        padding: 0;
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+      }
+      .infocontainer {
+        position: absolute;
+        bottom: 3rem;
+        left: 1rem;
+        width: 95%;
+        color: white;
+        z-index: 1;
+
+        h1 {
+          font-size: 3rem;
+          font-weight: 500;
+          margin-bottom: 1.563rem;
+        }
+        h3 {
+          font-size: 1.4rem;
+          font-weight: 500;
+          margin-bottom: 1.563rem;
+        }
+        .btnsContainer {
+          button {
+            width: 9rem;
+            height: 4rem;
+            border-radius: 2.5rem;
+            border: none;
+            background-color: white;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-right: 1.25rem;
+            transition: all 0.2s ease-in-out;
+            color: black;
+            cursor: pointer;
+            &:hover {
+              background-color: #d0cfcf;
+            }
+          }
+        }
+      }
+    }
+
+    .section2 {
+      height: calc(40% - 40vh);
+      width: 100vw;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+
+      cursor: pointer;
+
+      .section2Title {
+        width: 86%;
+
+        h4 {
+          font-size: 2.5rem;
+          font-weight: 500;
+        }
+      }
+
+      .pagesLinkContainer {
+        height: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        .linkBox {
+          position: relative;
+          width: 30vw;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          margin: 0.3rem;
+          border-radius: 0.938rem;
+
+          img {
+            object-fit: contain;
+            width: 30vw;
+            transition: all 0.3s ease-in-out;
+            border-radius: 0.938rem;
+            &:hover {
+              width: 40rem;
+            }
+          }
+          .bottomDiv {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            padding: 0 0.5rem;
+            bottom: 0.5rem;
+            z-index: 98;
+            p {
+              font-size: 1rem;
+              font-weight: 400;
+              color: white;
+              cursor: pointer;
+              &:hover {
+                color: gray;
+              }
+            }
+            button {
+              width: 1.5rem;
+              height: 1.5rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              background-color: transparent;
+              border: 0.12rem solid white;
+              color: white;
+              font-size: 1.4rem;
+              cursor: pointer;
+              &:hover {
+                background-color: white;
+                color: gray;
+              }
+            }
+          }
+          .shadow {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            height: 15.625rem;
+            background-image: linear-gradient(to top, #000000a2, transparent);
+            z-index: 90;
+          }
+        }
+      }
+    }
+
+    .section3 {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 20rem;
+      margin-top: 2rem;
+
+      .cards {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 95%;
+        height: 100vh;
+        position: relative;
+        .transversal {
+          display: none;
+        }
+        .cardsList {
+          height: auto;
+          width: auto;
+          margin-left: 0rem;
+
+          p {
+            width: fit-content;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #323131;
+            margin-bottom: 1rem;
+            margin-left: 0.25rem;
+            position: relative;
+            cursor: pointer;
+
+            &:after {
+              content: "";
+              position: absolute;
+              width: 105%;
+              height: 0.25rem;
+              background-color: #323131;
+              bottom: 0;
+              transform-origin: bottom left;
+              transform: scaleX(0);
+              left: 0;
+              transition: all 0.3s ease-in-out;
+            }
+            &:hover::after {
+              transform: scaleX(1);
+            }
+          }
+        }
+        .cardsContainer {
+          position: relative;
+          width: 16rem;
+          height: 19rem;
+          margin-right: 0rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: 4rem;
+          .cardImg {
+            top: 0;
+            position: absolute;
+            width: 12.5rem;
+            border-radius: 2.5rem;
+            cursor: pointer;
+          }
+
+          .cardImg1 {
+            transform: rotate(3deg);
+          }
+          .cardImg2 {
+            transform: rotate(5.5deg);
+          }
+          .cardImg3 {
+            transform: rotate(7.5deg);
+          }
+          .cardImg4 {
+            transform: rotate(9.5deg);
+          }
+          .cardImg5 {
+            transform: rotate(11.5deg);
+          }
+        }
+      }
+    }
+    .section4 {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100vw;
+      height: auto;
+      overflow: hidden;
+      .containerSec4 {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+        .boxContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: null;
+          overflow: hidden;
+          width: 20vw;
+          height: 20rem;
+          border-radius: 1.5rem;
+          margin: 0.4rem;
+          cursor: pointer;
+
+          h4 {
+            text-align: center;
+            position: absolute;
+            color: white;
+            bottom: 3rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            left: 0;
+            z-index: 99;
+            width: 100%;
+          }
+          .bttnShop {
+            position: absolute;
+            width: 5rem;
+            height: 1.8rem;
+            background-color: white;
+            border: none;
+            border-radius: 2.5rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #3e3d3d;
+            bottom: 1rem;
+            left: 50%;
+            margin-left: -2.5rem;
+            z-index: 99;
+
+            cursor: pointer;
+            &:hover {
+              background-color: #d0cfcf;
+            }
+          }
+        }
+
+        .sec4Backgroundimg1 {
+          background-image: url(${cloudultra2});
+          background-position: center;
+          background-size: cover;
+        }
+        .sec4Backgroundimg2 {
+          background-image: url(${apparelSec4});
+          background-position: center;
+          background-size: cover;
+        }
+        .sec4Backgroundimg3 {
+          background-image: url(${shorts});
+          background-position: center;
+          background-size: cover;
+        }
+        .sec4Backgroundimg4 {
+          background-image: url(${centerCourt});
+          background-position: center;
+          background-size: cover;
+        }
+        .shadowSec4 {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 18.75rem;
+          background-image: linear-gradient(to top, #000000a2, transparent);
+          z-index: 98;
+        }
+      }
+    }
+    .section6 {
+      position: relative;
+      height: 85vh;
+      width: 100vw;
+      overflow: hidden;
+
+      .sec6Container {
+        display: grid;
+        grid-template-columns: 99% 1%;
+        height: 100%;
+
+        .leftBcgSec6 {
+          height: 100vh;
+          width: 40rem;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          .shadowLayer {
+            width: 100%;
+            height: 40rem;
+            position: absolute;
+            bottom: 0;
+            z-index: 95;
+            background-image: linear-gradient(
+              to top,
+              #000000b9,
+              #000000a2,
+              transparent
+            );
+          }
+        }
+        .rightBcgSec6 {
+          width: 0rem;
+          transition: all 0.4s ease-in;
+          border: 3px solid black;
+          img {
+            width: 90rem;
+            object-fit: cover;
+          }
+        }
+        .boxMission {
+          position: absolute;
+          width: 22rem;
+          margin-bottom: 1rem;
+          bottom: 2rem;
+          left: 3.125;
+          z-index: 97;
+          transition: all ease-in 0.5s;
+          padding-left: 1.7rem;
+          h4 {
+            font-size: 2.2rem;
+            color: white;
+            font-weight: 500;
+            margin-bottom: 0rem;
+          }
+          p {
+            font-size: 1.5rem;
+            color: white;
+            font-weight: 400;
+            line-height: 1.5rem;
+          }
+          .containerReadMore {
+            width: 12rem;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            margin-top: 1.25rem;
+            border-radius: 3.125rem;
+            border: none;
+            background-color: transparent;
+
+            .btnReadMore {
+              display: flex;
+              width: 12rem;
+              height: 4.5rem;
+              background-color: #dcad03;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              border-radius: 3.125rem;
+              transition: all 0.3s ease-in-out;
+              cursor: pointer;
+              &:hover {
+                width: 12rem;
+                height: 4.5rem;
+              }
+              .redmoreImg {
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                background-image: url(${tennis});
+                background-size: cover;
+                background-position: 0;
+              }
+              p {
+                font-size: 1.3rem;
+                font-weight: 500;
+                margin-right: 0.938rem;
+                color: black;
+              }
+            }
+          }
+        }
+      }
+      .OverlayContainer {
+        height: 25rem;
+        width: 110rem;
+        position: absolute;
+        display: flex;
+        top: 10rem;
+        z-index: 98;
+        left: 50rem;
+        transition: all 0.3s ease-in;
+
+        .bigBox {
+          overflow: hidden;
+          position: relative;
+          width: 14rem;
+          height: 20rem;
+          margin: 0 1.9rem;
+          border-radius: 0.7rem;
+          box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
+            rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+          cursor: pointer;
+          h4 {
+            position: absolute;
+            color: white;
+            font-size: 1rem;
+            bottom: 1.4rem;
+            padding: 0 1.5rem;
+            z-index: 98;
+            font-weight: 400;
+          }
+
+          img {
+            width: 20rem;
+            border-radius: 0.7rem;
+          }
+          .shadowLayerBigBox {
+            width: 100%;
+            height: 10rem;
+            position: absolute;
+            bottom: 0;
+            z-index: 96;
+            background-image: linear-gradient(to top, #050505c2, transparent);
+            border-radius: 0.6rem;
+            cursor: pointer;
+          }
+        }
+        .smallBox {
+          position: relative;
+          width: 12rem;
+          height: 18rem;
+          border-radius: 0.7rem;
+          box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
+            rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+          overflow: hidden;
+          cursor: pointer;
+          h4 {
+            position: absolute;
+            color: white;
+            font-size: 1rem;
+            bottom: 1.875rem;
+            padding: 0 1.5rem;
+            z-index: 98;
+            font-weight: 400;
+            width: 100%;
+          }
+
+          img {
+            width: 18rem;
+            border-radius: 0.625rem;
+          }
+          .shadowLayerSmallBox {
+            width: 100%;
+            height: 9rem;
+            position: absolute;
+            bottom: 0;
+            z-index: 95;
+            border-radius: 0.5rem;
+            background-image: linear-gradient(to top, #000000a2, transparent);
+          }
+        }
+      }
+      .logSmallContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .logSmallImg {
+          width: 100%;
+          background-color: black;
+          height: 24rem;
+          object-fit: cover;
+        }
+      }
+
+      .sec6Btns {
+        width: 15rem;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+        position: absolute;
+        z-index: 99;
+        bottom: 2rem;
+        left: 7rem;
+        padding: 0;
+        .ClickVolta {
+          width: 3.5rem;
+          height: 3.5rem;
+          background-color: black;
+          border-radius: 50%;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.4s ease-in;
+          cursor: pointer;
+
+          .iconX {
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 500;
+            transition: all ease-in-out 0.3s;
+          }
+          &:hover > .iconX {
+            font-size: 1.5rem;
+            font-weight: 900;
+          }
+        }
+        .divbtn {
+          display: flex;
+          width: 9rem;
+          justify-content: space-between;
+          .sec6BtnLeft,
+          .sec6BtnRight {
+            width: 3.5rem;
+            height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            &:hover {
+              background-color: #191818;
+              border: 0.125rem solid black;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (min-device-width: 901px) and (max-device-width: 1400px) and (-webkit-min-device-pixel-ratio: 2) {
+    .section1 {
+      background: url(${backpic2}) fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 100vw;
+      .overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(
+          0deg,
+          black,
+          #0000009f,
+          #00000039,
+          #00000016
+        );
+      }
+      .logo {
+        display: none;
+      }
+      nav {
+        padding: 0;
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+      }
+      .infocontainer {
+        position: absolute;
+        bottom: 3rem;
+        left: 1rem;
+        width: 95%;
+        color: white;
+        z-index: 1;
+
+        h1 {
+          font-size: 3rem;
+          font-weight: 500;
+          margin-bottom: 1.563rem;
+        }
+        h3 {
+          font-size: 1.4rem;
+          font-weight: 500;
+          margin-bottom: 1.563rem;
+        }
+        .btnsContainer {
+          button {
+            width: 9rem;
+            height: 4rem;
+            border-radius: 2.5rem;
+            border: none;
+            background-color: white;
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-right: 1.25rem;
+            transition: all 0.2s ease-in-out;
+            color: black;
+            cursor: pointer;
+            &:hover {
+              background-color: #d0cfcf;
+            }
+          }
+        }
+      }
+    }
+
+    .section2 {
+      height: calc(40% - 40vh);
+      width: 100vw;
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      cursor: pointer;
+
+      .section2Title {
+        width: 98%;
+        h4 {
+          font-size: 3rem;
+          font-weight: 500;
+        }
+      }
+
+      .pagesLinkContainer {
+        height: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        .linkBox {
+          position: relative;
+          width: 30vw;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow: hidden;
+          margin: 0.3rem;
+          border-radius: 0.938rem;
+
+          img {
+            object-fit: contain;
+            width: 30vw;
+            transition: all 0.3s ease-in-out;
+            border-radius: 0.938rem;
+            &:hover {
+              width: 40rem;
+            }
+          }
+          .bottomDiv {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            padding: 0 1rem;
+            bottom: 1rem;
+            z-index: 98;
+            p {
+              font-size: 1.7rem;
+              font-weight: 400;
+              color: white;
+              cursor: pointer;
+              &:hover {
+                color: gray;
+              }
+            }
+            button {
+              width: 2.5rem;
+              height: 2.5rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              background-color: transparent;
+              border: 0.12rem solid white;
+              color: white;
+              font-size: 1.4rem;
+              cursor: pointer;
+              &:hover {
+                background-color: white;
+                color: gray;
+              }
+            }
+          }
+          .shadow {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            height: 15.625rem;
+            background-image: linear-gradient(to top, #000000a2, transparent);
+            z-index: 90;
+          }
+        }
+      }
+    }
+
+    .section3 {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 22rem;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+
+      .cards {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 95%;
+        height: 100%;
+        position: relative;
+
+        .transversal {
+          display: none;
+        }
+        .cardsList {
+          height: auto;
+          width: auto;
+          margin-left: 0rem;
+
+          p {
+            width: fit-content;
+            font-size: 2.1rem;
+            font-weight: 500;
+            color: #323131;
+            margin-bottom: 1rem;
+            margin-left: 0.25rem;
+            position: relative;
+            cursor: pointer;
+
+            &:after {
+              content: "";
+              position: absolute;
+              width: 105%;
+              height: 0.25rem;
+              background-color: #323131;
+              bottom: 0;
+              transform-origin: bottom left;
+              transform: scaleX(0);
+              left: 0;
+              transition: all 0.3s ease-in-out;
+            }
+            &:hover::after {
+              transform: scaleX(1);
+            }
+          }
+        }
+        .cardsContainer {
+          position: relative;
+          width: 18rem;
+          height: 26rem;
+          margin-right: 0rem;
+          display: flex;
+          align-items: start;
+          justify-content: center;
+          margin-top: 4rem;
+
+          .cardImg {
+            top: 0;
+            position: absolute;
+            width: 16rem;
+            border-radius: 2.5rem;
+            cursor: pointer;
+          }
+
+          .cardImg1 {
+            transform: rotate(3deg);
+          }
+          .cardImg2 {
+            transform: rotate(5.5deg);
+          }
+          .cardImg3 {
+            transform: rotate(7.5deg);
+          }
+          .cardImg4 {
+            transform: rotate(9.5deg);
+          }
+          .cardImg5 {
+            transform: rotate(11.5deg);
+          }
+        }
+      }
+    }
+    .section4 {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100vw;
+      height: auto;
+      overflow: hidden;
+      .containerSec4 {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        width: 100%;
+        .boxContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: null;
+          overflow: hidden;
+          width: 20vw;
+          height: 23rem;
+          border-radius: 1.5rem;
+          margin: 0.4rem;
+          cursor: pointer;
+
+          h4 {
+            text-align: center;
+            position: absolute;
+            color: white;
+            bottom: 3rem;
+            font-size: 1.2rem;
+            font-weight: 500;
+            left: 0;
+            z-index: 99;
+            width: 100%;
+          }
+          .bttnShop {
+            position: absolute;
+            width: 7rem;
+            height: 2rem;
+            background-color: white;
+            border: none;
+            border-radius: 2.5rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #3e3d3d;
+            bottom: 1rem;
+            left: 50%;
+            margin-left: -3.5rem;
+            z-index: 99;
+
+            cursor: pointer;
+            &:hover {
+              background-color: #d0cfcf;
+            }
+          }
+        }
+
+        .sec4Backgroundimg1 {
+          background-image: url(${cloudultra2});
+          background-position: center;
+          background-size: cover;
+        }
+        .sec4Backgroundimg2 {
+          background-image: url(${apparelSec4});
+          background-position: center;
+          background-size: cover;
+        }
+        .sec4Backgroundimg3 {
+          background-image: url(${shorts});
+          background-position: center;
+          background-size: cover;
+        }
+        .sec4Backgroundimg4 {
+          background-image: url(${centerCourt});
+          background-position: center;
+          background-size: cover;
+        }
+        .shadowSec4 {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 18.75rem;
+          background-image: linear-gradient(to top, #000000a2, transparent);
+          z-index: 98;
+        }
+      }
+    }
+    .section6 {
+      position: relative;
+      height: 90vh;
+      width: 100vw;
+      overflow: hidden;
+
+      .sec6Container {
+        display: grid;
+        grid-template-columns: 99% 1%;
+        height: 100%;
+
+        .leftBcgSec6 {
+          height: 100vh;
+          width: 100%;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+          .shadowLayer {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            bottom: 0;
+            z-index: 95;
+            background-image: linear-gradient(
+              to top,
+              #000000b9,
+              #000000a2,
+              transparent
+            );
+          }
+        }
+        .rightBcgSec6 {
+          width: 0rem;
+          transition: all 0.4s ease-in;
+          border: 3px solid black;
+          img {
+            width: 90rem;
+            object-fit: cover;
+          }
+        }
+
+        .boxMission {
+          position: absolute;
+          width: 30rem;
+          margin-bottom: 1rem;
+          bottom: 2rem;
+          left: 3.3;
+          z-index: 97;
+          transition: all ease-in 0.5s;
+          padding-left: 1.7rem;
+          h4 {
+            font-size: 3rem;
+            color: white;
+            font-weight: 500;
+            margin-bottom: 0rem;
+          }
+          p {
+            font-size: 1.8rem;
+            color: white;
+            font-weight: 400;
+            line-height: 2rem;
+          }
+          .containerReadMore {
+            width: 15rem;
+            height: 6rem;
+            display: flex;
+            align-items: center;
+            margin-top: 1.25rem;
+            border-radius: 3.125rem;
+            border: none;
+            background-color: transparent;
+
+            .btnReadMore {
+              display: flex;
+              width: 15rem;
+              height: 5.5rem;
+              background-color: #dcad03;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              border-radius: 3.125rem;
+              transition: all 0.3s ease-in-out;
+              cursor: pointer;
+              &:hover {
+                width: 12rem;
+                height: 4.5rem;
+              }
+              .redmoreImg {
+                width: 5rem;
+                height: 5rem;
+                border-radius: 50%;
+                background-image: url(${tennis});
+                background-size: cover;
+                background-position: 0;
+              }
+              p {
+                font-size: 1.6rem;
+                font-weight: 500;
+                margin-right: 0.938rem;
+                color: black;
+              }
+            }
+          }
+        }
+      }
+      .OverlayContainer {
+        height: 25rem;
+        width: 110rem;
+        position: absolute;
+        display: flex;
+        top: 10rem;
+        z-index: 98;
+        left: 50rem;
+        transition: all 0.3s ease-in;
+
+        .bigBox {
+          overflow: hidden;
+          position: relative;
+          width: 17rem;
+          height: 23rem;
+          margin: 0 1.9rem;
+          border-radius: 0.7rem;
+          box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
+            rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+          cursor: pointer;
+          h4 {
+            position: absolute;
+            color: white;
+            font-size: 1.3rem;
+            bottom: 1.4rem;
+            padding: 0 1.5rem;
+            z-index: 98;
+            font-weight: 400;
+          }
+
+          img {
+            width: 20rem;
+            border-radius: 0.7rem;
+          }
+          .shadowLayerBigBox {
+            width: 100%;
+            height: 10rem;
+            position: absolute;
+            bottom: 0;
+            z-index: 96;
+            background-image: linear-gradient(to top, #050505c2, transparent);
+            border-radius: 0.6rem;
+            cursor: pointer;
+          }
+        }
+        .smallBox {
+          position: relative;
+          width: 16rem;
+          height: 21rem;
+          border-radius: 0.7rem;
+          box-shadow: rgba(50, 50, 93, 0.25) 0 0.375rem 0.75rem -0.125rem,
+            rgba(0, 0, 0, 0.3) 0 0.188rem 0.438rem -0.188rem;
+          overflow: hidden;
+          cursor: pointer;
+          h4 {
+            position: absolute;
+            color: white;
+            font-size: 1.3rem;
+            bottom: 1.875rem;
+            padding: 0 1.5rem;
+            z-index: 98;
+            font-weight: 400;
+            width: 100%;
+          }
+
+          img {
+            width: 18rem;
+            border-radius: 0.625rem;
+          }
+          .shadowLayerSmallBox {
+            width: 100%;
+            height: 9rem;
+            position: absolute;
+            bottom: 0;
+            z-index: 95;
+            border-radius: 0.5rem;
+            background-image: linear-gradient(to top, #000000a2, transparent);
+          }
+        }
+      }
+      .logSmallContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .logSmallImg {
+          width: 100%;
+          background-color: black;
+          height: 24rem;
+          object-fit: cover;
+        }
+      }
+
+      .sec6Btns {
+        width: 18rem;
+        height: 75px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 100;
+        position: absolute;
+        z-index: 99;
+        bottom: 2rem;
+        left: 7rem;
+        padding: 0;
+        .ClickVolta {
+          width: 4.5rem;
+          height: 4.5rem;
+          background-color: black;
+          border-radius: 50%;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.4s ease-in;
+          cursor: pointer;
+
+          .iconX {
+            color: white;
+            font-size: 1.9rem;
+            font-weight: 500;
+            transition: all ease-in-out 0.3s;
+          }
+          &:hover > .iconX {
+            font-size: 2rem;
+            font-weight: 900;
+          }
+        }
+        .divbtn {
+          display: flex;
+          width: 10rem;
+          justify-content: space-between;
+          .sec6BtnLeft,
+          .sec6BtnRight {
+            width: 4.5rem;
+            height: 4.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+            cursor: pointer;
+            &:hover {
+              background-color: #191818;
+              border: 0.125rem solid black;
+            }
+          }
+        }
+      }
+    }
+  }
 `;
 export default Home;

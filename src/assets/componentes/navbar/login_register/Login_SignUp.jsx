@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import SignUp from "./Register";
+import SignUp from "./SignUp";
 import Login from "./Login";
 import { useEffect, useRef } from "react";
 import { useUserAuth } from "../../../contexts/UserAuthContext";
@@ -42,7 +42,7 @@ const Login_SignUp = ({ handleSignUp }) => {
             )}
           </div>
         </div>
-        <aside className="UserContainer">
+        <aside>
           {btnToggle ? <Login /> : <SignUp btnToggle={btnToggle} />}
         </aside>
       </main>
@@ -136,7 +136,7 @@ const Wrapper = styled.div`
       }
     }
   }
-  @media only screen and (min-device-width: 375px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     main {
       margin: 0;
       margin-top: 1.5rem;
@@ -145,15 +145,16 @@ const Wrapper = styled.div`
       align-items: center;
       justify-content: center;
       overflow-x: hidden;
+      width: 100%;
 
       .togglebutton {
         margin-bottom: 0rem;
-        height: 4.4rem;
+        height: 4rem;
 
         .login_signUp {
           position: relative;
-          width: 22rem;
-          height: 4rem;
+          width: 18rem;
+          height: 3rem;
           border-radius: 10rem;
           margin-bottom: 2rem;
           display: flex;
@@ -166,10 +167,10 @@ const Wrapper = styled.div`
             justify-content: center;
             align-items: center;
             z-index: 97;
-            width: 30rem;
+            width: 90%;
             cursor: pointer;
             p {
-              font-size: 1.2rem;
+              font-size: 1.1rem;
               width: 19rem;
               height: 4rem;
               display: flex;
@@ -187,10 +188,10 @@ const Wrapper = styled.div`
             justify-content: center;
             align-items: center;
             background-color: white;
-            width: 12rem;
-            height: 100%;
+            width: 9rem;
+            height: 90%;
             border-radius: 10rem;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 500;
             color: black;
             z-index: 98;
@@ -204,10 +205,10 @@ const Wrapper = styled.div`
             justify-content: center;
             align-items: center;
             background-color: white;
-            width: 12rem;
-            height: 100%;
+            width: 9rem;
+            height: 90%;
             border-radius: 10rem;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 500;
             color: black;
             z-index: 98;
@@ -224,6 +225,195 @@ const Wrapper = styled.div`
             height: 5rem;
             border-radius: 10rem;
             font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
+    main {
+      margin: 0;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      width: 80vw;
+
+      .togglebutton {
+        margin-bottom: 0rem;
+        height: 4rem;
+
+        .login_signUp {
+          position: relative;
+          width: 18rem;
+          height: 4rem;
+          border-radius: 10rem;
+          margin-bottom: 2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: black;
+          .backContainer {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 97;
+            width: 90%;
+            cursor: pointer;
+            p {
+              font-size: 1.3rem;
+              width: 19rem;
+              height: 4rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 10rem;
+            }
+          }
+
+          .buttonLeft {
+            position: absolute;
+            left: 0;
+            border: 2px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            width: 9rem;
+            height: 90%;
+            border-radius: 10rem;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: black;
+            z-index: 98;
+            cursor: pointer;
+          }
+          .buttonRight {
+            position: absolute;
+            right: 0;
+            border: 2px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            width: 9rem;
+            height: 90%;
+            border-radius: 10rem;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: black;
+            z-index: 98;
+
+            cursor: pointer;
+          }
+          .backContainer {
+            position: absolute;
+            width: 20rem;
+            z-index: 95;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            height: 5rem;
+            border-radius: 10rem;
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-device-width: 901px) and (max-device-width: 1400px) and (-webkit-min-device-pixel-ratio: 2) {
+    main {
+      margin: 0;
+      margin-top: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+      width: 100%;
+
+      .togglebutton {
+        margin-bottom: 0rem;
+        height: 4rem;
+
+        .login_signUp {
+          position: relative;
+          width: 18rem;
+          height: 4rem;
+          border-radius: 10rem;
+          margin-bottom: 2rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: black;
+          .backContainer {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 97;
+            width: 90%;
+            cursor: pointer;
+            p {
+              font-size: 1.3rem;
+              width: 19rem;
+              height: 4rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 10rem;
+            }
+          }
+
+          .buttonLeft {
+            position: absolute;
+            left: 0;
+            border: 2px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            width: 9rem;
+            height: 90%;
+            border-radius: 10rem;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: black;
+            z-index: 98;
+            cursor: pointer;
+          }
+          .buttonRight {
+            position: absolute;
+            right: 0;
+            border: 2px solid gray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            width: 9rem;
+            height: 90%;
+            border-radius: 10rem;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: black;
+            z-index: 98;
+
+            cursor: pointer;
+          }
+          .backContainer {
+            position: absolute;
+            width: 20rem;
+            z-index: 95;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            height: 5rem;
+            border-radius: 10rem;
+            font-size: 1.3rem;
           }
         }
       }

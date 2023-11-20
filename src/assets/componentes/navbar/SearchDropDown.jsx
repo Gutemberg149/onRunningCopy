@@ -467,7 +467,7 @@ const Wrapper = styled.div`
     }
   }
 
-  @media only screen and (min-device-width: 375px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+  @media only screen and (min-device-width: 375px) and (max-device-width: 600px) and (-webkit-min-device-pixel-ratio: 2) {
     padding: 0;
     width: 100vw;
     .bodyContainer {
@@ -569,6 +569,266 @@ const Wrapper = styled.div`
               align-items: center;
               justify-content: center;
               width: 11.5rem;
+              height: 12rem;
+              padding: 0.5rem;
+              .name {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #535252;
+                margin-bottom: 0.5rem;
+              }
+              .introduction,
+              .price,
+              .colors {
+                text-align: center;
+                font-size: 1rem;
+                color: #4d4d4d;
+                margin-bottom: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+      .pFaqs {
+        display: none;
+      }
+      .FAQs {
+        display: none;
+      }
+    }
+  }
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
+    padding: 0;
+    width: 100%;
+    .bodyContainer {
+      width: 99%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .search {
+        width: 80%;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+
+        input {
+          height: 3.8rem;
+          &::placeholder {
+          }
+        }
+        .searchIcon {
+          font-size: 1rem;
+          cursor: pointer;
+        }
+      }
+
+      .suggestedSearch {
+        margin-top: 1rem;
+        width: 96%;
+        height: 20rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .pSugested {
+          font-size: 1.6rem;
+          margin-bottom: 0;
+          margin-left: 0;
+        }
+        .innerSugested {
+          width: 100%;
+          height: 10rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin-bottom: 0;
+          margin-left: 0;
+
+          .sugested {
+            margin: 0.8rem 1.4rem;
+            width: 9rem;
+            height: 6.2;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 0.5rem 0.6rem;
+            margin-bottom: 0;
+
+            cursor: pointer;
+            &:hover {
+            }
+          }
+        }
+      }
+
+      .products {
+        width: 99%;
+        margin-top: 1.5rem;
+
+        .pProd {
+          margin-left: 1rem;
+        }
+        .prodsContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          cursor: pointer;
+          .prodContainer {
+            width: 12rem;
+            height: 24rem;
+            margin: 2rem 0.5rem;
+            display: grid;
+            grid-template-rows: 1fr 2fr;
+            .upperPart {
+              width: 11.5rem;
+              background-color: #e9e8e8;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              img {
+                width: 11rem;
+              }
+            }
+            .bottomPart {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              width: 11.5rem;
+              height: 12rem;
+              padding: 0.5rem;
+              .name {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #535252;
+                margin-bottom: 0.5rem;
+              }
+              .introduction,
+              .price,
+              .colors {
+                text-align: center;
+                font-size: 1rem;
+                color: #4d4d4d;
+                margin-bottom: 0.8rem;
+              }
+            }
+          }
+        }
+      }
+      .pFaqs {
+        display: none;
+      }
+      .FAQs {
+        display: none;
+      }
+    }
+  }
+
+  @media only screen and (min-device-width: 901px) and (max-device-width: 1400px) and (-webkit-min-device-pixel-ratio: 2) {
+    padding: 0;
+    width: 100%;
+    .bodyContainer {
+      width: 99%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .search {
+        width: 80%;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+
+        input {
+          height: 3.8rem;
+          &::placeholder {
+          }
+        }
+        .searchIcon {
+          font-size: 1rem;
+          cursor: pointer;
+        }
+      }
+
+      .suggestedSearch {
+        margin-top: 1rem;
+        width: 96%;
+        height: 20rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .pSugested {
+          font-size: 1.6rem;
+          margin-bottom: 0;
+          margin-left: 0;
+        }
+        .innerSugested {
+          width: 100%;
+          height: 10rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin-bottom: 0;
+          margin-left: 0;
+
+          .sugested {
+            margin: 0.8rem 1.4rem;
+            width: 9rem;
+            height: 6.2;
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 0.5rem 0.6rem;
+            margin-bottom: 0;
+
+            cursor: pointer;
+            &:hover {
+            }
+          }
+        }
+      }
+
+      .products {
+        width: 99%;
+        margin-top: 1.5rem;
+
+        .pProd {
+          margin-left: 1rem;
+          font-size: 1.4rem;
+          font-weight: 500;
+        }
+        .prodsContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          margin-bottom: 3rem;
+          cursor: pointer;
+          .prodContainer {
+            width: 15rem;
+            height: 24rem;
+            margin: 2rem 0.5rem;
+            display: grid;
+            grid-template-rows: 1fr 2fr;
+            .upperPart {
+              width: 14.5rem;
+              background-color: #e9e8e8;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              img {
+                width: 14rem;
+              }
+            }
+            .bottomPart {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              width: 14.5rem;
               height: 12rem;
               padding: 0.5rem;
               .name {

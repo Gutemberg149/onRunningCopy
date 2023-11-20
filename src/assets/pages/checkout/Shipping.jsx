@@ -337,5 +337,9 @@ const Wrapper = styled.div`
       }
     }
   }
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
+  }
+  @media only screen and (min-device-width: 901px) and (max-device-width: 1500px) and (-webkit-min-device-pixel-ratio: 2) {
+  }
 `;
 export default Shipping;

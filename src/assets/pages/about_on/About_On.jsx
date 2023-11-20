@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../../images/logoImg/logo.jpeg";
 import Navbar from "../../componentes/navbar/Navbar";
-import dreamHuman from "./dreamHuman.mp4";
 import { Link } from "react-router-dom";
 import image1 from "../../images/AboutOn/image1.avif";
 import image2 from "../../images/AboutOn/image2.avif";
@@ -20,7 +19,15 @@ const About_On = () => {
       </nav>
 
       <section className="sec1">
-        <video src={dreamHuman} width="1920" loop muted autoPlay />
+        <div className="IframeSection">
+          <iframe
+            src={`https://www.youtube.com/embed/ILN99_PZzko`}
+            frameBorder={0}
+            allowFullScreen
+            allow="autoplay"
+          />
+        </div>
+
         <div className="boxText">
           <h4>Dream On.</h4>
           <p>The On mission: To ignite the human spirit through movement.</p>
@@ -46,7 +53,12 @@ const About_On = () => {
       </section>
 
       <section className="sectionText">
-        <div className="containerSecText" style={{ backgroundColor: "black" }}>
+        <div
+          className="containerSecText"
+          style={{
+            backgroundColor: "black",
+          }}
+        >
           <p className="pSecText2" style={{ color: "white" }}>
             The Athlete Spirit guides everyone at On. And like our athletes, we
             are always recalibrating and reengineering toward better. Our goal
@@ -99,13 +111,21 @@ const Wrapper = styled.div`
   }
   .sec1 {
     position: relative;
-    height: 67.7rem;
-    video {
-      position: absolute;
+    height: 90vh;
+    .IframeSection {
+      overflow: hidden;
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+      }
     }
+
     .boxText {
       position: absolute;
-      top: 45rem;
+      top: 58%;
       left: 5rem;
       width: 50rem;
       h4 {
@@ -124,10 +144,14 @@ const Wrapper = styled.div`
     justify-content: center;
     .containerSecText {
       width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
       padding: 0 4rem;
       .containerText_h4 {
         color: black;
-        font-size: 5.5rem;
+        font-size: 5rem;
         margin-top: 5rem;
         margin-bottom: 2rem;
         font-weight: 500;
@@ -135,7 +159,7 @@ const Wrapper = styled.div`
 
       .pSecText2 {
         color: #222121;
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin: 3rem 1rem;
         font-weight: 400;
         line-height: 5rem;
@@ -144,6 +168,7 @@ const Wrapper = styled.div`
   }
 
   .secImage {
+    background-color: black;
     img {
       width: 100%;
     }
@@ -161,22 +186,29 @@ const Wrapper = styled.div`
     }
     .sec1 {
       position: relative;
-      height: 35vh;
-      video {
-        position: absolute;
-        width: 100vw;
+      height: 50vh;
+      .IframeSection {
+        overflow: hidden;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+        }
       }
+
       .boxText {
         position: absolute;
-        top: 50%;
-        left: 0.5rem;
-        width: 100vw;
+        top: 54%;
+        left: 1rem;
+        width: 50%;
         h4 {
-          font-size: 1.5rem;
+          font-size: 1.4rem;
           color: white;
         }
         p {
-          font-size: 1rem;
+          font-size: 0.9rem;
           color: white;
         }
       }
@@ -185,7 +217,79 @@ const Wrapper = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 100vw;
+      .containerSecText {
+        width: 100%;
+        padding: 0 1rem;
+        .containerText_h4 {
+          color: black;
+          font-size: 1.5rem;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+          font-weight: 500;
+        }
 
+        .pSecText2 {
+          color: black;
+          font-size: 0.9rem;
+          margin: 1rem 0.5rem;
+          font-weight: 400;
+          line-height: 2rem;
+          text-align: justify;
+        }
+      }
+    }
+
+    .secImage {
+      img {
+        width: 100%;
+      }
+    }
+  }
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
+    nav {
+      padding: 0;
+      width: 100vw;
+      .logo {
+        width: 4rem;
+        margin: 0;
+        margin-top: 7rem;
+        margin-bottom: 1rem;
+      }
+    }
+    .sec1 {
+      position: relative;
+      height: 55vh;
+      .IframeSection {
+        overflow: hidden;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .boxText {
+        position: absolute;
+        top: 54%;
+        left: 1rem;
+        width: 50%;
+        h4 {
+          font-size: 1.7rem;
+          color: white;
+        }
+        p {
+          font-size: 1.1rem;
+          color: white;
+        }
+      }
+    }
+    .sectionText {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       width: 100vw;
       .containerSecText {
         width: 100%;
@@ -200,7 +304,7 @@ const Wrapper = styled.div`
 
         .pSecText2 {
           color: black;
-          font-size: 1rem;
+          font-size: 1.4rem;
           margin: 1rem 0.5rem;
           font-weight: 400;
           line-height: 2rem;
@@ -209,6 +313,83 @@ const Wrapper = styled.div`
       }
     }
 
+    .secImage {
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  @media only screen and (min-device-width: 901px) and (max-device-width: 1400px) and (-webkit-min-device-pixel-ratio: 2) {
+    nav {
+      padding: 0;
+      width: 100vw;
+      .logo {
+        width: 5rem;
+        margin: 7rem 0 1rem 2rem;
+      }
+    }
+    .sec1 {
+      position: relative;
+      min-height: 60vh;
+      .IframeSection {
+        overflow: hidden;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .boxText {
+        position: absolute;
+        top: 54%;
+        left: 1rem;
+        width: 50%;
+        h4 {
+          font-size: 2rem;
+          color: white;
+        }
+        p {
+          font-size: 1.2rem;
+          color: white;
+        }
+      }
+    }
+    .sectionText {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+      height: 20rem;
+      max-height: 50vh;
+      .containerSecText {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 0 1rem;
+        .containerText_h4 {
+          color: black;
+          font-size: 1.7rem;
+          margin-top: 1rem;
+          margin-bottom: 1rem;
+          font-weight: 500;
+        }
+
+        .pSecText2 {
+          color: black;
+          font-size: 1.3rem;
+          margin: 1rem 0.5rem;
+          font-weight: 400;
+          line-height: 2.6rem;
+          text-align: justify;
+        }
+      }
+    }
     .secImage {
       img {
         width: 100%;

@@ -17,6 +17,7 @@ import TermsAndCondition from "./termsAndCondition/TermsAndCondition";
 import { useState } from "react";
 import Order_ReturnTracker from "./Order_ReturnTracker";
 import ReturnExchangeForm from "./return _exchange_form/ReturnExchangeForm";
+import Footer from "../../componentes/footer/Footer";
 
 const Orderstatus = () => {
   const [state, dispatch] = useReducer(ReducerBcg, initialState);
@@ -202,6 +203,7 @@ const Orderstatus = () => {
           )}
         </section>
       </main>
+      <Footer />
     </Wrapper>
   );
 };
@@ -469,6 +471,314 @@ const Wrapper = styled.div`
               width: fit-content;
               height: fit-content;
               font-size: 1.4rem;
+              font-weight: 400;
+              margin-bottom: 1rem;
+              background: linear-gradient(to right, #ffc250 50%, white 50%);
+              background-size: 200% 100%;
+              background-position: right bottom;
+              transition: all 0.5s ease-out;
+              cursor: pointer;
+              &:hover {
+                background-position: left bottom;
+              }
+            }
+            .orange {
+              width: fit-content;
+              height: fit-content;
+              font-size: 2.3rem;
+              font-weight: 400;
+              margin-bottom: 1.5rem;
+              background: #ffc250;
+              background-size: 200% 100%;
+              background-position: right bottom;
+              transition: all 0.5s ease-out;
+              cursor: pointer;
+            }
+          }
+        }
+        .RightInfo {
+          background-color: #f8f6f6;
+          border-radius: 1em;
+          width: 100%;
+          padding: 0 0.5rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-device-width: 601px) and (max-device-width: 900px) and (-webkit-min-device-pixel-ratio: 2) {
+    .topMessage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #22826aeb;
+      height: 4rem;
+      color: #f2f2f2;
+      padding: 0.2rem;
+      p {
+        font-size: 0.8rem;
+      }
+    }
+
+    .sec1 {
+      position: relative;
+      background-image: url(${mountain2});
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 55vh;
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+        .logo {
+          mix-blend-mode: darken;
+          width: 4rem;
+          margin: 0.8rem 0rem 0rem 0rem;
+          z-index: 96;
+          cursor: pointer;
+        }
+        .homeBtn {
+          width: 9.5rem;
+          height: 2.5rem;
+          border: white 2px solid;
+          color: white;
+          background-color: transparent;
+          border-radius: 3rem;
+          font-size: 1rem;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #ffffff35;
+          }
+        }
+      }
+      .contaText {
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding-left: 1rem;
+        z-index: 96;
+        margin-top: 0rem;
+        .topText {
+          width: 50vh;
+          font-size: 1.2rem;
+          font-weight: 300;
+          letter-spacing: 4px;
+          color: white;
+          z-index: 96;
+        }
+        h3 {
+          font-size: 2rem;
+          color: white;
+          z-index: 96;
+          margin-bottom: 0rem;
+        }
+        .btns {
+          display: flex;
+          flex-direction: column;
+
+          .btn {
+            width: 16rem;
+            height: 4rem;
+            background-color: #000000e1;
+            border: none;
+            color: white;
+            margin-bottom: 0.5rem;
+            border-radius: 5rem;
+            font-size: 1.2rem;
+
+            cursor: pointer;
+
+            &:hover {
+              background-color: #000000b5;
+            }
+          }
+        }
+      }
+    }
+    main {
+      .sec2 {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        background-color: #f8f6f6;
+        .leftList {
+          margin-right: 0rem;
+          background-color: white;
+          width: 90%;
+          height: 80vh;
+          display: flex;
+          padding-left: 1rem;
+          border-radius: 1em;
+          box-shadow: rgba(149, 157, 165, 0.064) 0px 8px 24px;
+          ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .liBcgDynamic {
+              width: fit-content;
+              height: fit-content;
+              font-size: 1.6rem;
+              font-weight: 400;
+              margin-bottom: 1rem;
+              background: linear-gradient(to right, #ffc250 50%, white 50%);
+              background-size: 200% 100%;
+              background-position: right bottom;
+              transition: all 0.5s ease-out;
+              cursor: pointer;
+              &:hover {
+                background-position: left bottom;
+              }
+            }
+            .orange {
+              width: fit-content;
+              height: fit-content;
+              font-size: 2.3rem;
+              font-weight: 400;
+              margin-bottom: 1.5rem;
+              background: #ffc250;
+              background-size: 200% 100%;
+              background-position: right bottom;
+              transition: all 0.5s ease-out;
+              cursor: pointer;
+            }
+          }
+        }
+        .RightInfo {
+          background-color: #f8f6f6;
+          border-radius: 1em;
+          width: 100%;
+          padding: 0 0.5rem;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-device-width: 901px) and (max-device-width: 1400px) and (-webkit-min-device-pixel-ratio: 2) {
+    .topMessage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #22826aeb;
+      height: 4rem;
+      color: #f2f2f2;
+      padding: 0.1rem;
+      p {
+        font-size: 0.9rem;
+      }
+    }
+
+    .sec1 {
+      position: relative;
+      background-image: url(${mountain2});
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 55vh;
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1rem;
+        .logo {
+          mix-blend-mode: darken;
+          width: 5rem;
+          margin: 0.8rem 0rem 0rem 0rem;
+          z-index: 96;
+          cursor: pointer;
+        }
+        .homeBtn {
+          width: 11rem;
+          height: 3rem;
+          border: white 2px solid;
+          color: white;
+          background-color: transparent;
+          border-radius: 3rem;
+          font-size: 1.1rem;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #ffffff35;
+          }
+        }
+      }
+      .contaText {
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        padding-left: 1rem;
+        z-index: 96;
+        margin-top: 0rem;
+        .topText {
+          width: 50vh;
+          font-size: 1.2rem;
+          font-weight: 300;
+          letter-spacing: 4px;
+          color: white;
+          z-index: 96;
+        }
+        h3 {
+          font-size: 2rem;
+          color: white;
+          z-index: 96;
+          margin-bottom: 1rem;
+        }
+        .btns {
+          display: flex;
+          flex-direction: column;
+
+          .btn {
+            width: 18rem;
+            height: 4.5rem;
+            background-color: #000000e1;
+            border: none;
+            color: white;
+            margin-bottom: 0.5rem;
+            border-radius: 5rem;
+            font-size: 1.3rem;
+
+            cursor: pointer;
+
+            &:hover {
+              background-color: #000000b5;
+            }
+          }
+        }
+      }
+    }
+    main {
+      .sec2 {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        background-color: #f8f6f6;
+        .leftList {
+          margin-right: 0rem;
+          background-color: white;
+          width: 90%;
+          height: 80vh;
+          display: flex;
+          padding-left: 1rem;
+          border-radius: 1em;
+          box-shadow: rgba(149, 157, 165, 0.064) 0px 8px 24px;
+          ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .liBcgDynamic {
+              width: fit-content;
+              height: fit-content;
+              font-size: 2rem;
               font-weight: 400;
               margin-bottom: 1rem;
               background: linear-gradient(to right, #ffc250 50%, white 50%);
